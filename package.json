@@ -1,0 +1,10 @@
+{
+    "id": "millwright",
+    "title": "Millwright",
+    "version": "0.1.0",
+    "creator": "Andrey",
+    "description": "Историческая механика: валы, цевочные передачи, водяные колёса и мельницы",
+    "dependencies": [
+        "base"
+    ]
+}

@@ -1,0 +1,6 @@
+{
+    "icon-type": "sprite",
+    "icon": "items:mw_berries",
+    "stack-size": 32,
+    "script-name": "food"
+}

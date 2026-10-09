@@ -1,0 +1,43 @@
+{
+    "animation": [
+        "mw_cow_walk",
+        "mw_cow_graze",
+        "mw_chicken_walk",
+        "mw_chicken_peck",
+        "mw_chicken_flap",
+        "mw_bear_walk",
+        "mw_bear_sniff",
+        "mw_bear_attack",
+        "mw_horse_walk",
+        "mw_horse_graze",
+        "mw_squirrel_hop",
+        "mw_squirrel_sit",
+        "mw_bird_fly",
+        "mw_bird_hop",
+        "mw_parrot_bob",
+        "mw_owl_look"
+    ],
+    "textures": [
+        "entities/mw_horse_bay",
+        "entities/mw_horse_bay_mane",
+        "entities/mw_horse_bay_face",
+        "entities/mw_horse_chestnut",
+        "entities/mw_horse_chestnut_mane",
+        "entities/mw_horse_chestnut_face",
+        "entities/mw_horse_grey",
+        "entities/mw_horse_grey_mane",
+        "entities/mw_horse_grey_face",
+        "entities/mw_horse_black",
+        "entities/mw_horse_black_mane",
+        "entities/mw_horse_black_face",
+        "entities/mw_parrot_scarlet",
+        "entities/mw_parrot_scarlet_wing",
+        "entities/mw_parrot_scarlet_face",
+        "entities/mw_parrot_blue",
+        "entities/mw_parrot_blue_wing",
+        "entities/mw_parrot_blue_face",
+        "entities/mw_parrot_green",
+        "entities/mw_parrot_green_wing",
+        "entities/mw_parrot_green_face"
+    ]
+}

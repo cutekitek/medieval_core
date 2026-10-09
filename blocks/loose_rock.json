@@ -1,0 +1,16 @@
+{
+    "model": "custom",
+    "model-name": "mw_loose_rock",
+    "hidden": true,
+    "picking-item": "millwright:rock",
+    "material": "base:sand",
+    "obstacle": false,
+    "grounded": true,
+    "replaceable": true,
+    "light-passing": true,
+    "sky-light-passing": true,
+    "ambient-occlusion": false,
+    "hitbox": [0.25, 0.0, 0.2, 0.5, 0.15, 0.45],
+    "script-name": "loose",
+    "base:durability": 0.0
+}

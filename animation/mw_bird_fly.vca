@@ -1,0 +1,4 @@
+@rotate bone wing_l by z func (-80 - sin(t * 14) * 40)
+@rotate bone wing_r by z func (80 + sin(t * 14) * 40)
+@rotate bone leg_l by x func (70)
+@rotate bone leg_r by x func (70)

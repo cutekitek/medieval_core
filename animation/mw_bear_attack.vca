@@ -1,0 +1,3 @@
+@rotate bone head by x func (sin(t * 3.1416) * 24)
+@rotate bone leg_fl by x func (sin(t * 3.1416) * -80)
+@rotate bone leg_fr by x func (sin(t * 3.1416) * -60)

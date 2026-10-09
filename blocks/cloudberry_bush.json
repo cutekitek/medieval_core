@@ -1,0 +1,20 @@
+{
+    "model": "X",
+    "texture": "mw_cloudberry_bush",
+    "material": "base:grass",
+    "draw-group": 1,
+    "light-passing": true,
+    "obstacle": false,
+    "grounded": true,
+    "hitbox": [0.1, 0.0, 0.1, 0.8, 0.7, 0.8],
+    "script-name": "fruit_bush",
+    "state-based": {
+        "offset": 0,
+        "bits": 1,
+        "variants": [
+            {"model": "X", "texture": "mw_cloudberry_bush_empty"}
+        ]
+    },
+    "millwright:fruit": {"item": "millwright:cloudberries", "min": 1, "max": 3},
+    "base:durability": 0.8
+}

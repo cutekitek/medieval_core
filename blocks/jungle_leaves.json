@@ -1,0 +1,7 @@
+{
+    "texture": "mw_jungle_leaves",
+    "material": "base:grass",
+    "draw-group": 5,
+    "culling": "optional",
+    "base:durability": 0.6
+}

@@ -1,0 +1,30 @@
+    @bone name 'body' move (0,0,0) {
+        @box from (-0.34,0,-0.68) to (0.34,0.6,0.68) texture "entities/mw_cow_hide"
+        @box from (-0.12,-0.09,0.18) to (0.12,0.01,0.42) texture "entities/mw_cow_udder"
+                @bone name 'head' move (0,0.5,-0.62) {
+            @box from (-0.2,-0.22,-0.38) to (0.2,0.18,0) texture "entities/mw_cow_hide" {
+            @part tags (north) texture "entities/mw_cow_face" region (0,0,1,1)
+        }
+            @box from (-0.34,0.12,-0.24) to (-0.18,0.18,-0.16) texture "entities/mw_cow_horn"
+            @box from (0.18,0.12,-0.24) to (0.34,0.18,-0.16) texture "entities/mw_cow_horn"
+        }
+                @bone name 'tail' move (0,0.55,0.68) {
+            @box from (-0.03,-0.55,-0.03) to (0.03,0,0.03) texture "entities/mw_cow_hide"
+        }
+                @bone name 'leg_fl' move (-0.22,0.05,-0.48) {
+            @box from (-0.09,-0.62,-0.09) to (0.09,0,0.09) texture "entities/mw_cow_hide"
+            @box from (-0.1,-0.7,-0.1) to (0.1,-0.6,0.1) texture "entities/mw_cow_hoof"
+        }
+                @bone name 'leg_fr' move (0.22,0.05,-0.48) {
+            @box from (-0.09,-0.62,-0.09) to (0.09,0,0.09) texture "entities/mw_cow_hide"
+            @box from (-0.1,-0.7,-0.1) to (0.1,-0.6,0.1) texture "entities/mw_cow_hoof"
+        }
+                @bone name 'leg_bl' move (-0.22,0.05,0.48) {
+            @box from (-0.09,-0.62,-0.09) to (0.09,0,0.09) texture "entities/mw_cow_hide"
+            @box from (-0.1,-0.7,-0.1) to (0.1,-0.6,0.1) texture "entities/mw_cow_hoof"
+        }
+                @bone name 'leg_br' move (0.22,0.05,0.48) {
+            @box from (-0.09,-0.62,-0.09) to (0.09,0,0.09) texture "entities/mw_cow_hide"
+            @box from (-0.1,-0.7,-0.1) to (0.1,-0.6,0.1) texture "entities/mw_cow_hoof"
+        }
+    }

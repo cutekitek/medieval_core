@@ -1,0 +1,10 @@
+{
+    "components": [
+        {"name": "core:mob", "args": {"jump_force": 8.5, "movement_speed": 12.0}},
+        "core:pathfinding",
+        {"name": "millwright:animal", "args": {"species": "chicken"}}
+    ],
+    "skeleton-name": "mw_chicken",
+    "hitbox": [0.4, 0.6, 0.4],
+    "mass": 2
+}

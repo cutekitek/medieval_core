@@ -1,0 +1,20 @@
+{
+    "texture": "water",
+    "overlay-texture": "blocks:water",
+    "draw-group": 3,
+    "light-passing": true,
+    "sky-light-passing": true,
+    "obstacle": false,
+    "selectable": false,
+    "replaceable": true,
+    "translucent": true,
+    "hidden": true,
+    "ambient-occlusion": false,
+    "tags": [
+        "core:liquid"
+    ],
+    "model": "custom",
+    "model-name": "mw_water_1",
+    "solid": true,
+    "culling": "disabled"
+}

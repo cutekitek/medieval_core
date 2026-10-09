@@ -1,0 +1,25 @@
+{
+    "components": [
+        {
+            "name": "core:mob",
+            "args": {
+                "jump_force": 7.5,
+                "movement_speed": 16.0
+            }
+        },
+        "core:pathfinding",
+        {
+            "name": "millwright:animal",
+            "args": {
+                "species": "brown_bear"
+            }
+        }
+    ],
+    "skeleton-name": "mw_brown_bear",
+    "hitbox": [
+        1.2,
+        1.3,
+        1.2
+    ],
+    "mass": 300
+}

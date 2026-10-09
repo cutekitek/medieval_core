@@ -1,0 +1,6 @@
+{
+    "icon-type": "sprite",
+    "icon": "items:mw_mushroom",
+    "stack-size": 16,
+    "script-name": "food"
+}

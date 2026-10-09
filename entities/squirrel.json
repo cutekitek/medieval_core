@@ -1,0 +1,25 @@
+{
+    "components": [
+        {
+            "name": "core:mob",
+            "args": {
+                "jump_force": 8.5,
+                "movement_speed": 16.0
+            }
+        },
+        "core:pathfinding",
+        {
+            "name": "millwright:animal",
+            "args": {
+                "species": "squirrel"
+            }
+        }
+    ],
+    "skeleton-name": "mw_squirrel",
+    "hitbox": [
+        0.35,
+        0.35,
+        0.35
+    ],
+    "mass": 0.5
+}

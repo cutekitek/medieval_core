@@ -1,0 +1,5 @@
+{
+    "texture-faces": ["mw_sandstone_side", "mw_sandstone_side", "mw_sandstone_top", "mw_sandstone_top", "mw_sandstone_side", "mw_sandstone_side"],
+    "material": "base:stone",
+    "base:durability": 6.0
+}

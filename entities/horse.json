@@ -1,0 +1,25 @@
+{
+    "components": [
+        {
+            "name": "core:mob",
+            "args": {
+                "jump_force": 8.0,
+                "movement_speed": 18.0
+            }
+        },
+        "core:pathfinding",
+        {
+            "name": "millwright:animal",
+            "args": {
+                "species": "horse"
+            }
+        }
+    ],
+    "skeleton-name": "mw_horse",
+    "hitbox": [
+        1.0,
+        1.6,
+        1.0
+    ],
+    "mass": 450
+}

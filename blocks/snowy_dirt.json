@@ -1,0 +1,5 @@
+{
+    "texture-faces": ["mw_snowy_dirt_side", "mw_snowy_dirt_side", "dirt", "mw_snow", "mw_snowy_dirt_side", "mw_snowy_dirt_side"],
+    "material": "base:snow",
+    "base:durability": 1.6
+}

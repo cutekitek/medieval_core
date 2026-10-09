@@ -1,0 +1,5 @@
+{
+    "texture": "mw_gravel",
+    "material": "base:sand",
+    "base:durability": 1.2
+}

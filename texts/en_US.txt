@@ -1,0 +1,27 @@
+millwright.rpm=rpm
+millwright.status.network=Network
+millwright.status.load=load
+millwright.status.unconnected=not connected
+millwright.status.idle=idle
+millwright.status.ok=running
+millwright.status.overload=overloaded
+millwright.status.overspeed=overspeed
+millwright.status.conflict=jammed
+millwright.millstone.title=Millstone
+millwright.health=Health
+millwright.hunger=Food
+millwright.thirst=Water
+millwright.died=You died
+millwright.drank=You drank some water
+
+raw meat=raw meat
+raw game=raw game
+fur=fur
+brown bear=brown bear
+polar bear=polar bear
+horse=horse
+squirrel=squirrel
+crow=crow
+parrot=parrot
+owl=owl
+millwright.air=Air

@@ -1,0 +1,26 @@
+    @bone name 'body' move (0,0,0) {
+        @box from (-0.07,-0.105,-0.13) to (0.07,0.025,0.13) texture "entities/mw_squirrel_fur"
+                @bone name 'head' move (0,-0.005,-0.12) {
+            @box from (-0.065,-0.04,-0.12) to (0.065,0.08,0) texture "entities/mw_squirrel_fur" {
+            @part tags (north) texture "entities/mw_squirrel_face" region (0,0,1,1)
+        }
+            @box from (-0.06,0.08,-0.05) to (-0.03,0.13,-0.02) texture "entities/mw_squirrel_fur"
+            @box from (0.03,0.08,-0.05) to (0.06,0.13,-0.02) texture "entities/mw_squirrel_fur"
+        }
+                @bone name 'tail' move (0,-0.045,0.12) {
+            @box from (-0.06,-0.03,0) to (0.06,0.24,0.1) texture "entities/mw_squirrel_tail"
+            @box from (-0.065,0.2,-0.08) to (0.065,0.3,0.06) texture "entities/mw_squirrel_tail"
+        }
+                @bone name 'leg_fl' move (-0.05,-0.095,-0.09) {
+            @box from (-0.02,-0.08,-0.03) to (0.02,0,0.02) texture "entities/mw_squirrel_fur"
+        }
+                @bone name 'leg_fr' move (0.05,-0.095,-0.09) {
+            @box from (-0.02,-0.08,-0.03) to (0.02,0,0.02) texture "entities/mw_squirrel_fur"
+        }
+                @bone name 'leg_bl' move (-0.05,-0.095,0.09) {
+            @box from (-0.02,-0.08,-0.03) to (0.02,0,0.02) texture "entities/mw_squirrel_fur"
+        }
+                @bone name 'leg_br' move (0.05,-0.095,0.09) {
+            @box from (-0.02,-0.08,-0.03) to (0.02,0,0.02) texture "entities/mw_squirrel_fur"
+        }
+    }

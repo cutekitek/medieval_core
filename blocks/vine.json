@@ -1,0 +1,19 @@
+{
+    "model": "X",
+    "texture": "mw_vine",
+    "material": "base:grass",
+    "draw-group": 1,
+    "light-passing": true,
+    "obstacle": false,
+    "replaceable": true,
+    "grounded": false,
+    "hitbox": [
+        0.1,
+        0.0,
+        0.1,
+        0.8,
+        1.0,
+        0.8
+    ],
+    "base:durability": 0.0
+}

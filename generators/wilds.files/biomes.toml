@@ -1,0 +1,155 @@
+# Biome parameters: 1 - temperature, 2 - humidity (both mapped to ~0.2..0.8).
+# Trees of tundra, taiga, tropics and desert are procedural (see script.lua),
+# forest and plains keep the fragment trees.
+
+[tundra]
+parameters = [
+    {weight=1, value=0.08},
+    {weight=1, value=0.45}
+]
+layers = [
+    {below-sea-level=false, height=1, block="millwright:snowy_dirt"},
+    {below-sea-level=false, height=3, block="base:dirt"},
+    {height=-1, block="base:stone"},
+    {height=1, block="base:bazalt"}
+]
+sea-layers = [
+    {height=1, block="base:ice"},
+    {height=-1, block="base:water"}
+]
+plant-chance = 0.12
+plants = [
+    {weight=1, block="millwright:lichen"},
+    {weight=0.35, block="millwright:dead_bush"},
+    {weight=0.25, block="millwright:loose_rock"},
+    {weight=0.08, block="millwright:loose_flint"},
+    {weight=0.12, block="millwright:cloudberry_bush"}
+]
+
+[taiga]
+parameters = [
+    {weight=1, value=0.3},
+    {weight=1, value=0.6}
+]
+layers = [
+    {below-sea-level=false, height=1, block="millwright:podzol"},
+    {below-sea-level=false, height=5, block="base:dirt"},
+    {height=-1, block="base:stone"},
+    {height=1, block="base:bazalt"}
+]
+sea-layers = [
+    {height=-1, block="base:water"}
+]
+plant-chance = 0.35
+plants = [
+    {weight=1, block="millwright:fern"},
+    {weight=0.6, block="base:grass"},
+    {weight=0.12, block="millwright:blueberry_bush"},
+    {weight=0.08, block="millwright:brown_mushroom"},
+    {weight=0.12, block="millwright:loose_sticks"},
+    {weight=0.06, block="millwright:loose_rock"}
+]
+
+[forest]
+parameters = [
+    {weight=1, value=0.5},
+    {weight=1, value=0.65}
+]
+layers = [
+    {below-sea-level=false, height=1, block="base:grass_block"},
+    {below-sea-level=false, height=6, block="base:dirt"},
+    {height=-1, block="base:stone"},
+    {height=1, block="base:bazalt"}
+]
+sea-layers = [
+    {height=-1, block="base:water"}
+]
+plant-chance = 0.45
+plants = [
+    {weight=1, block="base:grass"},
+    {weight=0.03, block="base:flower"},
+    {weight=0.06, block="millwright:loose_sticks"},
+    {weight=0.025, block="millwright:loose_rock"},
+    {weight=0.005, block="millwright:loose_flint"},
+    {weight=0.015, block="millwright:berry_bush"},
+    {weight=0.01, block="millwright:brown_mushroom"}
+]
+structure-chance = 0.032
+structures = [
+    {name="tree0", weight=1},
+    {name="tree1", weight=1},
+    {name="tree2", weight=1}
+]
+
+[plains]
+parameters = [
+    {weight=1, value=0.5},
+    {weight=1, value=0.33}
+]
+layers = [
+    {below-sea-level=false, height=1, block="base:grass_block"},
+    {below-sea-level=false, height=5, block="base:dirt"},
+    {height=-1, block="base:stone"},
+    {height=1, block="base:bazalt"}
+]
+sea-layers = [
+    {height=-1, block="base:water"}
+]
+plant-chance = 0.32
+plants = [
+    {weight=1, block="base:grass"},
+    {weight=0.03, block="base:flower"},
+    {weight=0.035, block="millwright:loose_rock"},
+    {weight=0.01, block="millwright:loose_sticks"},
+    {weight=0.01, block="millwright:loose_flint"},
+    {weight=0.01, block="millwright:berry_bush"}
+]
+structure-chance = 0.0004
+structures = [
+    {name="tree0", weight=1},
+    {name="tree1", weight=1}
+]
+
+[desert]
+parameters = [
+    {weight=1, value=0.85},
+    {weight=1, value=0.2}
+]
+layers = [
+    {height=4, block="base:sand"},
+    {height=5, block="millwright:sandstone"},
+    {height=-1, block="base:stone"},
+    {height=1, block="base:bazalt"}
+]
+sea-layers = [
+    {height=-1, block="base:water"}
+]
+plant-chance = 0.03
+plants = [
+    {weight=1, block="millwright:dead_bush"},
+    {weight=0.5, block="millwright:loose_rock"},
+    {weight=0.2, block="millwright:loose_flint"}
+]
+
+[tropics]
+parameters = [
+    {weight=1, value=0.85},
+    {weight=1, value=0.75}
+]
+layers = [
+    {below-sea-level=false, height=1, block="millwright:tropical_grass_block"},
+    {below-sea-level=false, height=6, block="base:dirt"},
+    {height=-1, block="base:stone"},
+    {height=1, block="base:bazalt"}
+]
+sea-layers = [
+    {height=-1, block="base:water"}
+]
+plant-chance = 0.55
+plants = [
+    {weight=1, block="millwright:tropical_fern"},
+    {weight=0.8, block="base:grass"},
+    {weight=0.06, block="base:flower"},
+    {weight=0.04, block="millwright:pineapple_plant"},
+    {weight=0.04, block="millwright:loose_sticks"}
+]

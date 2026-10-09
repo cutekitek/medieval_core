@@ -1,0 +1,8 @@
+{
+    "caption": "palm log",
+    "material": "base:wood",
+    "texture-faces": ["mw_palm_log", "mw_palm_log", "mw_palm_log_top", "mw_palm_log_top", "mw_palm_log", "mw_palm_log"],
+    "hidden": true,
+    "picking-item": "millwright:palm_log.item",
+    "base:durability": 5.0
+}

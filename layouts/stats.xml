@@ -1,0 +1,18 @@
+<container id="root" size="524,48" gravity="bottom-center" margin="0,0,0,62" color="#00000000">
+  <container id="bars" size="524,48" color="#00000000">
+    <container id="air_bar" pos="0,4" size="170,14" color="#00000000">
+      <container pos="0,0" size="170,14" color="#00000090"/>
+      <container id="air" pos="0,0" size="170,14" color="#A8D8F0FF"/>
+      <label id="air_text" pos="4,0" size="166,14" color="#103040FF">20</label>
+    </container>
+    <container pos="0,26" size="170,14" color="#00000090"/>
+    <container id="health" pos="0,26" size="170,14" color="#C0303AFF"/>
+    <label id="health_text" pos="4,26" size="166,14">20</label>
+    <container pos="177,26" size="170,14" color="#00000090"/>
+    <container id="food" pos="177,26" size="170,14" color="#C8862CFF"/>
+    <label id="food_text" pos="181,26" size="166,14">20</label>
+    <container pos="354,26" size="170,14" color="#00000090"/>
+    <container id="water" pos="354,26" size="170,14" color="#2C78C8FF"/>
+    <label id="water_text" pos="358,26" size="166,14">20</label>
+  </container>
+</container>

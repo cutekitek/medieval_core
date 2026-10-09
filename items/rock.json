@@ -1,0 +1,6 @@
+{
+    "icon-type": "sprite",
+    "icon": "items:mw_rock",
+    "stack-size": 32,
+    "placing-block": "millwright:loose_rock"
+}

@@ -1,0 +1,16 @@
+{
+    "model": "custom",
+    "model-name": "mw_loose_sticks",
+    "hidden": true,
+    "picking-item": "millwright:stick",
+    "material": "base:sand",
+    "obstacle": false,
+    "grounded": true,
+    "replaceable": true,
+    "light-passing": true,
+    "sky-light-passing": true,
+    "ambient-occlusion": false,
+    "hitbox": [0.1, 0.0, 0.25, 0.8, 0.12, 0.5],
+    "script-name": "loose",
+    "base:durability": 0.0
+}

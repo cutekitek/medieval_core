@@ -1,0 +1,5 @@
+{
+    "texture-faces": ["mw_podzol_side", "mw_podzol_side", "dirt", "mw_podzol_top", "mw_podzol_side", "mw_podzol_side"],
+    "material": "base:ground",
+    "base:durability": 1.6
+}

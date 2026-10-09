@@ -1,0 +1,5 @@
+{
+    "texture-faces": ["mw_tropical_grass_side", "mw_tropical_grass_side", "dirt", "mw_tropical_grass_top", "mw_tropical_grass_side", "mw_tropical_grass_side"],
+    "material": "base:grass_block",
+    "base:durability": 1.7
+}

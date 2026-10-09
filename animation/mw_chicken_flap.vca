@@ -1,0 +1,2 @@
+@rotate bone wing_l by z func (-35 + sin(t * 40) * 30)
+@rotate bone wing_r by z func (35 - sin(t * 40) * 30)

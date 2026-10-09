@@ -1,0 +1,6 @@
+{
+    "material": "base:wood",
+    "texture-faces": ["mw_jungle_log", "mw_jungle_log", "mw_jungle_log_top", "mw_jungle_log_top", "mw_jungle_log", "mw_jungle_log"],
+    "rotation": "pipe",
+    "base:durability": 6.5
+}

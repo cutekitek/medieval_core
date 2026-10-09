@@ -1,0 +1,5 @@
+{
+    "texture": "mw_snow",
+    "material": "base:snow",
+    "base:durability": 0.6
+}

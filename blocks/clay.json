@@ -1,0 +1,5 @@
+{
+    "texture": "mw_clay",
+    "material": "base:ground",
+    "base:durability": 1.6
+}

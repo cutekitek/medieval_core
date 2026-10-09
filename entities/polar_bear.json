@@ -1,0 +1,25 @@
+{
+    "components": [
+        {
+            "name": "core:mob",
+            "args": {
+                "jump_force": 7.5,
+                "movement_speed": 17.0
+            }
+        },
+        "core:pathfinding",
+        {
+            "name": "millwright:animal",
+            "args": {
+                "species": "polar_bear"
+            }
+        }
+    ],
+    "skeleton-name": "mw_polar_bear",
+    "hitbox": [
+        1.3,
+        1.4,
+        1.3
+    ],
+    "mass": 400
+}

@@ -1,0 +1,6 @@
+{
+    "material": "base:wood",
+    "texture-faces": ["mw_spruce_log", "mw_spruce_log", "mw_spruce_log_top", "mw_spruce_log_top", "mw_spruce_log", "mw_spruce_log"],
+    "rotation": "pipe",
+    "base:durability": 6.0
+}

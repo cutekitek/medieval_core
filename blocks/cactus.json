@@ -1,0 +1,8 @@
+{
+    "model": "aabb",
+    "texture-faces": ["mw_cactus_side", "mw_cactus_side", "mw_cactus_top", "mw_cactus_top", "mw_cactus_side", "mw_cactus_side"],
+    "hitbox": [0.0625, 0.0, 0.0625, 0.875, 1.0, 0.875],
+    "material": "base:grass",
+    "light-passing": true,
+    "base:durability": 0.8
+}

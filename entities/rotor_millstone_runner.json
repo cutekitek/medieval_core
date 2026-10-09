@@ -1,0 +1,8 @@
+{
+    "skeleton-name": "mw_millstone_runner",
+    "body-type": "static",
+    "hitbox": [0.2, 0.2, 0.2],
+    "selectable": false,
+    "blocking": false,
+    "save": false
+}

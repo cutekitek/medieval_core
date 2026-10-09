@@ -1,0 +1,2 @@
+generator = "millwright:wilds"
+player-entity = "millwright:player"

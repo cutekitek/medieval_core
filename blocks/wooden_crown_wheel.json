@@ -1,0 +1,11 @@
+{
+    "model": "none",
+    "rotation": "pipe",
+    "hitbox": [0.0, 0.375, 0.0, 1.0, 0.5, 1.0],
+    "material": "base:wood",
+    "light-passing": true,
+    "sky-light-passing": true,
+    "ambient-occlusion": false,
+    "script-name": "kinetic",
+    "base:durability": 2.0
+}

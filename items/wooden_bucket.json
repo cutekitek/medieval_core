@@ -1,0 +1,6 @@
+{
+    "icon-type": "sprite",
+    "icon": "items:mw_wooden_bucket",
+    "stack-size": 1,
+    "script-name": "bucket"
+}

@@ -1,0 +1,5 @@
+@box from (0,0,0) to (1,0.6250,1) texture "blocks:water"
+@box from (0.0030,0.5000,0.0000) to (0.0060,0.6250,1.0000) delete "bottom,east,north,south,top" texture "blocks:water"
+@box from (0.9940,0.5000,0.0000) to (0.9970,0.6250,1.0000) delete "bottom,north,south,top,west" texture "blocks:water"
+@box from (0.0000,0.5000,0.0030) to (1.0000,0.6250,0.0060) delete "bottom,east,south,top,west" texture "blocks:water"
+@box from (0.0000,0.5000,0.9940) to (1.0000,0.6250,0.9970) delete "bottom,east,north,top,west" texture "blocks:water"

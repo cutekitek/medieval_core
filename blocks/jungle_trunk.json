@@ -1,0 +1,8 @@
+{
+    "caption": "jungle log",
+    "material": "base:wood",
+    "texture-faces": ["mw_jungle_log", "mw_jungle_log", "mw_jungle_log_top", "mw_jungle_log_top", "mw_jungle_log", "mw_jungle_log"],
+    "hidden": true,
+    "picking-item": "millwright:jungle_log.item",
+    "base:durability": 6.5
+}

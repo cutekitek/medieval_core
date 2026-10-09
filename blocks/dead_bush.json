@@ -1,0 +1,12 @@
+{
+    "model": "X",
+    "texture": "mw_dead_bush",
+    "material": "base:grass",
+    "draw-group": 1,
+    "light-passing": true,
+    "obstacle": false,
+    "replaceable": true,
+    "grounded": true,
+    "hitbox": [0.15, 0.0, 0.15, 0.7, 0.6, 0.7],
+    "base:durability": 0.0
+}

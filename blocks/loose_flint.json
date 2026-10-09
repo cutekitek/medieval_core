@@ -1,0 +1,16 @@
+{
+    "model": "custom",
+    "model-name": "mw_loose_flint",
+    "hidden": true,
+    "picking-item": "millwright:flint",
+    "material": "base:sand",
+    "obstacle": false,
+    "grounded": true,
+    "replaceable": true,
+    "light-passing": true,
+    "sky-light-passing": true,
+    "ambient-occlusion": false,
+    "hitbox": [0.3, 0.0, 0.25, 0.4, 0.12, 0.4],
+    "script-name": "loose",
+    "base:durability": 0.0
+}

@@ -1,0 +1,1 @@
+@rotate bone head by x func (-30 - max(0, sin(t * 7)) * 35)

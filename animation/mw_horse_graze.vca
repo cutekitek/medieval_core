@@ -1,0 +1,2 @@
+@rotate bone head by x func (-62 + sin(t * 2.3) * 4)
+@rotate bone tail by z func (sin(t * 1.7) * 14)

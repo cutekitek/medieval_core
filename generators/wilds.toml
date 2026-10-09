@@ -1,0 +1,7 @@
+# 1 - temperature
+# 2 - humidity
+caption = "Wilds"
+biome-parameters = 2
+sea-level = 64
+heightmap-inputs = [1, 2]
+player-min-spawn-height = 65

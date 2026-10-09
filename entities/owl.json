@@ -1,0 +1,25 @@
+{
+    "components": [
+        {
+            "name": "core:mob",
+            "args": {
+                "jump_force": 7.5,
+                "movement_speed": 10.0
+            }
+        },
+        "core:pathfinding",
+        {
+            "name": "millwright:animal",
+            "args": {
+                "species": "owl"
+            }
+        }
+    ],
+    "skeleton-name": "mw_owl",
+    "hitbox": [
+        0.4,
+        0.55,
+        0.4
+    ],
+    "mass": 1.0
+}

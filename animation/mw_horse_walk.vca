@@ -1,0 +1,6 @@
+@rotate bone leg_fl by x func (sin(t * 6.2832) * 32)
+@rotate bone leg_br by x func (sin(t * 6.2832) * 32)
+@rotate bone leg_fr by x func (sin(t * 6.2832) * -32)
+@rotate bone leg_bl by x func (sin(t * 6.2832) * -32)
+@rotate bone head by x func (sin(t * 12.566) * 4)
+@rotate bone tail by x func (12 + sin(t * 12.566) * 6)

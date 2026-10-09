@@ -1,0 +1,6 @@
+{
+    "icon-type": "sprite",
+    "icon": "items:mw_stick",
+    "stack-size": 64,
+    "placing-block": "millwright:loose_sticks"
+}
