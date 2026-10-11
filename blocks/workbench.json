@@ -1,0 +1,26 @@
+{
+    "model": "custom",
+    "model-name": "mw_workbench",
+    "material": "base:wood",
+    "size": [
+        2,
+        1,
+        1
+    ],
+    "rotation": "pane",
+    "hitbox": [
+        0.0,
+        0.0,
+        0.05,
+        2.0,
+        0.92,
+        0.9
+    ],
+    "light-passing": true,
+    "sky-light-passing": true,
+    "ambient-occlusion": false,
+    "script-name": "workbench",
+    "inventory-size": 10,
+    "picking-item": "medieval_core:workbench.item",
+    "base:durability": 4.0
+}

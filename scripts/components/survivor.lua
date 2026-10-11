@@ -2,6 +2,10 @@
 local stats = require "survival/stats"
 local mode = require "survival/mode"
 local flow = require "water/flow"
+local ranged_pose = require "combat/ranged_pose"
+local sleep = require "player/sleep"
+local shapes = require "building/shapes"
+local boat = require "boat/boat"
 
 local tsf = entity.transform
 local body = entity.rigidbody
@@ -20,12 +24,21 @@ local SURFACE_UP = 1.0        -- keeps the head above the surface
 local CLIMB_OUT = 7.0         -- jump out of the water onto a bank
 local EYE_HEIGHT = 0.7
 
+-- ladders
+local LADDER_UP = 3.0         -- m/s with jump or forward held
+local LADDER_DOWN = -2.2      -- sliding down, nothing held
+local LADDER_STEP = 0.6       -- metres climbed per creak of a rung
+
 -- read by tests and the HUD: "dry", "wading", "swimming", "diving"
 water_state = "dry"
--- tests (no keyboard in headless mode) set {jump = bool, crouch = bool}
+-- read by tests: the player holds on to a ladder
+on_ladder = false
+-- tests (no keyboard in headless mode) set {jump = bool, crouch = bool,
+-- forward = bool}
 input_override = nil
 
 local climb_timer = 0
+local ladder_climbed = 0
 
 local function feet_y()
     return tsf:get_pos()[2] - body:get_size()[2] * 0.5
@@ -65,20 +78,57 @@ end
 
 local function controls(pid)
     if input_override then
-        return input_override.jump, input_override.crouch
+        return input_override.jump, input_override.crouch, input_override.forward
     end
     if not vc.is_client() or not hud or pid ~= hud.get_player() or
        hud.is_inventory_open() or menu.page ~= "" then
-        return false, false
+        return false, false, false
     end
-    return input.is_active("movement.jump"), input.is_active("movement.crouch")
+    return input.is_active("movement.jump"), input.is_active("movement.crouch"),
+        input.is_active("movement.forward")
+end
+
+-- On a ladder (in the cell of the feet or the body): no gravity; jump or
+-- forward climbs, crouch holds on, otherwise the player slides down slowly
+-- (which also stops a fall). Returns true while climbing.
+local function climb(pid, pos, delta)
+    local feet = feet_y()
+    if not shapes.is_ladder_at(pos[1], feet + 0.1, pos[3]) and
+       not shapes.is_ladder_at(pos[1], feet + 0.9, pos[3]) then
+        on_ladder = false
+        return false
+    end
+    if not on_ladder then
+        ladder_climbed = 0
+    end
+    on_ladder = true
+    body:set_gravity_scale(0)
+    local jump, crouch, forward = controls(pid)
+    local vel = body:get_vel()
+    if jump or forward then
+        vel[2] = LADDER_UP
+    elseif crouch then
+        vel[2] = 0
+    else
+        vel[2] = LADDER_DOWN
+    end
+    body:set_vel(vel)
+    -- a rung creaks every step up or down
+    ladder_climbed = ladder_climbed + math.abs(vel[2]) * delta
+    if ladder_climbed >= LADDER_STEP then
+        ladder_climbed = 0
+        audio.play_sound("medieval_core/ladder", pos[1], feet + 0.2, pos[3], 0.6,
+            0.9 + math.random() * 0.2, "regular")
+    end
+    return true
 end
 
 -- runs after core:mob and core:player, so the water settings win
 function on_physics_update(delta)
     local pid = entity:get_player()
-    if pid == -1 or player.is_flight(pid) or player.is_noclip(pid) then
+    if pid == -1 or player.is_flight(pid) or player.is_noclip(pid) or boat.seated_in(pid) then
         water_state = "dry"
+        on_ladder = false
         return
     end
     -- jumping out onto a bank: plain physics for a moment
@@ -87,6 +137,10 @@ function on_physics_update(delta)
         return
     end
     local pos = tsf:get_pos()
+    if climb(pid, pos, delta) then
+        water_state = "dry"
+        return
+    end
     local feet = feet_y()
     local wet_feet = flow.in_water(pos[1], feet + 0.1, pos[3])
     local wet_body = flow.in_water(pos[1], feet + 0.8, pos[3])
@@ -121,4 +175,59 @@ function on_physics_update(delta)
         vel[2] = approach(vel[2], SWIM_DOWN, k)
     end
     body:set_vel(vel)
+end
+
+-- third person: a held spear or bow is posed (and wound up) on the
+-- model's item bone; base:player_animator only sets the bone when the item
+-- changes
+local rig = entity.skeleton
+local item_bone = rig:index("item")
+local body_bone = rig:index("body")
+
+-- lying on the back in bed: the body turned flat (the head towards the
+-- pillow, the entity faces the foot of the bed), nothing in hand
+-- (the body model is 0.14 thick: it rests on the blanket; core:mob turns
+-- the head every frame, here it lies face up, sunk into the pillow)
+local LIE = mat4.mul(mat4.translate({0, -0.24, 0}), mat4.rotate({1, 0, 0}, 90))
+local HEAD_LIE = mat4.translate({0, 0, -0.15})
+local head_bone = rig:index("head")
+local lying = false
+
+local function pose_sleep(pid)
+    local asleep = sleep.is_sleeping(pid)
+    if asleep and head_bone then
+        rig:set_matrix(head_bone, HEAD_LIE)
+    end
+    -- the sleeper's own model would stand in the view from the pillow
+    local own = asleep and hud and pid == hud.get_player() and not sleep.free_camera
+    rig:set_visible(not own)
+    if asleep == lying or not body_bone then
+        return asleep
+    end
+    lying = asleep
+    rig:set_matrix(body_bone, asleep and LIE or mat4.idt())
+    rig:set_visible(item_bone, not asleep)
+    return asleep
+end
+
+function on_render(delta)
+    local pid = entity:get_player()
+    if pid == -1 or not item_bone then
+        return
+    end
+    if pose_sleep(pid) then
+        return
+    end
+    local m, model = ranged_pose.third_person(pid)
+    if m then
+        rig:set_matrix(item_bone, m)
+        rig:set_model(item_bone, model)
+        weapon_held = true
+    elseif weapon_held then
+        -- back to how the animator holds other items
+        weapon_held = false
+        local invid, slot = player.get_inventory(pid)
+        rig:set_model(item_bone, item.model_name(inventory.get(invid, slot)))
+        rig:set_matrix(item_bone, mat4.rotate({0, 1, 0}, -80))
+    end
 end

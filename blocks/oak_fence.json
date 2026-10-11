@@ -1,0 +1,95 @@
+{
+    "light-passing": true,
+    "sky-light-passing": true,
+    "material": "base:wood",
+    "texture-faces": [
+        "mw_oak_planks",
+        "mw_oak_planks",
+        "mw_oak_planks",
+        "mw_oak_planks",
+        "mw_oak_planks",
+        "mw_oak_planks"
+    ],
+    "model": "custom",
+    "model-name": "mw_fence_0",
+    "hitbox": [
+        0.125,
+        0,
+        0.125,
+        0.75,
+        1,
+        0.75
+    ],
+    "script-name": "fence",
+    "tags": [
+        "medieval_core:fence"
+    ],
+    "base:durability": 4.0,
+    "state-based": {
+        "offset": 0,
+        "bits": 4,
+        "variants": [
+            {
+                "model": "custom",
+                "model-name": "mw_fence_1"
+            },
+            {
+                "model": "custom",
+                "model-name": "mw_fence_2"
+            },
+            {
+                "model": "custom",
+                "model-name": "mw_fence_3"
+            },
+            {
+                "model": "custom",
+                "model-name": "mw_fence_4"
+            },
+            {
+                "model": "custom",
+                "model-name": "mw_fence_5"
+            },
+            {
+                "model": "custom",
+                "model-name": "mw_fence_6"
+            },
+            {
+                "model": "custom",
+                "model-name": "mw_fence_7"
+            },
+            {
+                "model": "custom",
+                "model-name": "mw_fence_8"
+            },
+            {
+                "model": "custom",
+                "model-name": "mw_fence_9"
+            },
+            {
+                "model": "custom",
+                "model-name": "mw_fence_10"
+            },
+            {
+                "model": "custom",
+                "model-name": "mw_fence_11"
+            },
+            {
+                "model": "custom",
+                "model-name": "mw_fence_12"
+            },
+            {
+                "model": "custom",
+                "model-name": "mw_fence_13"
+            },
+            {
+                "model": "custom",
+                "model-name": "mw_fence_14"
+            },
+            {
+                "model": "custom",
+                "model-name": "mw_fence_15"
+            }
+        ]
+    },
+    "caption": "oak fence"
+}

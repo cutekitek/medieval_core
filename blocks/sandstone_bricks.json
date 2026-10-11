@@ -1,0 +1,6 @@
+{
+    "texture": "mw_sandstone_bricks",
+    "material": "base:stone",
+    "base:durability": 6.0,
+    "caption": "sandstone bricks"
+}

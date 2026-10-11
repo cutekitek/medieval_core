@@ -1,0 +1,12 @@
+{
+    "skeleton-name": "mw_beam_hide",
+    "body-type": "static",
+    "hitbox": [
+        0.1,
+        0.1,
+        0.1
+    ],
+    "selectable": false,
+    "blocking": false,
+    "save": false
+}

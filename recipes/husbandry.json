@@ -1,0 +1,19 @@
+[
+    {
+        "type": "shaped",
+        "pattern": [
+            "P P",
+            "PPP"
+        ],
+        "key": {
+            "P": [
+                "base:planks.item",
+                "medieval_core:oak_planks.item",
+                "medieval_core:spruce_planks.item",
+                "medieval_core:jungle_planks.item",
+                "medieval_core:palm_planks.item"
+            ]
+        },
+        "result": "medieval_core:trough.item"
+    }
+]

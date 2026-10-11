@@ -1,0 +1,12 @@
+@bone name 'spear' {
+    @box from (-0.027,-0.027,0.3788) to (0.027,0.027,0.9188) texture "blocks:mw_stripped_spruce_log" {
+        @part tags (south) texture "blocks:mw_stick_end" region (0,0,1,1)
+    }
+    @box from (-0.0248,-0.0248,-0.1462) to (0.0248,0.0248,0.3938) texture "blocks:mw_stripped_spruce_log"
+    @box from (-0.0225,-0.0225,-0.6562) to (0.0225,0.0225,-0.1312) texture "blocks:mw_stripped_spruce_log"
+    @box from (-0.0323,-0.0323,-0.5812) to (0.0323,0.0323,-0.5062) texture "blocks:mw_rope"
+    @box from (-0.03,-0.03,-0.6713) to (0.03,0.03,-0.6112) texture "blocks:mw_rope"
+    @box from (-0.0525,-0.0165,-0.7313) to (0.0525,0.0165,-0.5662) texture "blocks:mw_flint"
+    @box from (-0.039,-0.0135,-0.8287) to (0.039,0.0135,-0.7313) texture "blocks:mw_flint"
+    @box from (-0.0195,-0.009,-0.9188) to (0.0195,0.009,-0.8287) texture "blocks:mw_flint"
+}

@@ -1,2 +1,2 @@
-generator = "millwright:wilds"
-player-entity = "millwright:player"
+generator = "medieval_core:wilds"
+player-entity = "medieval_core:player"

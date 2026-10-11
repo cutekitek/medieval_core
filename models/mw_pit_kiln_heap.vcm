@@ -1,0 +1,7 @@
+@box from (0.01,0,0.01) to (0.99,1,0.99) texture "blocks:mw_kiln_straw"
+@box from (0.1,0.5,0.1) to (0.9,1.24,0.9) texture "blocks:mw_kiln_straw"
+@box from (0.24,0.8,0.24) to (0.76,1.42,0.76) texture "blocks:mw_kiln_straw"
+@box from (0.3463,1.42,0.326) to (0.5657,1.455,0.386) rotate (0,109.5158,0) texture "blocks:mw_kiln_straw"
+@box from (0.537,1.42,0.4537) to (0.7329,1.455,0.5137) rotate (0,76.4039,0) texture "blocks:mw_kiln_straw"
+@box from (0.429,1.42,0.4743) to (0.7053,1.455,0.5343) rotate (0,44.3302,0) texture "blocks:mw_kiln_straw"
+@box from (0.2031,1.42,0.5199) to (0.503,1.455,0.5799) rotate (0,177.4393,0) texture "blocks:mw_kiln_straw"

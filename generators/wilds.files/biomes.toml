@@ -1,4 +1,7 @@
 # Biome parameters: 1 - temperature, 2 - humidity (both mapped to ~0.2..0.8).
+# Rock under the soil depends on the biome (sedimentary near the surface,
+# granite or basalt deep down); the generator script adds lenses of other
+# rocks in between.
 # Trees of tundra, taiga, tropics and desert are procedural (see script.lua),
 # forest and plains keep the fragment trees.
 
@@ -8,9 +11,11 @@ parameters = [
     {weight=1, value=0.45}
 ]
 layers = [
-    {below-sea-level=false, height=1, block="millwright:snowy_dirt"},
+    {below-sea-level=false, height=1, block="medieval_core:snowy_dirt"},
     {below-sea-level=false, height=3, block="base:dirt"},
+    {height=10, block="medieval_core:slate"},
     {height=-1, block="base:stone"},
+    {height=24, block="medieval_core:granite"},
     {height=1, block="base:bazalt"}
 ]
 sea-layers = [
@@ -19,11 +24,11 @@ sea-layers = [
 ]
 plant-chance = 0.12
 plants = [
-    {weight=1, block="millwright:lichen"},
-    {weight=0.35, block="millwright:dead_bush"},
-    {weight=0.25, block="millwright:loose_rock"},
-    {weight=0.08, block="millwright:loose_flint"},
-    {weight=0.12, block="millwright:cloudberry_bush"}
+    {weight=1, block="medieval_core:lichen"},
+    {weight=0.35, block="medieval_core:dead_bush"},
+    {weight=0.25, block="medieval_core:loose_rock"},
+    {weight=0.08, block="medieval_core:loose_flint"},
+    {weight=0.12, block="medieval_core:cloudberry_bush"}
 ]
 
 [taiga]
@@ -32,9 +37,11 @@ parameters = [
     {weight=1, value=0.6}
 ]
 layers = [
-    {below-sea-level=false, height=1, block="millwright:podzol"},
+    {below-sea-level=false, height=1, block="medieval_core:podzol"},
     {below-sea-level=false, height=5, block="base:dirt"},
+    {height=12, block="medieval_core:granite"},
     {height=-1, block="base:stone"},
+    {height=20, block="medieval_core:basalt"},
     {height=1, block="base:bazalt"}
 ]
 sea-layers = [
@@ -42,12 +49,14 @@ sea-layers = [
 ]
 plant-chance = 0.35
 plants = [
-    {weight=1, block="millwright:fern"},
+    {weight=1, block="medieval_core:fern"},
     {weight=0.6, block="base:grass"},
-    {weight=0.12, block="millwright:blueberry_bush"},
-    {weight=0.08, block="millwright:brown_mushroom"},
-    {weight=0.12, block="millwright:loose_sticks"},
-    {weight=0.06, block="millwright:loose_rock"}
+    {weight=0.12, block="medieval_core:blueberry_bush"},
+    {weight=0.08, block="medieval_core:brown_mushroom"},
+    {weight=0.12, block="medieval_core:loose_sticks"},
+    {weight=0.06, block="medieval_core:loose_rock"},
+    {weight=0.006, block="medieval_core:wild_potato"},
+    {weight=0.004, block="medieval_core:wild_cabbage"}
 ]
 
 [forest]
@@ -58,7 +67,9 @@ parameters = [
 layers = [
     {below-sea-level=false, height=1, block="base:grass_block"},
     {below-sea-level=false, height=6, block="base:dirt"},
+    {height=10, block="medieval_core:limestone"},
     {height=-1, block="base:stone"},
+    {height=24, block="medieval_core:granite"},
     {height=1, block="base:bazalt"}
 ]
 sea-layers = [
@@ -68,11 +79,14 @@ plant-chance = 0.45
 plants = [
     {weight=1, block="base:grass"},
     {weight=0.03, block="base:flower"},
-    {weight=0.06, block="millwright:loose_sticks"},
-    {weight=0.025, block="millwright:loose_rock"},
-    {weight=0.005, block="millwright:loose_flint"},
-    {weight=0.015, block="millwright:berry_bush"},
-    {weight=0.01, block="millwright:brown_mushroom"}
+    {weight=0.06, block="medieval_core:loose_sticks"},
+    {weight=0.025, block="medieval_core:loose_rock"},
+    {weight=0.005, block="medieval_core:loose_flint"},
+    {weight=0.015, block="medieval_core:berry_bush"},
+    {weight=0.01, block="medieval_core:brown_mushroom"},
+    {weight=0.005, block="medieval_core:wild_carrot"},
+    {weight=0.004, block="medieval_core:wild_cabbage"},
+    {weight=0.004, block="medieval_core:wild_potato"}
 ]
 structure-chance = 0.032
 structures = [
@@ -89,7 +103,10 @@ parameters = [
 layers = [
     {below-sea-level=false, height=1, block="base:grass_block"},
     {below-sea-level=false, height=5, block="base:dirt"},
+    {height=6, block="medieval_core:limestone"},
+    {height=5, block="medieval_core:marble"},
     {height=-1, block="base:stone"},
+    {height=24, block="medieval_core:granite"},
     {height=1, block="base:bazalt"}
 ]
 sea-layers = [
@@ -99,10 +116,13 @@ plant-chance = 0.32
 plants = [
     {weight=1, block="base:grass"},
     {weight=0.03, block="base:flower"},
-    {weight=0.035, block="millwright:loose_rock"},
-    {weight=0.01, block="millwright:loose_sticks"},
-    {weight=0.01, block="millwright:loose_flint"},
-    {weight=0.01, block="millwright:berry_bush"}
+    {weight=0.035, block="medieval_core:loose_rock"},
+    {weight=0.01, block="medieval_core:loose_sticks"},
+    {weight=0.01, block="medieval_core:loose_flint"},
+    {weight=0.01, block="medieval_core:berry_bush"},
+    {weight=0.008, block="medieval_core:wild_wheat"},
+    {weight=0.005, block="medieval_core:wild_carrot"},
+    {weight=0.003, block="medieval_core:wild_cucumber"}
 ]
 structure-chance = 0.0004
 structures = [
@@ -117,8 +137,10 @@ parameters = [
 ]
 layers = [
     {height=4, block="base:sand"},
-    {height=5, block="millwright:sandstone"},
+    {height=5, block="medieval_core:sandstone"},
+    {height=8, block="medieval_core:limestone"},
     {height=-1, block="base:stone"},
+    {height=20, block="medieval_core:basalt"},
     {height=1, block="base:bazalt"}
 ]
 sea-layers = [
@@ -126,9 +148,9 @@ sea-layers = [
 ]
 plant-chance = 0.03
 plants = [
-    {weight=1, block="millwright:dead_bush"},
-    {weight=0.5, block="millwright:loose_rock"},
-    {weight=0.2, block="millwright:loose_flint"}
+    {weight=1, block="medieval_core:dead_bush"},
+    {weight=0.5, block="medieval_core:loose_rock"},
+    {weight=0.2, block="medieval_core:loose_flint"}
 ]
 
 [tropics]
@@ -137,9 +159,11 @@ parameters = [
     {weight=1, value=0.75}
 ]
 layers = [
-    {below-sea-level=false, height=1, block="millwright:tropical_grass_block"},
+    {below-sea-level=false, height=1, block="medieval_core:tropical_grass_block"},
     {below-sea-level=false, height=6, block="base:dirt"},
+    {height=10, block="medieval_core:basalt"},
     {height=-1, block="base:stone"},
+    {height=20, block="medieval_core:granite"},
     {height=1, block="base:bazalt"}
 ]
 sea-layers = [
@@ -147,9 +171,11 @@ sea-layers = [
 ]
 plant-chance = 0.55
 plants = [
-    {weight=1, block="millwright:tropical_fern"},
+    {weight=1, block="medieval_core:tropical_fern"},
     {weight=0.8, block="base:grass"},
     {weight=0.06, block="base:flower"},
-    {weight=0.04, block="millwright:pineapple_plant"},
-    {weight=0.04, block="millwright:loose_sticks"}
+    {weight=0.04, block="medieval_core:pineapple_plant"},
+    {weight=0.04, block="medieval_core:loose_sticks"},
+    {weight=0.006, block="medieval_core:wild_tomato"},
+    {weight=0.005, block="medieval_core:wild_cucumber"}
 ]

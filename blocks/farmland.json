@@ -1,0 +1,35 @@
+{
+    "material": "base:ground",
+    "texture-faces": [
+        "mw_farmland_side",
+        "mw_farmland_side",
+        "dirt",
+        "mw_farmland",
+        "mw_farmland_side",
+        "mw_farmland_side"
+    ],
+    "state-based": {
+        "offset": 0,
+        "bits": 1,
+        "variants": [
+            {
+                "texture-faces": [
+                    "mw_farmland_side_wet",
+                    "mw_farmland_side_wet",
+                    "dirt",
+                    "mw_farmland_wet",
+                    "mw_farmland_side_wet",
+                    "mw_farmland_side_wet"
+                ]
+            }
+        ]
+    },
+    "picking-item": "base:dirt.item",
+    "base:durability": 1.2,
+    "fields": {
+        "wet_until": {
+            "type": "float64"
+        }
+    },
+    "script-name": "farmland"
+}

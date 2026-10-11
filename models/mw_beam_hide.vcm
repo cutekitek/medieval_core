@@ -1,0 +1,9 @@
+@bone name 'skin' {
+    @box from (-0.3,0,-0.47) to (0.3,0.025,0.47) texture "$skin"
+    @box from (-0.3,-0.34,-0.524) to (-0.1,0.025,-0.5) origin (-0.2,0.02,-0.512) rotate (-6.1192,0,0) texture "$skin"
+    @box from (-0.1,-0.44,-0.524) to (0.12,0.025,-0.5) origin (0.01,0.02,-0.512) rotate (-5.26,0,0) texture "$skin"
+    @box from (0.12,-0.28,-0.524) to (0.3,0.025,-0.5) origin (0.21,0.02,-0.512) rotate (-6.1983,0,0) texture "$skin"
+    @box from (-0.3,-0.34,0.5) to (-0.1,0.025,0.524) origin (-0.2,0.02,0.512) rotate (6.0739,0,0) texture "$skin"
+    @box from (-0.1,-0.44,0.5) to (0.12,0.025,0.524) origin (0.01,0.02,0.512) rotate (4.3645,0,0) texture "$skin"
+    @box from (0.12,-0.28,0.5) to (0.3,0.025,0.524) origin (0.21,0.02,0.512) rotate (3.6065,0,0) texture "$skin"
+}

@@ -1,0 +1,7 @@
+{
+    "caption": "granite roof slope",
+    "icon-type": "block",
+    "icon": "medieval_core:granite_roof",
+    "placing-block": "medieval_core:granite_roof",
+    "script-name": "shape_item"
+}

@@ -8,7 +8,7 @@
         },
         "core:player",
         "base:player_animator",
-        "millwright:survivor"
+        "medieval_core:survivor"
     ],
     "skeleton-name": "base:player",
     "hitbox": [0.6, 1.8, 0.6]

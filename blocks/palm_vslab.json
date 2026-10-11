@@ -1,0 +1,28 @@
+{
+    "material": "base:wood",
+    "model": "custom",
+    "base:durability": 3.0,
+    "texture-faces": [
+        "mw_palm_planks",
+        "mw_palm_planks",
+        "mw_palm_planks",
+        "mw_palm_planks",
+        "mw_palm_planks",
+        "mw_palm_planks"
+    ],
+    "model-name": "mw_vslab",
+    "rotation": "pane",
+    "hitbox": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0.5
+    ],
+    "tags": [
+        "medieval_core:vslab"
+    ],
+    "picking-item": "medieval_core:palm_vslab.item",
+    "caption": "palm vertical slab"
+}

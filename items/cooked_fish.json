@@ -1,0 +1,7 @@
+{
+    "icon-type": "sprite",
+    "icon": "items:mw_cooked_fish",
+    "stack-size": 16,
+    "script-name": "food",
+    "model-name": "mw_sprite_cooked_fish"
+}

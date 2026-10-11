@@ -1,0 +1,14 @@
+{
+    "material": "base:wood",
+    "texture-faces": [
+        "mw_stripped_oak_log",
+        "mw_stripped_oak_log",
+        "mw_stripped_oak_log_top",
+        "mw_stripped_oak_log_top",
+        "mw_stripped_oak_log",
+        "mw_stripped_oak_log"
+    ],
+    "rotation": "pipe",
+    "script-name": "stripped_log",
+    "base:durability": 6.0
+}

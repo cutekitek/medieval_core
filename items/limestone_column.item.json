@@ -1,0 +1,7 @@
+{
+    "caption": "limestone column",
+    "icon-type": "block",
+    "icon": "medieval_core:limestone_column",
+    "placing-block": "medieval_core:limestone_column",
+    "script-name": "shape_item"
+}

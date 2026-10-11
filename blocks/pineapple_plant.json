@@ -15,6 +15,6 @@
             {"model": "X", "texture": "mw_pineapple_plant_empty"}
         ]
     },
-    "millwright:fruit": {"item": "millwright:pineapple", "min": 1, "max": 1},
+    "medieval_core:fruit": {"item": "medieval_core:pineapple", "min": 1, "max": 1},
     "base:durability": 0.8
 }

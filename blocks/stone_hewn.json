@@ -1,0 +1,6 @@
+{
+    "texture": "mw_stone_hewn",
+    "material": "base:stone",
+    "base:durability": 12.0,
+    "caption": "hewn stone"
+}

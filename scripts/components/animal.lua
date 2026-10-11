@@ -1,11 +1,16 @@
 -- Wild animal: wanders, grazes, follows a player holding its favourite
 -- food, runs from danger, fights (bears), flies (birds), drops loot on death.
--- Species data and tempers: fauna/species.
+-- Sheep also crop grass, grow wool back and are shorn with a knife. Farm
+-- animals (species with `breed`) get hungry and thirsty, eat and drink from
+-- troughs and breed when fed (husbandry/husbandry). Species data and
+-- tempers: fauna/species.
 local species_list = require "fauna/species"
 local base_util = require "base:util"
 local stats = require "survival/stats"
 local mode = require "survival/mode"
 local flow = require "water/flow"
+local husbandry = require "husbandry/husbandry"
+local trough = require "husbandry/trough"
 
 local tsf = entity.transform
 local body = entity.rigidbody
@@ -20,6 +25,7 @@ local species = species_list[species_name]
 health = SAVED_DATA.health or species.health
 local lure_item = species.lure_item and item.index(species.lure_item) or 0
 local water = block.index("base:water")
+local FENCE_TAG, GATE_TAG = "medieval_core:fence", "medieval_core:gate"
 
 local FOLLOW_RADIUS = 10
 local REACHED = 1.2
@@ -40,6 +46,58 @@ if species.variants then
         rig:set_texture(key, value)
     end
 end
+
+-- lambs: SAVED_DATA.age counts up to breed.grow_time (nil when grown up);
+-- a newborn gets age = 0 from its spawn args
+local breed = species.breed
+local hitbox = entities.def_hitbox(entities.def_index(species.entity))
+if not SAVED_DATA.aged then
+    SAVED_DATA.aged = true
+    SAVED_DATA.age = breed and ARGS.age or nil
+end
+
+local function young()
+    return SAVED_DATA.age ~= nil
+end
+
+local function scale()
+    return young() and breed.baby_scale or 1
+end
+
+if breed then
+    local s = scale()
+    tsf:set_size({s, s, s})
+end
+
+-- the fleece: every bone named wool* is hidden while shorn
+local wool_bones = {}
+if species.wool then
+    for _, name in ipairs({"wool", "wool_head", "wool_leg_fl", "wool_leg_fr", "wool_leg_bl", "wool_leg_br"}) do
+        local index = rig:index(name)
+        if index then
+            table.insert(wool_bones, index)
+        end
+    end
+end
+
+local function show_wool()
+    for _, index in ipairs(wool_bones) do
+        rig:set_visible(index, not SAVED_DATA.sheared)
+    end
+end
+show_wool()
+
+local love = 0              -- seconds left looking for a mate
+local heart_timer = 0
+local breed_item = breed and item.index(breed.item) or 0
+
+-- farm animals: seconds since the last meal and drink (a new one is hungry)
+if breed then
+    SAVED_DATA.hunger = SAVED_DATA.hunger or husbandry.FED_FOR
+    SAVED_DATA.thirst = SAVED_DATA.thirst or husbandry.FED_FOR
+end
+local check_timer = husbandry.next_check() * math.random()
+local visit = nil           -- the trough it goes to: {kind, site, rect}
 
 -- behaviour state
 local state = "idle"
@@ -63,6 +121,9 @@ local function set_state(name, duration, new_target)
     state = name
     state_timer = duration
     target = new_target
+    if name ~= "trough" and name ~= "eat" then
+        visit = nil
+    end
     pf.reset_route()
     pf.set_target(target)
     -- a chase re-plans the route often (the default is every 100 updates)
@@ -87,9 +148,32 @@ local function ground_at(x, y, z, up, down)
     return nil
 end
 
+-- nearest grown animal of the same species (a lamb keeps close to it)
+local function nearest_adult(radius)
+    local pos = tsf:get_pos()
+    local me = entity:get_uid()
+    local best, best_dist = nil, radius
+    for _, uid in ipairs(entities.get_all_in_radius(pos, radius)) do
+        local e = uid ~= me and entities.get(uid)
+        local ai = e and e:get_component("medieval_core:animal")
+        if ai and ai.get_species() == species_name and not ai.is_baby() then
+            local d = vec3.distance(pos, e.transform:get_pos())
+            if d < best_dist then
+                best, best_dist = e, d
+            end
+        end
+    end
+    return best
+end
+
 local function pick_wander_target()
     local pos = tsf:get_pos()
     local r = species.wander_radius
+    local parent = young() and nearest_adult(16)
+    if parent then
+        pos = parent.transform:get_pos()
+        r = 3
+    end
     local x = math.floor(pos[1] + (math.random() * 2 - 1) * r)
     local z = math.floor(pos[3] + (math.random() * 2 - 1) * r)
     return ground_at(x, math.floor(pos[2]), z)
@@ -136,6 +220,55 @@ local function active_time()
     return not is_night()
 end
 
+-- voice ---------------------------------------------------------------------
+
+local VOICE_RANGE = 40        -- calls are only played this close to the player
+local voice = species.voice
+local voice_timer = 0
+
+local function next_call()
+    if voice then
+        voice_timer = voice.every[1] + math.random() * (voice.every[2] - voice.every[1])
+    end
+end
+next_call()
+
+local function heard()
+    if not gfx or not hud then
+        return false
+    end
+    local pos = tsf:get_pos()
+    local x, y, z = player.get_pos(hud.get_player())
+    return vec3.distance(pos, {x, y, z}) < VOICE_RANGE
+end
+
+local function sound(name, volume, pitch)
+    local pos = tsf:get_pos()
+    audio.play_sound("medieval_core/" .. name, pos[1], pos[2] + 0.3, pos[3], volume,
+        pitch * (0.92 + math.random() * 0.16), "regular")
+end
+
+-- the species' call; young ones sound higher
+local function say(volume_k, pitch_k)
+    if voice and heard() then
+        sound(voice.name, (voice.volume or 0.8) * (volume_k or 1),
+            (voice.pitch or 1) * (pitch_k or 1) * (young() and 1.35 or 1))
+    end
+end
+
+local function tick_voice(dt)
+    if not voice then
+        return
+    end
+    voice_timer = voice_timer - dt
+    if voice_timer <= 0 then
+        next_call()
+        if active_time() then
+            say()
+        end
+    end
+end
+
 local function shy_radius()
     if species.flight and species.nocturnal and not is_night() then
         return 2          -- dozing owl
@@ -159,6 +292,9 @@ local function flee_from(from, duration)
 end
 
 local function start_chase(pid)
+    if species.roar and prey ~= pid and heard() then
+        sound(species.roar, species.roar_volume or 1.0, 1.0)
+    end
     prey = pid
     chase_time = 0
     local x, y, z = player.get_pos(pid)
@@ -313,6 +449,316 @@ local function fly_steer(delta)
     body:set_vel(vec3.add(vel, vec3.mul(vec3.sub(desired, vel), k)))
 end
 
+-- sheep: grazing, shearing, breeding -------------------------------------------
+
+local MATE_RADIUS = 8
+local MATE_REACH = 1.8
+-- what grazing leaves of the ground
+local GRAZED = {
+    ["base:grass_block"] = "base:dirt",
+    ["medieval_core:tropical_grass_block"] = "base:dirt",
+}
+local grass_plant = block.index("base:grass")
+
+local function puff(texture, count, speed, size, lift)
+    if not gfx then
+        return
+    end
+    local pos = tsf:get_pos()
+    local h = hitbox[2] * scale()
+    gfx.particles.emit({pos[1], pos[2] + h * (lift or 0.5), pos[3]}, count, {
+        texture = texture,
+        lifetime = 0.9,
+        spawn_interval = 0.0001,
+        explosion = {speed, speed * 1.5, speed},
+        acceleration = {0, -2, 0},
+        size = {size, size, size},
+        spawn_shape = "box",
+        spawn_spread = {0.3, 0.1, 0.3},
+    })
+end
+
+function hearts(count)
+    puff("blocks:mw_heart", count, 0.6, 0.18, 0.9)
+end
+
+-- the grass the animal stands on: {x, y, z, kind} with kind "plant" (tall
+-- grass in the feet cell) or "ground" (grass block under it)
+local function grass_underfoot()
+    local pos = tsf:get_pos()
+    local feet = pos[2] - hitbox[2] * scale() * 0.5
+    local x, y, z = math.floor(pos[1]), math.floor(feet + 0.05), math.floor(pos[3])
+    if block.get(x, y, z) == grass_plant then
+        return {x, y, z, "plant"}
+    end
+    local id = block.get(x, y - 1, z)
+    if id > 0 and GRAZED[block.name(id)] then
+        return {x, y - 1, z, "ground"}
+    end
+    return nil
+end
+
+function try_graze(dt)
+    local graze = species.graze
+    if not graze or not body:is_grounded() then
+        return false
+    end
+    local interval = young() and graze.interval / 10 or graze.interval
+    if math.random() >= dt / interval or not grass_underfoot() then
+        return false
+    end
+    set_state("eat", graze.time)
+    return true
+end
+
+function finish_grazing()
+    local cell = grass_underfoot()
+    if not cell then
+        return false
+    end
+    local x, y, z = cell[1], cell[2], cell[3]
+    if cell[4] == "plant" then
+        block.set(x, y, z, 0, 0)
+    else
+        block.set(x, y, z, block.index(GRAZED[block.name(block.get(x, y, z))]), 0)
+    end
+    if gfx then
+        puff("blocks:mw_dirt_clod", 6, 1.2, 0.07, 0.0)
+    end
+    -- a meal regrows the fleece and helps a lamb grow up
+    if SAVED_DATA.sheared then
+        SAVED_DATA.sheared = nil
+        show_wool()
+    end
+    if young() then
+        SAVED_DATA.age = SAVED_DATA.age + species.graze.lamb_growth
+    end
+    return true
+end
+
+-- the knife takes the fleece: wool drops, the knife wears
+function shear(pid, invid, slot)
+    if not species.wool or SAVED_DATA.sheared or young() then
+        return false
+    end
+    SAVED_DATA.sheared = true
+    show_wool()
+    local pos = tsf:get_pos()
+    local n = math.random(species.wool.shear[1], species.wool.shear[2])
+    local e = base_util.drop({pos[1], pos[2] + 0.3, pos[3]}, item.index(species.wool.item), n)
+    if e then
+        e.rigidbody:set_vel({math.random() - 0.5, 3.5, math.random() - 0.5})
+    end
+    if pid and not player.is_infinite_items(pid) then
+        inventory.use(invid, slot)
+    end
+    if gfx then
+        puff("blocks:mw_wool_tuft", 10, 1.4, 0.12, 0.7)
+        audio.play_sound("medieval_core/shear", pos[1], pos[2], pos[3], 0.8, 0.9 + math.random() * 0.2, "regular")
+    end
+    return true
+end
+
+-- its food from a hand: a meal for a grown animal (not right after one), a
+-- young one grows. Returns true if it was eaten.
+function feed()
+    if not breed then
+        return false
+    end
+    if young() then
+        SAVED_DATA.age = SAVED_DATA.age + breed.grow_time * breed.feed_growth
+        puff("blocks:mw_heart", 2, 0.4, 0.12, 0.9)
+        return true
+    end
+    if SAVED_DATA.hunger < husbandry.MEAL_EVERY * 0.25 then
+        return false
+    end
+    SAVED_DATA.hunger = 0
+    puff("blocks:mw_heart", 2, 0.4, 0.12, 0.9)
+    return true
+end
+
+-- troughs ----------------------------------------------------------------------
+
+local function needs(kind)
+    local since = kind == "feed" and SAVED_DATA.hunger or SAVED_DATA.thirst
+    return since >= husbandry.MEAL_EVERY
+end
+
+-- a standing cell beside the trough (not at its corners), nearest first
+local function trough_spot(rect, y)
+    local pos = tsf:get_pos()
+    local best, best_dist = nil, math.huge
+    for x = rect[1] - 1, rect[3] + 1 do
+        for z = rect[2] - 1, rect[4] + 1 do
+            local out_x = x < rect[1] or x > rect[3]
+            local out_z = z < rect[2] or z > rect[4]
+            if out_x ~= out_z then
+                local cell = ground_at(x, y, z, 1, 2)
+                if cell then
+                    local d = vec3.distance(pos, {cell[1] + 0.5, cell[2], cell[3] + 0.5})
+                    if d < best_dist then
+                        best, best_dist = cell, d
+                    end
+                end
+            end
+        end
+    end
+    return best
+end
+
+-- the point of the trough's footprint nearest to the animal, and the
+-- horizontal distance to it
+local function trough_point(rect)
+    local pos = tsf:get_pos()
+    local x = math.max(rect[1], math.min(rect[3] + 1, pos[1]))
+    local z = math.max(rect[2], math.min(rect[4] + 1, pos[3]))
+    return x, z, vec2.length({pos[1] - x, pos[3] - z})
+end
+
+local function at_trough(rect)
+    local _, _, d = trough_point(rect)
+    return d <= hitbox[1] * scale() * 0.5 + 1.0
+end
+
+-- hungry or thirsty: off to the nearest trough with feed or water in it
+local function go_to_trough()
+    local kinds = {"feed", "water"}
+    if SAVED_DATA.thirst > SAVED_DATA.hunger then
+        kinds = {"water", "feed"}
+    end
+    for _, kind in ipairs(kinds) do
+        if needs(kind) then
+            local site, rect = trough.find(tsf:get_pos(), husbandry.SEARCH_RADIUS, kind)
+            local spot = site and trough_spot(rect, site[2])
+            if spot then
+                set_state("trough", husbandry.GIVE_UP, spot)
+                visit = {kind = kind, site = site, rect = rect}
+                return true
+            end
+        end
+    end
+    return false
+end
+
+local function start_meal()
+    local x, z = trough_point(visit.rect)
+    local pos = tsf:get_pos()
+    local dx, dz = x - pos[1], z - pos[3]
+    local len = math.sqrt(dx * dx + dz * dz)
+    if len > 1e-3 then
+        mob.set_dir({dx / len, 0, dz / len})
+    end
+    local v = visit
+    set_state("eat", husbandry.MEAL_TIME)
+    visit = v
+end
+
+local function finish_meal()
+    local s = visit.site
+    if not trough.take(s[1], s[2], s[3], visit.kind) then
+        return false
+    end
+    if visit.kind == "feed" then
+        SAVED_DATA.hunger = 0
+        if heard() then
+            sound("eat", 0.35, 1.0)
+        end
+    else
+        SAVED_DATA.thirst = 0
+        if heard() then
+            sound("drink", 0.4, 1.0)
+        end
+    end
+    return true
+end
+
+-- breeding ---------------------------------------------------------------------
+
+-- grown, rested and has eaten and drunk lately
+local function ready()
+    return breed ~= nil and not young() and not SAVED_DATA.breed_cooldown and love <= 0
+        and SAVED_DATA.hunger < husbandry.FED_FOR and SAVED_DATA.thirst < husbandry.FED_FOR
+end
+
+function is_ready()
+    return ready()
+end
+
+function start_love()
+    love = breed.love_time
+    heart_timer = 0
+end
+
+-- now and then a ready animal finds a ready partner nearby: both look for
+-- each other (seek_mate) and have a young one
+local function try_breed()
+    if not ready() or math.random() >= husbandry.BREED_CHANCE then
+        return false
+    end
+    local pos = tsf:get_pos()
+    local me = entity:get_uid()
+    local herd, partner = 0, nil
+    for _, uid in ipairs(entities.get_all_in_radius(pos, husbandry.HERD_RADIUS)) do
+        local e = entities.get(uid)
+        local ai = e and e:get_component("medieval_core:animal")
+        if ai and ai.get_species() == species_name then
+            herd = herd + 1
+            if uid ~= me and not partner and ai.is_ready() and
+               vec3.distance(pos, e.transform:get_pos()) <= husbandry.MATE_RADIUS then
+                partner = ai
+            end
+        end
+    end
+    if not partner or herd >= husbandry.HERD_LIMIT then
+        return false
+    end
+    partner.start_love()
+    start_love()
+    return true
+end
+
+local function find_mate()
+    local pos = tsf:get_pos()
+    local me = entity:get_uid()
+    for _, uid in ipairs(entities.get_all_in_radius(pos, MATE_RADIUS)) do
+        local e = uid ~= me and entities.get(uid)
+        local ai = e and e:get_component("medieval_core:animal")
+        if ai and ai.get_species() == species_name and ai.in_love() and not ai.is_baby() then
+            return e, ai
+        end
+    end
+    return nil
+end
+
+-- walks up to a mate in love; next to it a lamb is born
+function seek_mate()
+    local mate, ai = find_mate()
+    if not mate then
+        return false
+    end
+    local pos = tsf:get_pos()
+    local mpos = mate.transform:get_pos()
+    if vec3.distance(pos, mpos) > MATE_REACH then
+        if state ~= "follow" or state_timer <= 0 then
+            set_state("follow", 1.0, floor3(mpos))
+        end
+        return true
+    end
+    ai.end_love()
+    end_love()
+    local spot = {(pos[1] + mpos[1]) * 0.5, math.max(pos[2], mpos[2]), (pos[3] + mpos[3]) * 0.5}
+    -- a herd shares its coat: the young one gets a parent's
+    local variant = nil
+    if species.variants then
+        variant = math.random() < 0.5 and SAVED_DATA.variant or ai.get_variant()
+    end
+    entities.spawn(species.entity, spot, {medieval_core__animal = {species = species_name, age = 0, variant = variant}})
+    hearts(6)
+    set_state("idle", 3)
+    return true
+end
+
 -- thinking ------------------------------------------------------------------
 
 local function chase_think(dt)
@@ -389,6 +835,41 @@ local function think(dt)
         end
     end
 
+    if state == "eat" then
+        if state_timer <= 0 then
+            if visit then
+                finish_meal()
+            else
+                finish_grazing()
+            end
+            set_state("idle", 1 + math.random() * 2)
+        end
+        return
+    end
+    if state == "trough" then
+        if at_trough(visit.rect) then
+            start_meal()
+        elseif state_timer <= 0 then
+            set_state("idle", 2 + math.random() * 2)
+        end
+        return
+    end
+    if love > 0 and state ~= "flee" and seek_mate() then
+        return
+    end
+    if breed and state ~= "flee" then
+        check_timer = check_timer - dt
+        if check_timer <= 0 then
+            check_timer = husbandry.next_check()
+            if not young() and (go_to_trough() or try_breed()) then
+                return
+            end
+        end
+    end
+    if state ~= "flee" and state ~= "follow" and try_graze(dt) then
+        return
+    end
+
     local holder = state ~= "flee" and nearest_player(FOLLOW_RADIUS, holds_lure)
     if holder then
         local ppos = {player.get_pos(holder)}
@@ -429,7 +910,7 @@ local function think(dt)
 end
 
 local function lay_egg(dt)
-    if not species.lay_interval then
+    if not species.lay_interval or young() then
         return
     end
     local lo, hi = species.lay_interval[1], species.lay_interval[2]
@@ -440,10 +921,48 @@ local function lay_egg(dt)
     end
 end
 
+local function grow_up()
+    SAVED_DATA.age = nil
+    local pos = tsf:get_pos()
+    tsf:set_size({1, 1, 1})
+    -- the hitbox grows from the middle: keep the feet on the ground
+    tsf:set_pos({pos[1], pos[2] + hitbox[2] * (1 - breed.baby_scale) * 0.5 + 0.02, pos[3]})
+end
+
+local function tick_life(dt)
+    if not breed then
+        return
+    end
+    SAVED_DATA.hunger = SAVED_DATA.hunger + dt
+    SAVED_DATA.thirst = SAVED_DATA.thirst + dt
+    if love > 0 then
+        love = love - dt
+        heart_timer = heart_timer - dt
+        if heart_timer <= 0 then
+            heart_timer = 0.8
+            hearts(1)
+        end
+    end
+    if SAVED_DATA.breed_cooldown then
+        SAVED_DATA.breed_cooldown = SAVED_DATA.breed_cooldown - dt
+        if SAVED_DATA.breed_cooldown <= 0 then
+            SAVED_DATA.breed_cooldown = nil
+        end
+    end
+    if young() then
+        SAVED_DATA.age = SAVED_DATA.age + dt
+        if SAVED_DATA.age >= breed.grow_time then
+            grow_up()
+        end
+    end
+end
+
 function on_update(tps)
     local dt = 1 / tps
     think(dt)
     lay_egg(dt)
+    tick_life(dt)
+    tick_voice(dt)
 end
 
 -- Steers along the pathfinding route (safe for zero-length steps)
@@ -465,6 +984,11 @@ local function follow_route()
     mob.go({dx / len, dz / len}, 1.0, false, false)
     if body:is_grounded() then
         if waypoint[2] > math.floor(pos[2]) then
+            -- fences and gates hold animals in: no jumping onto them
+            local under = block.get(waypoint[1], waypoint[2] - 1, waypoint[3])
+            if under > 0 and (block.has_tag(under, FENCE_TAG) or block.has_tag(under, GATE_TAG)) then
+                return
+            end
             mob.jump()
         elseif species.hop then
             mob.jump(0.55)
@@ -588,7 +1112,14 @@ local hurt_timer = 0
 
 local function die()
     local pos = tsf:get_pos()
-    for _, drop in ipairs(base_util.calc_loot(species.loot)) do
+    local loot = species.loot
+    if young() then
+        loot = {}
+    elseif species.wool and not SAVED_DATA.sheared then
+        loot = {unpack(loot)}
+        table.insert(loot, {item = species.wool.item, count = species.wool.drop})
+    end
+    for _, drop in ipairs(base_util.calc_loot(loot)) do
         local e = base_util.drop(pos, drop.item, drop.count)
         if e then
             e.rigidbody:set_vel(vec3.spherical_rand(2.0))
@@ -597,10 +1128,15 @@ local function die()
     entity:despawn()
 end
 
-function damage(amount, from, pid)
+-- knockback scales the push away from the attacker (weapons)
+function damage(amount, from, pid, knockback)
     health = health - amount
     SAVED_DATA.health = health
     hurt_timer = HURT_FLASH
+    if heard() then
+        sound("animal_hurt", 0.8, 1.0)
+        say(1.0, 1.2)
+    end
     if health <= 0 then
         die()
         return
@@ -621,7 +1157,7 @@ function damage(amount, from, pid)
         end
         return
     end
-    local push = species.attack and 2 or 6
+    local push = (species.attack and 2 or 6) * (knockback or 1)
     body:set_vel(vec3.add(vec3.mul(away, push), {0, push * 0.8, 0}))
     local fights = species.temper == "hostile" or species.temper == "neutral"
     if fights and pid and pid ~= -1 and valid_prey(pid) and health > species.health * 0.25 then
@@ -639,14 +1175,21 @@ function on_attacked(attacker, pid)
     if entities.exists(attacker) then
         from = entities.get(attacker).transform:get_pos()
     end
-    local amount = 1
+    local amount, knockback = 1, 1
     if pid ~= -1 then
         local invid, slot = player.get_inventory(pid)
         local itemid = inventory.get(invid, slot)
         local props = itemid ~= 0 and item.properties and item.properties[itemid]
-        amount = props and props["millwright:damage"] or 1
+        if props and props["medieval_core:damage"] then
+            amount = props["medieval_core:damage"]
+            knockback = props["medieval_core:knockback"] or 1
+            -- weapons and tools wear out on every hit
+            if not player.is_infinite_items(pid) then
+                inventory.use(invid, slot)
+            end
+        end
     end
-    damage(amount, from, pid)
+    damage(amount, from, pid, knockback)
 end
 
 function on_save()
@@ -662,10 +1205,91 @@ function get_variant()
     return SAVED_DATA.variant
 end
 
+function get_species()
+    return species_name
+end
+
+function get_temper()
+    return species.temper
+end
+
+function is_baby()
+    return young()
+end
+
+function get_age()
+    return SAVED_DATA.age
+end
+
+function is_sheared()
+    return SAVED_DATA.sheared == true
+end
+
+-- seconds since the last meal and drink (farm animals)
+function get_needs()
+    return SAVED_DATA.hunger, SAVED_DATA.thirst
+end
+
+function set_needs(hunger, thirst)
+    SAVED_DATA.hunger = hunger or SAVED_DATA.hunger
+    SAVED_DATA.thirst = thirst or SAVED_DATA.thirst
+end
+
+function get_cooldown()
+    return SAVED_DATA.breed_cooldown
+end
+
+-- tests: look around now
+function check_now()
+    check_timer = 0
+end
+
+function in_love()
+    return love > 0
+end
+
+function end_love()
+    love = 0
+    if breed then
+        SAVED_DATA.breed_cooldown = breed.cooldown
+    end
+end
+
+-- tests: skips the lamb's growing up (nil) or makes it a lamb of that age
+function set_age(age)
+    if age == nil then
+        if young() then
+            grow_up()
+        end
+    else
+        SAVED_DATA.age = age
+        tsf:set_size({breed.baby_scale, breed.baby_scale, breed.baby_scale})
+    end
+end
+
+-- the use button on the animal: a knife shears it, its breeding food makes
+-- it look for a mate (or a lamb grow)
+function on_used(pid)
+    local invid, slot = player.get_inventory(pid)
+    local itemid, count = inventory.get(invid, slot)
+    if itemid == 0 then
+        return
+    end
+    local props = item.properties and item.properties[itemid]
+    local tool = props and props["medieval_core:tool"]
+    if tool and tool.type == "knife" then
+        shear(pid, invid, slot)
+    elseif itemid == breed_item then
+        if feed() and not player.is_infinite_items(pid) then
+            inventory.set(invid, slot, count > 1 and itemid or 0, count - 1)
+        end
+    end
+end
+
 -- animation (client) ---------------------------------------------------------
 
 local tracks = {}
-local weights = {walk = 0, idle = 0, air = 0, fly = 0}
+local weights = {walk = 0, idle = 0, air = 0, fly = 0, eat = 0}
 local gait_phase = 0
 local idle_time = math.random() * 10
 
@@ -700,9 +1324,12 @@ function on_render(delta)
     local flying = state == "fly"
 
     weights.walk = approach(weights.walk, flying and 0 or math.min(1, speed / 2.5), delta * 8)
-    weights.idle = approach(weights.idle, (state == "idle" and speed < 0.3) and 1 or 0, delta * 3)
+    -- at a trough the species without an eating animation graze or peck
+    local resting = state == "idle" or (state == "eat" and not species.tracks.eat)
+    weights.idle = approach(weights.idle, (resting and speed < 0.3) and 1 or 0, delta * 3)
     weights.air = approach(weights.air, (grounded or flying) and 0 or 1, delta * 10)
     weights.fly = approach(weights.fly, flying and 1 or 0, delta * 6)
+    weights.eat = approach(weights.eat, state == "eat" and 1 or 0, delta * 5)
     gait_phase = gait_phase + speed * species.gait * delta
     idle_time = idle_time + delta
 
@@ -711,6 +1338,7 @@ function on_render(delta)
     apply("idle", idle_time, weights.idle)
     apply("air", idle_time, weights.air)
     apply("fly", idle_time, weights.fly)
+    apply("eat", idle_time, weights.eat)
     if attack_anim > 0 then
         attack_anim = math.max(0, attack_anim - delta)
         apply("attack", 1 - attack_anim / ATTACK_ANIM, 1)

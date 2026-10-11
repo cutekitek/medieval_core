@@ -1,0 +1,6 @@
+{
+    "texture": "mw_limestone_bricks",
+    "material": "base:stone",
+    "base:durability": 9.0,
+    "caption": "limestone bricks"
+}

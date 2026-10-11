@@ -1,0 +1,25 @@
+@box from (0.23,0,0.39) to (0.77,0.025,0.61) texture "blocks:mw_raw_clay" {
+    @part tags (top) texture "blocks:mw_raw_clay_inner"
+}
+@box from (0.39,0,0.23) to (0.61,0.025,0.77) texture "blocks:mw_raw_clay" {
+    @part tags (top) texture "blocks:mw_raw_clay_inner"
+}
+@box from (0.3,0,0.3) to (0.7,0.025,0.7) texture "blocks:mw_raw_clay" {
+    @part tags (top) texture "blocks:mw_raw_clay_inner"
+}
+@box from (0.6948,0,0.5556) to (0.851,0.07,0.5906) rotate (0,-105,0) texture "blocks:mw_raw_clay"
+@box from (0.6216,0,0.6823) to (0.7779,0.07,0.7173) rotate (0,-135,0) texture "blocks:mw_raw_clay"
+@box from (0.495,0,0.7554) to (0.6512,0.07,0.7904) rotate (0,-165,0) texture "blocks:mw_raw_clay"
+@box from (0.3488,0,0.7554) to (0.505,0.07,0.7904) rotate (0,165,0) texture "blocks:mw_raw_clay"
+@box from (0.2221,0,0.6823) to (0.3784,0.07,0.7173) rotate (0,135,0) texture "blocks:mw_raw_clay"
+@box from (0.149,0,0.5556) to (0.3052,0.07,0.5906) rotate (0,105,0) texture "blocks:mw_raw_clay"
+@box from (0.149,0,0.4094) to (0.3052,0.07,0.4444) rotate (0,75,0) texture "blocks:mw_raw_clay"
+@box from (0.2221,0,0.2827) to (0.3784,0.07,0.3177) rotate (0,45,0) texture "blocks:mw_raw_clay"
+@box from (0.3488,0,0.2096) to (0.505,0.07,0.2446) rotate (0,15,0) texture "blocks:mw_raw_clay"
+@box from (0.495,0,0.2096) to (0.6512,0.07,0.2446) rotate (0,-15,0) texture "blocks:mw_raw_clay"
+@box from (0.6216,0,0.2827) to (0.7779,0.07,0.3177) rotate (0,-45,0) texture "blocks:mw_raw_clay"
+@box from (0.6948,0,0.4094) to (0.851,0.07,0.4444) rotate (0,-75,0) texture "blocks:mw_raw_clay"
+@box from (0.01,0,0.01) to (0.99,0.1,0.99) texture "blocks:mw_kiln_straw"
+@box from (0.3632,0.1,0.7344) to (0.6311,0.135,0.7944) rotate (0,127.9445,0) texture "blocks:mw_kiln_straw"
+@box from (0.1784,0.1,0.3929) to (0.3898,0.135,0.4529) rotate (0,144.6619,0) texture "blocks:mw_kiln_straw"
+@box from (0.1564,0.1,0.7294) to (0.4312,0.135,0.7894) rotate (0,104.8451,0) texture "blocks:mw_kiln_straw"

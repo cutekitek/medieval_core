@@ -1,0 +1,7 @@
+@bone name 'lid' {
+    @box from (-0.4405,0,-0.003) to (0.4405,0.253,0.878) texture "blocks:mw_chest_side" {
+        @part tags (top) texture "blocks:mw_chest_top"
+        @part tags (bottom) texture "blocks:mw_chest_inner"
+    }
+    @box from (-0.05,-0.12,0.878) to (0.05,0.08,0.903) texture "blocks:mw_chest_hasp"
+}

@@ -1,0 +1,85 @@
+[
+    {
+        "type": "shapeless",
+        "ingredients": [
+            "medieval_core:plant_fiber",
+            "medieval_core:plant_fiber",
+            "medieval_core:plant_fiber"
+        ],
+        "result": "medieval_core:twine"
+    },
+    {
+        "type": "shaped",
+        "pattern": [
+            "B",
+            "S"
+        ],
+        "key": {
+            "B": "medieval_core:knife_blade",
+            "S": "medieval_core:stick"
+        },
+        "result": "medieval_core:stone_knife"
+    },
+    {
+        "type": "shaped",
+        "pattern": [
+            "H",
+            "S"
+        ],
+        "key": {
+            "H": "medieval_core:shovel_head",
+            "S": "medieval_core:stick"
+        },
+        "result": "medieval_core:stone_shovel"
+    },
+    {
+        "type": "shaped",
+        "pattern": [
+            "HT",
+            "S "
+        ],
+        "key": {
+            "H": "medieval_core:axe_head",
+            "T": "medieval_core:twine",
+            "S": "medieval_core:stick"
+        },
+        "result": "medieval_core:stone_axe"
+    },
+    {
+        "type": "shaped",
+        "pattern": [
+            "HT",
+            "S "
+        ],
+        "key": {
+            "H": "medieval_core:pickaxe_head",
+            "T": "medieval_core:twine",
+            "S": "medieval_core:stick"
+        },
+        "result": "medieval_core:stone_pickaxe"
+    },
+    {
+        "type": "shaped",
+        "pattern": [
+            " H",
+            "S "
+        ],
+        "key": {
+            "H": "medieval_core:mace_head",
+            "S": "medieval_core:stick"
+        },
+        "result": "medieval_core:stone_mace"
+    },
+    {
+        "type": "shaped",
+        "pattern": [
+            "ST",
+            "S "
+        ],
+        "key": {
+            "S": "medieval_core:stick",
+            "T": "medieval_core:twine"
+        },
+        "result": "medieval_core:bow_drill"
+    }
+]

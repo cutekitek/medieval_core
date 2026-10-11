@@ -1,0 +1,43 @@
+{
+    "light-passing": true,
+    "sky-light-passing": true,
+    "caption": "palm fence gate",
+    "material": "base:wood",
+    "texture-faces": [
+        "mw_palm_planks",
+        "mw_palm_planks",
+        "mw_palm_planks",
+        "mw_palm_planks",
+        "mw_palm_planks",
+        "mw_palm_planks"
+    ],
+    "model": "custom",
+    "model-name": "mw_gate_open",
+    "rotation": "pane",
+    "obstacle": false,
+    "hitboxes": [
+        [
+            0,
+            0.3125,
+            0.0625,
+            0.125,
+            0.6875,
+            0.5
+        ],
+        [
+            0.875,
+            0.3125,
+            0.0625,
+            0.125,
+            0.6875,
+            0.5
+        ]
+    ],
+    "script-name": "gate",
+    "tags": [
+        "medieval_core:gate"
+    ],
+    "hidden": true,
+    "picking-item": "medieval_core:palm_gate.item",
+    "base:durability": 4.0
+}

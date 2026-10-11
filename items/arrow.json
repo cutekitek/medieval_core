@@ -1,0 +1,6 @@
+{
+    "icon-type": "sprite",
+    "icon": "items:mw_arrow",
+    "stack-size": 32,
+    "model-name": "mw_arrow_item"
+}

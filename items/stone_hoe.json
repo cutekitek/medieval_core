@@ -1,0 +1,9 @@
+{
+    "icon-type": "sprite",
+    "icon": "items:mw_stone_hoe",
+    "stack-size": 1,
+    "uses": 80,
+    "medieval_core:damage": 2,
+    "script-name": "hoe",
+    "model-name": "mw_sprite_stone_hoe"
+}

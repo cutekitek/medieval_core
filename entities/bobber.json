@@ -1,0 +1,10 @@
+{
+    "components": [
+        "medieval_core:bobber"
+    ],
+    "skeleton-name": "mw_bobber",
+    "hitbox": [0.14, 0.14, 0.14],
+    "mass": 0.05,
+    "blocking": false,
+    "selectable": false
+}

@@ -1,0 +1,3 @@
+<container id="root" color="#00000000" size-func="unpack(gui.get_viewport())">
+    <button id="leave" size="280,40" gravity="bottom-center" margin="0,0,0,96" onclick="leave()">Leave</button>
+</container>

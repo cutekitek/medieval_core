@@ -1,0 +1,6 @@
+{
+    "icon-type": "sprite",
+    "icon": "items:mw_wool",
+    "stack-size": 64,
+    "model-name": "mw_sprite_wool"
+}

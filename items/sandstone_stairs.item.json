@@ -1,0 +1,7 @@
+{
+    "caption": "sandstone stairs",
+    "icon-type": "block",
+    "icon": "medieval_core:sandstone_stairs",
+    "placing-block": "medieval_core:sandstone_stairs",
+    "script-name": "shape_item"
+}

@@ -1,0 +1,83 @@
+@box from (0.7435,0,0.6793) to (0.8371,0.256,0.7729) origin (0.7903,0,0.7261) rotate (-0.3145,0.893,0.0502,0.3179) texture "blocks:mw_charred_wood" {
+    @part tags (bottom) texture "blocks:mw_charred_end" region (0,0,1,1)
+}
+@box from (0.6252,0.1588,0.6675) to (0.7151,0.4453,0.7574) origin (0.6702,0.1588,0.7124) rotate (-0.3192,0.8974,-0.1187,0.2806) texture "blocks:mw_charred_wood"
+@box from (0.5185,0.3354,0.5773) to (0.5983,0.597,0.6572) origin (0.5584,0.3354,0.6173) rotate (-0.3628,0.8967,-0.0104,0.2534) texture "blocks:mw_charred_wood" {
+    @part tags (top) texture "blocks:mw_charred_end" region (0,0,1,1)
+}
+@box from (0.5884,0.25,0.6442) to (0.6317,0.3251,0.6875) origin (0.61,0.25,0.6659) rotate (0.1037,0.8295,0.2031,0.5097) texture "blocks:mw_charred_wood" {
+    @part tags (top) texture "blocks:mw_charred_end" region (0,0,1,1)
+}
+@box from (0.579,0.2642,0.6369) to (0.6223,0.3372,0.6803) origin (0.6007,0.2642,0.6586) rotate (0.1501,0.2155,-0.0074,0.9649) texture "blocks:mw_charred_wood" {
+    @part tags (top) texture "blocks:mw_charred_end" region (0,0,1,1)
+}
+@box from (0.2043,0,0.19) to (0.3061,0.2663,0.2918) origin (0.2552,0,0.2409) rotate (0.3039,0.8788,-0.018,0.3674) texture "blocks:mw_charred_wood" {
+    @part tags (bottom) texture "blocks:mw_charred_end" region (0,0,1,1)
+}
+@box from (0.321,0.1685,0.2296) to (0.4173,0.4632,0.3259) origin (0.3692,0.1685,0.2778) rotate (0.3085,0.8754,0.0307,0.3709) texture "blocks:mw_charred_wood"
+@box from (0.4465,0.3592,0.2945) to (0.5378,0.6331,0.3859) origin (0.4921,0.3592,0.3402) rotate (0.3112,0.8822,0.1178,0.3331) texture "blocks:mw_charred_wood" {
+    @part tags (top) texture "blocks:mw_charred_end" region (0,0,1,1)
+}
+@box from (0.3195,0.129,0.2489) to (0.3642,0.2082,0.2936) origin (0.3418,0.129,0.2712) rotate (-0.001,0.8244,0.5572,0.0996) texture "blocks:mw_charred_wood" {
+    @part tags (top) texture "blocks:mw_charred_end" region (0,0,1,1)
+}
+@box from (0.2234,0,0.75) to (0.315,0.2715,0.8416) origin (0.2692,0,0.7958) rotate (-0.0095,0.8194,-0.3197,0.4756) texture "blocks:mw_charred_wood" {
+    @part tags (bottom) texture "blocks:mw_charred_end" region (0,0,1,1)
+}
+@box from (0.2944,0.1734,0.636) to (0.3794,0.4718,0.721) origin (0.3369,0.1734,0.6785) rotate (-0.1078,0.7792,-0.2584,0.5608) texture "blocks:mw_charred_wood"
+@box from (0.3251,0.3827,0.5123) to (0.4017,0.6614,0.5889) origin (0.3634,0.3827,0.5506) rotate (-0.0518,0.7886,-0.3249,0.5194) texture "blocks:mw_charred_wood" {
+    @part tags (top) texture "blocks:mw_charred_end" region (0,0,1,1)
+}
+@box from (0.3371,0.31,0.5742) to (0.3762,0.3687,0.6132) origin (0.3566,0.31,0.5937) rotate (0.0852,0.6676,0.1702,0.7198) texture "blocks:mw_charred_wood" {
+    @part tags (top) texture "blocks:mw_charred_end" region (0,0,1,1)
+}
+@box from (0.3352,0.2963,0.5827) to (0.3742,0.3508,0.6217) origin (0.3547,0.2963,0.6022) rotate (0.0337,0.3773,0.2412,0.8935) texture "blocks:mw_charred_wood" {
+    @part tags (top) texture "blocks:mw_charred_end" region (0,0,1,1)
+}
+@box from (0.7517,0,0.2384) to (0.8482,0.2836,0.335) origin (0.7999,0,0.2867) rotate (-0.0782,0.9157,0.3067,0.2476) texture "blocks:mw_charred_wood" {
+    @part tags (bottom) texture "blocks:mw_charred_end" region (0,0,1,1)
+}
+@box from (0.6904,0.1789,0.366) to (0.7814,0.4925,0.457) origin (0.7359,0.1789,0.4115) rotate (-0.1495,0.9268,0.205,0.2768) texture "blocks:mw_charred_wood"
+@box from (0.5912,0.404,0.4392) to (0.678,0.6941,0.526) origin (0.6346,0.404,0.4826) rotate (-0.0767,0.8813,0.2998,0.3572) texture "blocks:mw_charred_wood" {
+    @part tags (top) texture "blocks:mw_charred_end" region (0,0,1,1)
+}
+@box from (0.7334,0.1221,0.3451) to (0.7764,0.1803,0.3881) origin (0.7549,0.1221,0.3666) rotate (-0.27,0.6045,0.5747,0.4811) texture "blocks:mw_charred_wood" {
+    @part tags (top) texture "blocks:mw_charred_end" region (0,0,1,1)
+}
+@box from (0.685,0,0.5147) to (0.7286,0.1413,0.5583) origin (0.7068,0,0.5365) rotate (-0.2698,0.9266,0.0946,0.2443) texture "blocks:mw_charred_wood" {
+    @part tags (bottom) texture "blocks:mw_charred_end" region (0,0,1,1)
+}
+@box from (0.6241,0.0964,0.5195) to (0.6638,0.2521,0.5592) origin (0.644,0.0964,0.5393) rotate (-0.2394,0.9116,0.1855,0.2779) texture "blocks:mw_charred_wood"
+@box from (0.5558,0.2021,0.5501) to (0.5939,0.3481,0.5882) origin (0.5748,0.2021,0.5691) rotate (-0.2967,0.8869,0.0909,0.3421) texture "blocks:mw_charred_wood" {
+    @part tags (top) texture "blocks:mw_charred_end" region (0,0,1,1)
+}
+@box from (0.5068,0,0.6855) to (0.5517,0.1334,0.7304) origin (0.5292,0,0.708) rotate (-0.3351,0.2865,0.056,0.8958) texture "blocks:mw_charred_wood" {
+    @part tags (bottom) texture "blocks:mw_charred_end" region (0,0,1,1)
+}
+@box from (0.4751,0.0815,0.6247) to (0.5188,0.2282,0.6684) origin (0.4969,0.0815,0.6465) rotate (-0.2932,0.2884,0.0255,0.9112) texture "blocks:mw_charred_wood"
+@box from (0.4511,0.1814,0.5641) to (0.492,0.3182,0.6049) origin (0.4715,0.1814,0.5845) rotate (-0.3169,0.2522,0.0522,0.9128) texture "blocks:mw_charred_wood" {
+    @part tags (top) texture "blocks:mw_charred_end" region (0,0,1,1)
+}
+@box from (0.2905,0,0.5713) to (0.332,0.1475,0.6128) origin (0.3113,0,0.5921) rotate (-0.0826,0.2566,-0.2772,0.9222) texture "blocks:mw_charred_wood" {
+    @part tags (bottom) texture "blocks:mw_charred_end" region (0,0,1,1)
+}
+@box from (0.3492,0.1007,0.5375) to (0.3906,0.2612,0.5789) origin (0.3699,0.1007,0.5582) rotate (-0.1485,0.3431,-0.2395,0.896) texture "blocks:mw_charred_wood"
+@box from (0.394,0.2136,0.4808) to (0.4319,0.3644,0.5188) origin (0.413,0.2136,0.4998) rotate (-0.0993,0.386,-0.2665,0.8776) texture "blocks:mw_charred_wood" {
+    @part tags (top) texture "blocks:mw_charred_end" region (0,0,1,1)
+}
+@box from (0.3328,0,0.3276) to (0.3755,0.1292,0.3703) origin (0.3541,0,0.3489) rotate (0.361,0.925,0.0927,0.0738) texture "blocks:mw_charred_wood" {
+    @part tags (bottom) texture "blocks:mw_charred_end" region (0,0,1,1)
+}
+@box from (0.4025,0.0736,0.35) to (0.4434,0.2149,0.3909) origin (0.423,0.0736,0.3705) rotate (0.3009,0.9361,0.1521,0.0998) texture "blocks:mw_charred_wood"
+@box from (0.4652,0.1618,0.3901) to (0.5052,0.294,0.4301) origin (0.4852,0.1618,0.4101) rotate (0.2416,0.9536,0.1798,0.0016) texture "blocks:mw_charred_wood" {
+    @part tags (top) texture "blocks:mw_charred_end" region (0,0,1,1)
+}
+@box from (0.5761,0,0.2921) to (0.621,0.1364,0.337) origin (0.5986,0,0.3146) rotate (0.2887,0.2967,0.1078,0.9039) texture "blocks:mw_charred_wood" {
+    @part tags (bottom) texture "blocks:mw_charred_end" region (0,0,1,1)
+}
+@box from (0.5785,0.0893,0.3587) to (0.6203,0.2403,0.4005) origin (0.5994,0.0893,0.3796) rotate (0.2291,0.2781,0.2261,0.905) texture "blocks:mw_charred_wood"
+@box from (0.5411,0.188,0.4262) to (0.581,0.328,0.4661) origin (0.561,0.188,0.4462) rotate (0.3014,0.2377,0.0955,0.9184) texture "blocks:mw_charred_wood" {
+    @part tags (top) texture "blocks:mw_charred_end" region (0,0,1,1)
+}
+@box from (0.28,0,0.3) to (0.7,0.05,0.72) texture "blocks:mw_embers" delete "bottom"
+@box from (0.36,0.04,0.38) to (0.6,0.1,0.62) origin (0.5,0,0.5) rotate (0,20,0) texture "blocks:mw_embers" delete "bottom"

@@ -1,0 +1,28 @@
+{
+    "material": "base:stone",
+    "model": "custom",
+    "base:durability": 5.3999999999999995,
+    "texture-faces": [
+        "mw_limestone_bricks",
+        "mw_limestone_bricks",
+        "mw_limestone_bricks",
+        "mw_limestone_bricks",
+        "mw_limestone_bricks",
+        "mw_limestone_bricks"
+    ],
+    "model-name": "mw_vslab",
+    "rotation": "pane",
+    "hitbox": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0.5
+    ],
+    "tags": [
+        "medieval_core:vslab"
+    ],
+    "picking-item": "medieval_core:limestone_vslab.item",
+    "caption": "limestone vertical slab"
+}

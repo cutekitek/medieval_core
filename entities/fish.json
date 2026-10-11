@@ -1,0 +1,13 @@
+{
+    "components": [
+        "medieval_core:fish"
+    ],
+    "skeleton-name": "mw_fish",
+    "hitbox": [
+        0.4,
+        0.3,
+        0.4
+    ],
+    "mass": 0.3,
+    "blocking": false
+}

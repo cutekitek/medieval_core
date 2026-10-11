@@ -1,0 +1,29 @@
+{
+    "material": "base:wood",
+    "model": "custom",
+    "model-name": "mw_trough",
+    "texture": "mw_trough_wood",
+    "size": [2, 1, 1],
+    "rotation": "pane",
+    "light-passing": true,
+    "sky-light-passing": true,
+    "ambient-occlusion": false,
+    "hitbox": [0.04, 0, 0.16, 1.92, 0.42, 0.68],
+    "script-name": "trough",
+    "base:durability": 3.0,
+    "fields": {
+        "portions": {"type": "int16"}
+    },
+    "state-based": {
+        "offset": 0,
+        "bits": 3,
+        "variants": [
+            {"model": "custom", "model-name": "mw_trough_feed_1"},
+            {"model": "custom", "model-name": "mw_trough_feed_2"},
+            {"model": "custom", "model-name": "mw_trough_feed_3"},
+            {"model": "custom", "model-name": "mw_trough_water_1"},
+            {"model": "custom", "model-name": "mw_trough_water_2"},
+            {"model": "custom", "model-name": "mw_trough_water_3"}
+        ]
+    }
+}

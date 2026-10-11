@@ -2,5 +2,6 @@
     "icon-type": "sprite",
     "icon": "items:mw_stick",
     "stack-size": 64,
-    "placing-block": "millwright:loose_sticks"
+    "placing-block": "medieval_core:loose_sticks",
+    "model-name": "mw_sprite_stick"
 }

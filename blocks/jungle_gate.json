@@ -1,0 +1,30 @@
+{
+    "light-passing": true,
+    "sky-light-passing": true,
+    "material": "base:wood",
+    "texture-faces": [
+        "mw_jungle_planks",
+        "mw_jungle_planks",
+        "mw_jungle_planks",
+        "mw_jungle_planks",
+        "mw_jungle_planks",
+        "mw_jungle_planks"
+    ],
+    "model": "custom",
+    "model-name": "mw_gate",
+    "rotation": "pane",
+    "hitbox": [
+        0,
+        0,
+        0.375,
+        1,
+        1,
+        0.25
+    ],
+    "script-name": "gate",
+    "tags": [
+        "medieval_core:gate"
+    ],
+    "base:durability": 4.0,
+    "caption": "jungle fence gate"
+}

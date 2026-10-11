@@ -1,0 +1,39 @@
+{
+    "material": "base:stone",
+    "model": "custom",
+    "base:durability": 15.0,
+    "texture-faces": [
+        "mw_granite_bricks",
+        "mw_granite_bricks",
+        "mw_granite_bricks",
+        "mw_granite_bricks",
+        "mw_granite_bricks",
+        "mw_granite_bricks"
+    ],
+    "model-name": "mw_stairs",
+    "rotation": "stairs",
+    "hitboxes": [
+        [
+            0,
+            0,
+            0,
+            1,
+            0.5,
+            1
+        ],
+        [
+            0,
+            0.5,
+            0,
+            1,
+            0.5,
+            0.5
+        ]
+    ],
+    "script-name": "stairs",
+    "tags": [
+        "medieval_core:stairs"
+    ],
+    "picking-item": "medieval_core:granite_stairs.item",
+    "caption": "granite stairs"
+}

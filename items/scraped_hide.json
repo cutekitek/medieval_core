@@ -1,0 +1,6 @@
+{
+    "icon-type": "sprite",
+    "icon": "items:mw_scraped_hide",
+    "stack-size": 16,
+    "model-name": "mw_sprite_scraped_hide"
+}

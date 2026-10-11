@@ -1,0 +1,7 @@
+{
+    "caption": "jungle column",
+    "icon-type": "block",
+    "icon": "medieval_core:jungle_column",
+    "placing-block": "medieval_core:jungle_column",
+    "script-name": "shape_item"
+}

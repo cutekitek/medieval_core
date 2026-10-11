@@ -1,0 +1,7 @@
+{
+    "caption": "sandstone roof slope",
+    "icon-type": "block",
+    "icon": "medieval_core:sandstone_roof",
+    "placing-block": "medieval_core:sandstone_roof",
+    "script-name": "shape_item"
+}

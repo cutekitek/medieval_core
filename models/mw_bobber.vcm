@@ -1,0 +1,23 @@
+@bone name 'float' {
+    @box from (-0.045,-0.07,-0.045) to (0.045,-0.012,0.045) texture "blocks:mw_bobber_white"
+    @box from (-0.05,-0.012,-0.05) to (0.05,0.045,0.05) texture "blocks:mw_bobber_red"
+    @box from (-0.012,0.045,-0.012) to (0.012,0.14,0.012) texture "blocks:mw_bobber_quill"
+}
+@bone name 'line0' {
+    @box from (-0.005,-0.005,0) to (0.005,0.005,1) texture "blocks:mw_fishing_line"
+}
+@bone name 'line1' {
+    @box from (-0.005,-0.005,0) to (0.005,0.005,1) texture "blocks:mw_fishing_line"
+}
+@bone name 'line2' {
+    @box from (-0.005,-0.005,0) to (0.005,0.005,1) texture "blocks:mw_fishing_line"
+}
+@bone name 'line3' {
+    @box from (-0.005,-0.005,0) to (0.005,0.005,1) texture "blocks:mw_fishing_line"
+}
+@bone name 'line4' {
+    @box from (-0.005,-0.005,0) to (0.005,0.005,1) texture "blocks:mw_fishing_line"
+}
+@bone name 'line5' {
+    @box from (-0.005,-0.005,0) to (0.005,0.005,1) texture "blocks:mw_fishing_line"
+}

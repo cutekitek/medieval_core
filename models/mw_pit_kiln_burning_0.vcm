@@ -1,0 +1,7 @@
+@box from (0.01,0,0.01) to (0.99,1,0.99) texture "blocks:mw_kiln_burning"
+@box from (0.1,0.5,0.1) to (0.9,1.24,0.9) texture "blocks:mw_kiln_burning"
+@box from (0.24,0.8,0.24) to (0.76,1.42,0.76) texture "blocks:mw_kiln_burning"
+@box from (0.2672,1.42,0.3999) to (0.4819,1.455,0.4599) rotate (0,13.926,0) texture "blocks:mw_kiln_burning"
+@box from (0.3754,1.42,0.4239) to (0.6589,1.455,0.4839) rotate (0,50.7879,0) texture "blocks:mw_kiln_burning"
+@box from (0.3072,1.42,0.5804) to (0.4904,1.455,0.6404) rotate (0,179.7331,0) texture "blocks:mw_kiln_burning"
+@box from (0.3025,1.42,0.5439) to (0.5774,1.455,0.6039) rotate (0,105.0262,0) texture "blocks:mw_kiln_burning"

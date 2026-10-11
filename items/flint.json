@@ -2,5 +2,6 @@
     "icon-type": "sprite",
     "icon": "items:mw_flint",
     "stack-size": 32,
-    "placing-block": "millwright:loose_flint"
+    "placing-block": "medieval_core:loose_flint",
+    "model-name": "mw_sprite_flint"
 }

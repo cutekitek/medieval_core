@@ -1,0 +1,6 @@
+{
+    "icon-type": "sprite",
+    "icon": "items:mw_wheat",
+    "stack-size": 32,
+    "model-name": "mw_sprite_wheat"
+}

@@ -1,0 +1,7 @@
+{
+    "caption": "stone vertical slab",
+    "icon-type": "block",
+    "icon": "medieval_core:stone_vslab",
+    "placing-block": "medieval_core:stone_vslab",
+    "script-name": "shape_item"
+}

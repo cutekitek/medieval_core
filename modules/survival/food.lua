@@ -1,19 +1,34 @@
--- Edible items: item name -> {food, water}
+-- Edible items: item name -> {food, water, container}; the container (a
+-- plate) is left in hand after eating
 local stats = require "survival/stats"
 
 local this = {}
 
 local foods = {
-    ["millwright:berries"] = {food = 2, water = 1},
-    ["millwright:raw_beef"] = {food = 4},
-    ["millwright:raw_chicken"] = {food = 3},
-    ["millwright:raw_meat"] = {food = 4},
-    ["millwright:raw_game"] = {food = 2},
-    ["millwright:egg"] = {food = 2},
-    ["millwright:blueberries"] = {food = 2, water = 1},
-    ["millwright:cloudberries"] = {food = 2, water = 1},
-    ["millwright:pineapple"] = {food = 4, water = 3},
-    ["millwright:mushroom"] = {food = 2},
+    ["medieval_core:berries"] = {food = 2, water = 1},
+    ["medieval_core:raw_beef"] = {food = 3},
+    ["medieval_core:raw_chicken"] = {food = 2},
+    ["medieval_core:raw_meat"] = {food = 3},
+    ["medieval_core:raw_game"] = {food = 2},
+    ["medieval_core:cooked_beef"] = {food = 8},
+    ["medieval_core:cooked_chicken"] = {food = 6},
+    ["medieval_core:cooked_meat"] = {food = 8},
+    ["medieval_core:cooked_game"] = {food = 5},
+    ["medieval_core:raw_mutton"] = {food = 2},
+    ["medieval_core:cooked_mutton"] = {food = 6},
+    ["medieval_core:raw_fish"] = {food = 2},
+    ["medieval_core:cooked_fish"] = {food = 5},
+    ["medieval_core:egg"] = {food = 2},
+    ["medieval_core:blueberries"] = {food = 2, water = 1},
+    ["medieval_core:cloudberries"] = {food = 2, water = 1},
+    ["medieval_core:pineapple"] = {food = 4, water = 3},
+    ["medieval_core:mushroom"] = {food = 2},
+    ["medieval_core:carrot"] = {food = 3, water = 1},
+    ["medieval_core:potato"] = {food = 2},
+    ["medieval_core:cabbage"] = {food = 4, water = 2},
+    ["medieval_core:tomato"] = {food = 2, water = 2},
+    ["medieval_core:cucumber"] = {food = 1, water = 3},
+    ["medieval_core:stew"] = {food = 12, water = 6, container = "medieval_core:clay_plate.item"},
 }
 
 function this.register(name, food, water)

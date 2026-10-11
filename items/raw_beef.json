@@ -2,5 +2,6 @@
     "icon-type": "sprite",
     "icon": "items:mw_raw_beef",
     "stack-size": 16,
-    "script-name": "food"
+    "script-name": "food",
+    "model-name": "mw_sprite_raw_beef"
 }

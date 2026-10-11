@@ -2,5 +2,6 @@
     "icon-type": "sprite",
     "icon": "items:mw_rock",
     "stack-size": 32,
-    "placing-block": "millwright:loose_rock"
+    "placing-block": "medieval_core:loose_rock",
+    "model-name": "mw_sprite_rock"
 }

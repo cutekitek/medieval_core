@@ -1,0 +1,28 @@
+{
+    "material": "base:stone",
+    "model": "custom",
+    "base:durability": 3.5999999999999996,
+    "texture-faces": [
+        "mw_sandstone_bricks",
+        "mw_sandstone_bricks",
+        "mw_sandstone_bricks",
+        "mw_sandstone_bricks",
+        "mw_sandstone_bricks",
+        "mw_sandstone_bricks"
+    ],
+    "model-name": "mw_slab",
+    "rotation": "stairs",
+    "hitbox": [
+        0,
+        0,
+        0,
+        1,
+        0.5,
+        1
+    ],
+    "tags": [
+        "medieval_core:slab"
+    ],
+    "picking-item": "medieval_core:sandstone_slab.item",
+    "caption": "sandstone slab"
+}

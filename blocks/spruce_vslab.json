@@ -1,0 +1,28 @@
+{
+    "material": "base:wood",
+    "model": "custom",
+    "base:durability": 3.0,
+    "texture-faces": [
+        "mw_spruce_planks",
+        "mw_spruce_planks",
+        "mw_spruce_planks",
+        "mw_spruce_planks",
+        "mw_spruce_planks",
+        "mw_spruce_planks"
+    ],
+    "model-name": "mw_vslab",
+    "rotation": "pane",
+    "hitbox": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0.5
+    ],
+    "tags": [
+        "medieval_core:vslab"
+    ],
+    "picking-item": "medieval_core:spruce_vslab.item",
+    "caption": "spruce vertical slab"
+}

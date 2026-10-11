@@ -9,7 +9,7 @@
         },
         "core:pathfinding",
         {
-            "name": "millwright:animal",
+            "name": "medieval_core:animal",
             "args": {
                 "species": "horse"
             }

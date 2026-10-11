@@ -5,6 +5,12 @@
       <container id="air" pos="0,0" size="170,14" color="#A8D8F0FF"/>
       <label id="air_text" pos="4,0" size="166,14" color="#103040FF">20</label>
     </container>
+    <container id="temp_bar" pos="354,4" size="170,14" color="#00000000">
+      <container pos="0,0" size="170,14" color="#00000090"/>
+      <container id="temp" pos="0,0" size="85,14" color="#58B050FF"/>
+      <container pos="84,0" size="2,14" color="#FFFFFF70"/>
+      <label id="temp_text" pos="4,0" size="166,14">37</label>
+    </container>
     <container pos="0,26" size="170,14" color="#00000090"/>
     <container id="health" pos="0,26" size="170,14" color="#C0303AFF"/>
     <label id="health_text" pos="4,26" size="166,14">20</label>

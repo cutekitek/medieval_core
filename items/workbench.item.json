@@ -1,0 +1,7 @@
+{
+    "icon-type": "sprite",
+    "icon": "items:mw_workbench",
+    "stack-size": 8,
+    "placing-block": "medieval_core:workbench",
+    "model-name": "mw_sprite_workbench"
+}

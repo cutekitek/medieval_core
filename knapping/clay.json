@@ -1,0 +1,22 @@
+[
+    {
+        "material": "clay",
+        "pattern": [
+            "X   X",
+            "X   X",
+            "X   X",
+            "XXXXX",
+            " XXX "
+        ],
+        "result": "medieval_core:raw_clay_pot.item"
+    },
+    {
+        "material": "clay",
+        "pattern": [
+            "X   X",
+            "XXXXX"
+        ],
+        "result": "medieval_core:raw_clay_plate.item",
+        "count": 2
+    }
+]

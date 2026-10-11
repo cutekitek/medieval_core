@@ -1,0 +1,7 @@
+{
+    "caption": "spruce vertical slab",
+    "icon-type": "block",
+    "icon": "medieval_core:spruce_vslab",
+    "placing-block": "medieval_core:spruce_vslab",
+    "script-name": "shape_item"
+}

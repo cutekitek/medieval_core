@@ -2,5 +2,6 @@
     "icon-type": "sprite",
     "icon": "items:mw_pineapple",
     "stack-size": 8,
-    "script-name": "food"
+    "script-name": "food",
+    "model-name": "mw_sprite_pineapple"
 }

@@ -1,0 +1,7 @@
+{
+    "icon-type": "sprite",
+    "icon": "items:mw_stew",
+    "stack-size": 1,
+    "script-name": "food",
+    "model-name": "mw_sprite_stew"
+}

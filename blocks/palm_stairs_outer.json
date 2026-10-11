@@ -1,0 +1,40 @@
+{
+    "material": "base:wood",
+    "model": "custom",
+    "base:durability": 5.0,
+    "texture-faces": [
+        "mw_palm_planks",
+        "mw_palm_planks",
+        "mw_palm_planks",
+        "mw_palm_planks",
+        "mw_palm_planks",
+        "mw_palm_planks"
+    ],
+    "model-name": "mw_stairs_outer",
+    "rotation": "stairs",
+    "hitboxes": [
+        [
+            0,
+            0,
+            0,
+            1,
+            0.5,
+            1
+        ],
+        [
+            0,
+            0.5,
+            0,
+            0.5,
+            0.5,
+            0.5
+        ]
+    ],
+    "script-name": "stairs",
+    "tags": [
+        "medieval_core:stairs"
+    ],
+    "picking-item": "medieval_core:palm_stairs.item",
+    "hidden": true,
+    "caption": "palm stairs"
+}

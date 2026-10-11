@@ -1,0 +1,12 @@
+{
+    "material": "base:stone",
+    "model": "custom",
+    "model-name": "mw_clay_pot",
+    "texture": "mw_fired_clay",
+    "grounded": true,
+    "light-passing": true,
+    "sky-light-passing": true,
+    "ambient-occlusion": false,
+    "hitbox": [0.2, 0, 0.2, 0.6, 0.42, 0.6],
+    "base:durability": 0.6
+}

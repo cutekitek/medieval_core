@@ -57,7 +57,7 @@ end
 
 -- Conifer with layered skirts, narrowing to a pointed top
 function this.spruce(put, x, y, z, rng)
-    local log, leaf = id("millwright:spruce_trunk"), id("millwright:spruce_leaves")
+    local log, leaf = id("medieval_core:spruce_trunk"), id("medieval_core:spruce_leaves")
     local height = rng:random(9, 15)
     local rmax = height >= 12 and 3 or 2
     local start = rng:random(2, 3)
@@ -76,7 +76,7 @@ end
 
 -- Stunted, sparse spruce of the tundra
 function this.tundra_spruce(put, x, y, z, rng)
-    local log, leaf = id("millwright:spruce_trunk"), id("millwright:spruce_leaves")
+    local log, leaf = id("medieval_core:spruce_trunk"), id("medieval_core:spruce_leaves")
     local height = rng:random(3, 6)
     trunk(put, log, x, y, z, height)
     for i = math.max(1, height - 4), height - 1 do
@@ -109,7 +109,7 @@ end
 -- Hangs vines from the underside of the tree's own leaves; a vine stops
 -- above any part of the tree.
 local function vines(put, cells, order, leaf, rng, chance)
-    local vine = id("millwright:vine")
+    local vine = id("medieval_core:vine")
     for _, p in ipairs(order) do
         local x, y, z = p[1], p[2], p[3]
         if cells[x .. "," .. y .. "," .. z] == leaf and
@@ -126,7 +126,7 @@ end
 
 -- Tall rainforest tree: buttress roots, side branches, wide flat crown, vines
 function this.jungle(put, x, y, z, rng)
-    local log, leaf = id("millwright:jungle_trunk"), id("millwright:jungle_leaves")
+    local log, leaf = id("medieval_core:jungle_trunk"), id("medieval_core:jungle_leaves")
     local rec, cells, order = recorder(put)
     local height = rng:random(12, 19)
     trunk(rec, log, x, y, z, height)
@@ -155,7 +155,7 @@ end
 
 -- Palm with a curved, leaning trunk and drooping fronds
 function this.palm(put, x, y, z, rng)
-    local log, leaf = id("millwright:palm_trunk"), id("millwright:palm_leaves")
+    local log, leaf = id("medieval_core:palm_trunk"), id("medieval_core:palm_leaves")
     local height = rng:random(5, 8)
     local lean = DIRS8[rng:random(1, 4)]
     local tx, tz = x, z
@@ -181,7 +181,7 @@ end
 
 -- Columnar cactus, sometimes with an arm
 function this.cactus(put, x, y, z, rng)
-    local cactus = id("millwright:cactus")
+    local cactus = id("medieval_core:cactus")
     local height = rng:random(1, 4)
     trunk(put, cactus, x, y, z, height)
     if height >= 3 and rng:random() < 0.35 then

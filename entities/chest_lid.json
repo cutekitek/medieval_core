@@ -1,0 +1,11 @@
+{
+    "components": [
+        "medieval_core:chest_lid"
+    ],
+    "skeleton-name": "mw_chest_lid",
+    "body-type": "static",
+    "hitbox": [0.1, 0.1, 0.1],
+    "blocking": false,
+    "selectable": false,
+    "save": false
+}

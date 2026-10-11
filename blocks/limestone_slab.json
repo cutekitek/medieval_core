@@ -1,0 +1,28 @@
+{
+    "material": "base:stone",
+    "model": "custom",
+    "base:durability": 5.3999999999999995,
+    "texture-faces": [
+        "mw_limestone_bricks",
+        "mw_limestone_bricks",
+        "mw_limestone_bricks",
+        "mw_limestone_bricks",
+        "mw_limestone_bricks",
+        "mw_limestone_bricks"
+    ],
+    "model-name": "mw_slab",
+    "rotation": "stairs",
+    "hitbox": [
+        0,
+        0,
+        0,
+        1,
+        0.5,
+        1
+    ],
+    "tags": [
+        "medieval_core:slab"
+    ],
+    "picking-item": "medieval_core:limestone_slab.item",
+    "caption": "limestone slab"
+}

@@ -3,6 +3,6 @@
     "material": "base:wood",
     "texture-faces": ["mw_spruce_log", "mw_spruce_log", "mw_spruce_log_top", "mw_spruce_log_top", "mw_spruce_log", "mw_spruce_log"],
     "hidden": true,
-    "picking-item": "millwright:spruce_log.item",
+    "picking-item": "medieval_core:spruce_log.item",
     "base:durability": 6.0
 }

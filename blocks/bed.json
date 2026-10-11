@@ -1,0 +1,25 @@
+{
+    "model": "custom",
+    "model-name": "mw_bed",
+    "material": "base:wood",
+    "size": [
+        1,
+        1,
+        2
+    ],
+    "rotation": "pane",
+    "hitbox": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.5625,
+        2.0
+    ],
+    "light-passing": true,
+    "sky-light-passing": true,
+    "ambient-occlusion": false,
+    "script-name": "bed",
+    "picking-item": "medieval_core:bed.item",
+    "base:durability": 1.5
+}

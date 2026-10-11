@@ -1,0 +1,28 @@
+@box from (0.35,0.24,0) to (0.65,0.62,0.16) texture "blocks:mw_dugout_bark" {
+    @part tags (top) texture "blocks:mw_dugout_inner"
+}
+@box from (0.23,0.1,0.16) to (0.77,0.69,0.36) texture "blocks:mw_dugout_bark" {
+    @part tags (top) texture "blocks:mw_dugout_inner"
+}
+@box from (0.14,0.03,0.36) to (0.86,0.72,0.48) texture "blocks:mw_dugout_bark" {
+    @part tags (top) texture "blocks:mw_dugout_inner"
+    @part tags (south) texture "blocks:mw_dugout_inner"
+}
+@box from (0.14,0.03,0.48) to (0.86,0.3,0.58) texture "blocks:mw_dugout_bark" {
+    @part tags (top) texture "blocks:mw_dugout_inner"
+}
+@box from (0.14,0.3,0.48) to (0.23,0.72,0.58) texture "blocks:mw_dugout_bark" {
+    @part tags (top, east) texture "blocks:mw_dugout_inner"
+}
+@box from (0.77,0.3,0.48) to (0.86,0.72,0.58) texture "blocks:mw_dugout_bark" {
+    @part tags (top, west) texture "blocks:mw_dugout_inner"
+}
+@box from (0.08,0,0.58) to (0.92,0.3,1) texture "blocks:mw_dugout_bark" {
+    @part tags (top) texture "blocks:mw_dugout_inner"
+}
+@box from (0.08,0.3,0.58) to (0.17,0.72,1) texture "blocks:mw_dugout_bark" {
+    @part tags (top, east) texture "blocks:mw_dugout_inner"
+}
+@box from (0.83,0.3,0.58) to (0.92,0.72,1) texture "blocks:mw_dugout_bark" {
+    @part tags (top, west) texture "blocks:mw_dugout_inner"
+}

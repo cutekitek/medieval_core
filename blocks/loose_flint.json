@@ -2,7 +2,7 @@
     "model": "custom",
     "model-name": "mw_loose_flint",
     "hidden": true,
-    "picking-item": "millwright:flint",
+    "picking-item": "medieval_core:flint",
     "material": "base:sand",
     "obstacle": false,
     "grounded": true,

@@ -1,0 +1,7 @@
+{
+    "icon-type": "sprite",
+    "icon": "items:mw_wheat_seeds",
+    "stack-size": 64,
+    "script-name": "seeds",
+    "model-name": "mw_sprite_wheat_seeds"
+}

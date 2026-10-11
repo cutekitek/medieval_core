@@ -1,0 +1,193 @@
+[
+    {
+        "type": "shapeless",
+        "ingredients": [
+            "medieval_core:stone_axe",
+            "medieval_core:stone_knife",
+            [
+                "base:wood.item",
+                "medieval_core:spruce_log.item",
+                "medieval_core:jungle_log.item",
+                "medieval_core:palm_log.item",
+                "medieval_core:stripped_oak_log.item",
+                "medieval_core:stripped_spruce_log.item",
+                "medieval_core:stripped_jungle_log.item",
+                "medieval_core:stripped_palm_log.item"
+            ],
+            [
+                "base:wood.item",
+                "medieval_core:spruce_log.item",
+                "medieval_core:jungle_log.item",
+                "medieval_core:palm_log.item",
+                "medieval_core:stripped_oak_log.item",
+                "medieval_core:stripped_spruce_log.item",
+                "medieval_core:stripped_jungle_log.item",
+                "medieval_core:stripped_palm_log.item"
+            ]
+        ],
+        "tools": [
+            "medieval_core:stone_axe",
+            "medieval_core:stone_knife"
+        ],
+        "tool_wear": 5,
+        "result": "medieval_core:workbench.item"
+    },
+    {
+        "type": "shaped",
+        "pattern": [
+            "L L",
+            "LAL"
+        ],
+        "key": {
+            "L": [
+                "base:wood.item",
+                "medieval_core:spruce_log.item",
+                "medieval_core:jungle_log.item",
+                "medieval_core:palm_log.item",
+                "medieval_core:stripped_oak_log.item",
+                "medieval_core:stripped_spruce_log.item",
+                "medieval_core:stripped_jungle_log.item",
+                "medieval_core:stripped_palm_log.item"
+            ],
+            "A": "medieval_core:stone_axe"
+        },
+        "tools": [
+            "medieval_core:stone_axe"
+        ],
+        "tool_wear": 3,
+        "result": "medieval_core:tanning_vat.item"
+    },
+    {
+        "type": "shaped",
+        "pattern": [
+            "PP",
+            "PP"
+        ],
+        "key": {
+            "P": "medieval_core:plant_fiber"
+        },
+        "result": "medieval_core:straw_hat"
+    },
+    {
+        "type": "shaped",
+        "pattern": [
+            " F ",
+            "FKF"
+        ],
+        "key": {
+            "F": "medieval_core:dressed_fur",
+            "K": "medieval_core:stone_knife"
+        },
+        "tools": [
+            "medieval_core:stone_knife"
+        ],
+        "result": "medieval_core:fur_hat"
+    },
+    {
+        "type": "shaped",
+        "pattern": [
+            "FKF",
+            "LFL",
+            "LLL"
+        ],
+        "key": {
+            "F": "medieval_core:dressed_fur",
+            "L": "medieval_core:leather",
+            "K": "medieval_core:stone_knife"
+        },
+        "tools": [
+            "medieval_core:stone_knife"
+        ],
+        "result": "medieval_core:fur_coat"
+    },
+    {
+        "type": "shaped",
+        "pattern": [
+            "LKL",
+            "LTL",
+            "LLL"
+        ],
+        "key": {
+            "L": "medieval_core:leather",
+            "T": "medieval_core:twine",
+            "K": "medieval_core:stone_knife"
+        },
+        "tools": [
+            "medieval_core:stone_knife"
+        ],
+        "result": "medieval_core:leather_tunic"
+    },
+    {
+        "type": "shaped",
+        "pattern": [
+            "LKL",
+            "LTL",
+            "L L"
+        ],
+        "key": {
+            "L": "medieval_core:leather",
+            "T": "medieval_core:twine",
+            "K": "medieval_core:stone_knife"
+        },
+        "tools": [
+            "medieval_core:stone_knife"
+        ],
+        "result": "medieval_core:leather_trousers"
+    },
+    {
+        "type": "shaped",
+        "pattern": [
+            "LKL",
+            "L L"
+        ],
+        "key": {
+            "L": "medieval_core:leather",
+            "K": "medieval_core:stone_knife"
+        },
+        "tools": [
+            "medieval_core:stone_knife"
+        ],
+        "result": "medieval_core:leather_boots"
+    },
+    {
+        "type": "shaped",
+        "pattern": [
+            " TF",
+            " S ",
+            "S  "
+        ],
+        "key": {
+            "F": "medieval_core:spear_head",
+            "T": "medieval_core:twine",
+            "S": "medieval_core:stick"
+        },
+        "result": "medieval_core:stone_spear"
+    },
+    {
+        "type": "shaped",
+        "pattern": [
+            " ST",
+            "S T",
+            " ST"
+        ],
+        "key": {
+            "S": "medieval_core:stick",
+            "T": "medieval_core:twine"
+        },
+        "result": "medieval_core:bow"
+    },
+    {
+        "type": "shaped",
+        "pattern": [
+            "F",
+            "S",
+            "E"
+        ],
+        "key": {
+            "F": "medieval_core:arrowhead",
+            "S": "medieval_core:stick",
+            "E": "medieval_core:feather"
+        },
+        "result": "medieval_core:arrow"
+    }
+]

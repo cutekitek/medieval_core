@@ -1,0 +1,6 @@
+{
+    "texture": "mw_oak_planks",
+    "material": "base:wood",
+    "base:durability": 5.0,
+    "caption": "oak planks"
+}

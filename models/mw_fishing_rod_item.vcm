@@ -1,0 +1,6 @@
+@box from (-0.032,-0.032,-0.2) to (0.032,0.032,0.35) texture "blocks:mw_stripped_spruce_log" {
+    @part tags (south) texture "blocks:mw_stick_end" region (0,0,1,1)
+}
+@box from (-0.036,-0.036,0.12) to (0.036,0.036,0.24) texture "blocks:mw_rope"
+@box from (-0.022,-0.022,-0.92) to (0.022,0.022,-0.18) texture "blocks:mw_stripped_spruce_log"
+@box from (-0.013,-0.013,-1.55) to (0.013,0.013,-0.9) texture "blocks:mw_stripped_spruce_log"

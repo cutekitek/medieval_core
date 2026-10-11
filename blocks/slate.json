@@ -1,0 +1,13 @@
+{
+    "texture-faces": [
+        "mw_slate",
+        "mw_slate",
+        "mw_slate_top",
+        "mw_slate_top",
+        "mw_slate",
+        "mw_slate"
+    ],
+    "material": "base:stone",
+    "base:durability": 10.0,
+    "caption": "slate"
+}

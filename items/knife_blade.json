@@ -1,0 +1,6 @@
+{
+    "icon-type": "sprite",
+    "icon": "items:mw_knife_blade",
+    "stack-size": 16,
+    "model-name": "mw_sprite_knife_blade"
+}

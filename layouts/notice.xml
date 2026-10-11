@@ -1,0 +1,4 @@
+<container id="root" size="720,44" gravity="bottom-center" margin="0,0,0,116" color="#00000000" interactive="false">
+    <label id="line1" pos="0,0" size="720,20" align="center" color="#FFFFFFFF"></label>
+    <label id="line2" pos="0,22" size="720,20" align="center" color="#FFFFFFFF"></label>
+</container>

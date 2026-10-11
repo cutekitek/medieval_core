@@ -1,0 +1,31 @@
+@bone name 'skewer' {
+    @box from (-0.0197,0,-0.0197) to (0.0197,0.217,0.0197) origin (0,0,0) rotate (-0.0254,0.9525,-0.0148,0.303) texture "blocks:mw_stick_bark" {
+        @part tags (bottom) texture "blocks:mw_stick_end" region (0,0,1,1)
+    }
+    @box from (-0.0273,0.1926,-0.0277) to (0.0096,0.4217,0.0091) origin (-0.0088,0.1926,-0.0093) rotate (0.0342,0.9333,0.0041,0.3573) texture "blocks:mw_stick_bark"
+    @box from (-0.0136,0.3972,-0.0207) to (0.0229,0.6201,0.0157) origin (0.0046,0.3972,-0.0025) rotate (-0.0064,0.8757,0.0099,0.4827) texture "blocks:mw_stick_bark" {
+        @part tags (top) texture "blocks:mw_stick_end" region (0,0,1,1)
+    }
+}
+@bone name 'beef' {
+    @box from (-0.075,0.5,-0.07) to (0.075,0.62,0.07) origin (0,0.56,0) rotate (0,20,4) texture "$flesh"
+    @box from (-0.08,0.375,-0.075) to (0.09,0.505,0.075) origin (0.005,0.44,0) rotate (3,-15,-5) texture "$flesh"
+    @box from (-0.074,0.265,-0.073) to (0.066,0.375,0.077) origin (-0.004,0.32,0.002) rotate (-4,35,3) texture "$flesh"
+}
+@bone name 'meat' {
+    @box from (-0.1,0.415,-0.045) to (0.1,0.585,0.045) origin (0,0.5,0) rotate (0,10,6) texture "$flesh"
+    @box from (-0.055,0.32,-0.06) to (0.075,0.42,0.06) origin (0.01,0.37,0) rotate (5,-25,-4) texture "$flesh"
+}
+@bone name 'chicken' {
+    @box from (-0.085,0.31,-0.075) to (0.085,0.45,0.075) origin (0,0.38,0) rotate (0,15,0) texture "$flesh"
+    @box from (-0.065,0.42,-0.06) to (0.065,0.52,0.06) origin (0,0.47,0) rotate (0,30,0) texture "$flesh"
+    @box from (-0.045,0.5,-0.042) to (0.045,0.57,0.042) origin (0,0.535,0) rotate (0,45,0) texture "$flesh"
+    @box from (-0.022,0.55,-0.022) to (0.022,0.65,0.022) origin (0,0.6,0) rotate (0,45,0) texture "blocks:mw_roast_bone"
+    @box from (-0.032,0.635,-0.032) to (0.032,0.675,0.032) origin (0,0.655,0) rotate (0,20,0) texture "blocks:mw_roast_bone"
+}
+@bone name 'game' {
+    @box from (-0.055,0.505,-0.05) to (0.055,0.595,0.05) origin (0,0.55,0) rotate (0,30,8) texture "$flesh"
+    @box from (-0.056,0.418,-0.055) to (0.064,0.502,0.055) origin (0.004,0.46,0) rotate (-6,-10,0) texture "$flesh"
+    @box from (-0.053,0.33,-0.05) to (0.047,0.41,0.05) origin (-0.003,0.37,0) rotate (4,50,-6) texture "$flesh"
+    @box from (-0.043,0.255,-0.045) to (0.047,0.325,0.045) origin (0.002,0.29,0) rotate (0,15,5) texture "$flesh"
+}

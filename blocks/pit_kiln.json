@@ -1,0 +1,25 @@
+{
+    "material": "base:grass",
+    "model": "custom",
+    "model-name": "mw_pit_kiln_burning_0",
+    "texture": "mw_kiln_burning",
+    "obstacle": false,
+    "grounded": true,
+    "hidden": true,
+    "light-passing": true,
+    "sky-light-passing": true,
+    "ambient-occlusion": false,
+    "picking-item": "medieval_core:raw_clay_pot.item",
+    "hitbox": [0.05, 0, 0.05, 0.9, 1.0, 0.9],
+    "emission": [14, 8, 3],
+    "script-name": "pit_kiln",
+    "base:durability": 0.3,
+    "state-based": {
+        "offset": 0,
+        "bits": 2,
+        "variants": [
+            {"model": "custom", "model-name": "mw_pit_kiln_burning_1"},
+            {"model": "custom", "model-name": "mw_pit_kiln_burning_2"}
+        ]
+    }
+}

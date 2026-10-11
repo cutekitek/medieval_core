@@ -1,0 +1,20 @@
+{
+    "model": "X",
+    "texture": "mw_wild_carrot",
+    "material": "base:grass",
+    "draw-group": 1,
+    "light-passing": true,
+    "obstacle": false,
+    "grounded": true,
+    "hitbox": [
+        0.2,
+        0,
+        0.2,
+        0.6,
+        0.5,
+        0.6
+    ],
+    "picking-item": "medieval_core:carrot",
+    "script-name": "crop",
+    "base:durability": 0.0
+}

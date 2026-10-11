@@ -1,0 +1,63 @@
+[
+    {
+        "type": "shaped",
+        "pattern": [
+            "HT",
+            "S "
+        ],
+        "key": {
+            "H": "medieval_core:hoe_head",
+            "T": "medieval_core:twine",
+            "S": "medieval_core:stick"
+        },
+        "result": "medieval_core:stone_hoe"
+    },
+    {
+        "type": "shapeless",
+        "ingredients": [
+            "medieval_core:wheat"
+        ],
+        "result": "medieval_core:wheat_seeds",
+        "count": 2
+    },
+    {
+        "type": "shapeless",
+        "ingredients": [
+            "medieval_core:carrot"
+        ],
+        "result": "medieval_core:carrot_seeds",
+        "count": 2
+    },
+    {
+        "type": "shapeless",
+        "ingredients": [
+            "medieval_core:potato"
+        ],
+        "result": "medieval_core:potato_seeds",
+        "count": 2
+    },
+    {
+        "type": "shapeless",
+        "ingredients": [
+            "medieval_core:cabbage"
+        ],
+        "result": "medieval_core:cabbage_seeds",
+        "count": 2
+    },
+    {
+        "type": "shapeless",
+        "ingredients": [
+            "medieval_core:tomato"
+        ],
+        "result": "medieval_core:tomato_seeds",
+        "count": 3
+    },
+    {
+        "type": "shapeless",
+        "ingredients": [
+            "medieval_core:cucumber"
+        ],
+        "result": "medieval_core:cucumber_seeds",
+        "count": 3
+    }
+]

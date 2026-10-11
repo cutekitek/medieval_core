@@ -1,0 +1,21 @@
+{
+    "material": "base:wood",
+    "model": "custom",
+    "model-name": "mw_chest",
+    "texture": "mw_chest_side",
+    "rotation": "pane",
+    "light-passing": true,
+    "sky-light-passing": true,
+    "ambient-occlusion": false,
+    "hitbox": [0.0625, 0, 0.0625, 0.875, 0.875, 0.875],
+    "script-name": "chest",
+    "inventory-size": 27,
+    "base:durability": 3.0,
+    "state-based": {
+        "offset": 0,
+        "bits": 1,
+        "variants": [
+            {"model": "custom", "model-name": "mw_chest_open"}
+        ]
+    }
+}

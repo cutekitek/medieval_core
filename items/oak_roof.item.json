@@ -1,0 +1,7 @@
+{
+    "caption": "oak roof slope",
+    "icon-type": "block",
+    "icon": "medieval_core:oak_roof",
+    "placing-block": "medieval_core:oak_roof",
+    "script-name": "shape_item"
+}

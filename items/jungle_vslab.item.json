@@ -1,0 +1,7 @@
+{
+    "caption": "jungle vertical slab",
+    "icon-type": "block",
+    "icon": "medieval_core:jungle_vslab",
+    "placing-block": "medieval_core:jungle_vslab",
+    "script-name": "shape_item"
+}

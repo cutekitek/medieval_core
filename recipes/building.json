@@ -1,0 +1,54 @@
+[
+    {
+        "type": "shaped",
+        "pattern": [
+            "SAS",
+            "L L"
+        ],
+        "key": {
+            "S": "medieval_core:stick",
+            "A": "medieval_core:stone_axe",
+            "L": [
+                "base:wood.item",
+                "medieval_core:spruce_log.item",
+                "medieval_core:jungle_log.item",
+                "medieval_core:palm_log.item",
+                "medieval_core:stripped_oak_log.item",
+                "medieval_core:stripped_spruce_log.item",
+                "medieval_core:stripped_jungle_log.item",
+                "medieval_core:stripped_palm_log.item"
+            ]
+        },
+        "tools": [
+            "medieval_core:stone_axe"
+        ],
+        "tool_wear": 2,
+        "result": "medieval_core:carpentry_table.item"
+    },
+    {
+        "type": "shaped",
+        "pattern": [
+            "RPR",
+            "L L"
+        ],
+        "key": {
+            "R": "medieval_core:rock",
+            "P": "medieval_core:stone_pickaxe",
+            "L": [
+                "base:wood.item",
+                "medieval_core:spruce_log.item",
+                "medieval_core:jungle_log.item",
+                "medieval_core:palm_log.item",
+                "medieval_core:stripped_oak_log.item",
+                "medieval_core:stripped_spruce_log.item",
+                "medieval_core:stripped_jungle_log.item",
+                "medieval_core:stripped_palm_log.item"
+            ]
+        },
+        "tools": [
+            "medieval_core:stone_pickaxe"
+        ],
+        "tool_wear": 2,
+        "result": "medieval_core:mason_table.item"
+    }
+]

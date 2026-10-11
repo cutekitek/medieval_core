@@ -1,0 +1,23 @@
+{
+    "material": "base:wood",
+    "model": "custom",
+    "model-name": "mw_dugout_end_1",
+    "texture": "mw_dugout_bark",
+    "rotation": "pane",
+    "hidden": true,
+    "light-passing": true,
+    "sky-light-passing": true,
+    "ambient-occlusion": false,
+    "picking-item": "base:wood.item",
+    "base:durability": 6.0,
+    "hitbox": [0.08, 0, 0, 0.84, 0.8, 1],
+    "tags": ["medieval_core:dugout"],
+    "state-based": {
+        "offset": 0,
+        "bits": 2,
+        "variants": [
+            {"model": "custom", "model-name": "mw_dugout_end_2"},
+            {"model": "custom", "model-name": "mw_dugout_end_3"}
+        ]
+    }
+}

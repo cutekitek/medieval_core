@@ -1,0 +1,6 @@
+{
+    "texture": "mw_marble",
+    "material": "base:stone",
+    "base:durability": 12.0,
+    "caption": "marble"
+}

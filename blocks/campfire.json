@@ -1,0 +1,22 @@
+{
+    "model": "custom",
+    "material": "base:wood",
+    "obstacle": false,
+    "grounded": true,
+    "light-passing": true,
+    "sky-light-passing": true,
+    "ambient-occlusion": false,
+    "picking-item": "medieval_core:stick",
+    "script-name": "campfire",
+    "model-name": "mw_campfire",
+    "hidden": false,
+    "hitbox": [
+        0.15,
+        0,
+        0.15,
+        0.7,
+        0.85,
+        0.7
+    ],
+    "base:durability": 0.4
+}

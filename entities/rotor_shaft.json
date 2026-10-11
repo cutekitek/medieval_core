@@ -1,8 +1,0 @@
-{
-    "skeleton-name": "mw_shaft",
-    "body-type": "static",
-    "hitbox": [0.2, 0.2, 0.2],
-    "selectable": false,
-    "blocking": false,
-    "save": false
-}

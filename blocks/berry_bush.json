@@ -26,8 +26,8 @@
     },
     "base:durability": 0.8,
     "script-name": "fruit_bush",
-    "millwright:fruit": {
-        "item": "millwright:berries",
+    "medieval_core:fruit": {
+        "item": "medieval_core:berries",
         "min": 1,
         "max": 3
     }

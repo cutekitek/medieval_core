@@ -1,0 +1,12 @@
+@box from (0.0625,0,0.0625) to (0.1875,0.8125,0.1875) texture "blocks:mw_oak_hewn_side"
+@box from (0.0625,0,0.8125) to (0.1875,0.8125,0.9375) texture "blocks:mw_oak_hewn_side"
+@box from (0.8125,0,0.0625) to (0.9375,0.8125,0.1875) texture "blocks:mw_oak_hewn_side"
+@box from (0.8125,0,0.8125) to (0.9375,0.8125,0.9375) texture "blocks:mw_oak_hewn_side"
+@box from (0,0.8125,0) to (1,0.9375,1) texture "blocks:mw_oak_planks" {
+    @part tags (top) texture "blocks:mw_oak_planks"
+}
+@box from (0.125,0.25,0.125) to (0.875,0.3125,0.875) texture "blocks:mw_oak_planks"
+@box from (0.125,0.9375,0.25) to (0.75,1,0.5) texture "blocks:mw_spruce_planks"
+@box from (0.5625,0.9375,0.625) to (0.625,0.975,0.9375) texture "blocks:mw_tool_handle"
+@box from (0.5,0.9375,0.5625) to (0.6875,1,0.65625) texture "blocks:mw_tool_stone"
+@box from (0.1875,0.9375,0.625) to (0.375,0.9625,0.875) texture "blocks:mw_shavings"

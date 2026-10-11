@@ -1,0 +1,23 @@
+@box from (0.7435,0,0.6793) to (0.8371,0.256,0.7729) origin (0.7903,0,0.7261) rotate (-0.3145,0.893,0.0502,0.3179) texture "blocks:mw_stick_bark" {
+    @part tags (bottom) texture "blocks:mw_stick_end" region (0,0,1,1)
+}
+@box from (0.6252,0.1588,0.6675) to (0.7151,0.4453,0.7574) origin (0.6702,0.1588,0.7124) rotate (-0.3192,0.8974,-0.1187,0.2806) texture "blocks:mw_stick_bark"
+@box from (0.5185,0.3354,0.5773) to (0.5983,0.597,0.6572) origin (0.5584,0.3354,0.6173) rotate (-0.3628,0.8967,-0.0104,0.2534) texture "blocks:mw_stick_bark" {
+    @part tags (top) texture "blocks:mw_stick_end" region (0,0,1,1)
+}
+@box from (0.5884,0.25,0.6442) to (0.6317,0.3251,0.6875) origin (0.61,0.25,0.6659) rotate (0.1037,0.8295,0.2031,0.5097) texture "blocks:mw_stick_bark" {
+    @part tags (top) texture "blocks:mw_stick_end" region (0,0,1,1)
+}
+@box from (0.579,0.2642,0.6369) to (0.6223,0.3372,0.6803) origin (0.6007,0.2642,0.6586) rotate (0.1501,0.2155,-0.0074,0.9649) texture "blocks:mw_stick_bark" {
+    @part tags (top) texture "blocks:mw_stick_end" region (0,0,1,1)
+}
+@box from (0.2043,0,0.19) to (0.3061,0.2663,0.2918) origin (0.2552,0,0.2409) rotate (0.3039,0.8788,-0.018,0.3674) texture "blocks:mw_stick_bark" {
+    @part tags (bottom) texture "blocks:mw_stick_end" region (0,0,1,1)
+}
+@box from (0.321,0.1685,0.2296) to (0.4173,0.4632,0.3259) origin (0.3692,0.1685,0.2778) rotate (0.3085,0.8754,0.0307,0.3709) texture "blocks:mw_stick_bark"
+@box from (0.4465,0.3592,0.2945) to (0.5378,0.6331,0.3859) origin (0.4921,0.3592,0.3402) rotate (0.3112,0.8822,0.1178,0.3331) texture "blocks:mw_stick_bark" {
+    @part tags (top) texture "blocks:mw_stick_end" region (0,0,1,1)
+}
+@box from (0.3195,0.129,0.2489) to (0.3642,0.2082,0.2936) origin (0.3418,0.129,0.2712) rotate (-0.001,0.8244,0.5572,0.0996) texture "blocks:mw_stick_bark" {
+    @part tags (top) texture "blocks:mw_stick_end" region (0,0,1,1)
+}

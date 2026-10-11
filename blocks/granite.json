@@ -1,0 +1,6 @@
+{
+    "texture": "mw_granite",
+    "material": "base:stone",
+    "base:durability": 15.0,
+    "caption": "granite"
+}

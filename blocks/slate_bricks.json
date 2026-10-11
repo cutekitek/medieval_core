@@ -1,0 +1,6 @@
+{
+    "texture": "mw_slate_bricks",
+    "material": "base:stone",
+    "base:durability": 10.0,
+    "caption": "slate bricks"
+}

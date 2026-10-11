@@ -1,0 +1,91 @@
+@box from (0.025,0,0.085) to (0.135,0.5783,0.195) origin (0.08,0,0.14) rotate (0.0697,0,-0.1046,0.9921) texture "blocks:mw_bench_post" {
+    @part tags (bottom,top) texture "blocks:mw_bench_end" region (0,0,1,1)
+}
+@box from (0.136,0.47,0.156) to (0.264,0.51,0.284) texture "blocks:mw_rope"
+@box from (0.025,0,0.825) to (0.135,0.5783,0.935) origin (0.08,0,0.88) rotate (-0.0697,0,-0.1046,0.9921) texture "blocks:mw_bench_post" {
+    @part tags (bottom,top) texture "blocks:mw_bench_end" region (0,0,1,1)
+}
+@box from (0.136,0.47,0.736) to (0.264,0.51,0.864) texture "blocks:mw_rope"
+@box from (0.14,0.52,0.12) to (0.26,0.6,0.92) texture "blocks:mw_bench_post" {
+    @part tags (north,south) texture "blocks:mw_bench_end" region (0,0,1,1)
+}
+@box from (0.17,0.08,0.23) to (0.23,0.6922,0.29) origin (0.2,0.08,0.26) rotate (0.4355,0,0,0.9002) texture "blocks:mw_bench_post" {
+    @part tags (bottom,top) texture "blocks:mw_bench_end" region (0,0,1,1)
+}
+@box from (1.865,0,0.085) to (1.975,0.5783,0.195) origin (1.92,0,0.14) rotate (0.0697,0,0.1046,0.9921) texture "blocks:mw_bench_post" {
+    @part tags (bottom,top) texture "blocks:mw_bench_end" region (0,0,1,1)
+}
+@box from (1.736,0.47,0.156) to (1.864,0.51,0.284) texture "blocks:mw_rope"
+@box from (1.865,0,0.825) to (1.975,0.5783,0.935) origin (1.92,0,0.88) rotate (-0.0697,0,0.1046,0.9921) texture "blocks:mw_bench_post" {
+    @part tags (bottom,top) texture "blocks:mw_bench_end" region (0,0,1,1)
+}
+@box from (1.736,0.47,0.736) to (1.864,0.51,0.864) texture "blocks:mw_rope"
+@box from (1.74,0.52,0.12) to (1.86,0.6,0.92) texture "blocks:mw_bench_post" {
+    @part tags (north,south) texture "blocks:mw_bench_end" region (0,0,1,1)
+}
+@box from (1.77,0.08,0.23) to (1.83,0.6922,0.29) origin (1.8,0.08,0.26) rotate (0.4355,0,0,0.9002) texture "blocks:mw_bench_post" {
+    @part tags (bottom,top) texture "blocks:mw_bench_end" region (0,0,1,1)
+}
+@box from (0.26,0.2,0.47) to (1,0.27,0.54) texture "blocks:mw_bench_post"
+@box from (1,0.2,0.47) to (1.74,0.27,0.54) texture "blocks:mw_bench_post"
+@box from (0.0382,0.6017,0.34) to (1,0.6617,0.544) origin (0.5191,0.6317,0.442) rotate (0,-0.3755,0.0799) texture "blocks:mw_bench_plank" {
+    @part tags (east,west) texture "blocks:mw_bench_end" region (0,0,1,1)
+}
+@box from (1,0.6017,0.34) to (1.9555,0.6617,0.544) origin (1.4777,0.6317,0.442) rotate (0,0.0232,-0.2044) texture "blocks:mw_bench_plank" {
+    @part tags (east,west) texture "blocks:mw_bench_end" region (0,0,1,1)
+}
+@box from (0.0317,0.6003,0.55) to (1,0.6603,0.774) origin (0.5159,0.6303,0.662) rotate (0,0.4567,0.048) texture "blocks:mw_bench_plank" {
+    @part tags (east,west) texture "blocks:mw_bench_end" region (0,0,1,1)
+}
+@box from (1,0.6003,0.55) to (1.9331,0.6603,0.774) origin (1.4665,0.6303,0.662) rotate (0,-0.314,-0.2302) texture "blocks:mw_bench_plank" {
+    @part tags (east,west) texture "blocks:mw_bench_end" region (0,0,1,1)
+}
+@box from (0.0334,0.5982,0.78) to (1,0.6582,0.974) origin (0.5167,0.6282,0.877) rotate (0,0.1715,0.2098) texture "blocks:mw_bench_plank" {
+    @part tags (east,west) texture "blocks:mw_bench_end" region (0,0,1,1)
+}
+@box from (1,0.5982,0.78) to (1.9508,0.6582,0.974) origin (1.4754,0.6282,0.877) rotate (0,-0.3657,-0.1683) texture "blocks:mw_bench_plank" {
+    @part tags (east,west) texture "blocks:mw_bench_end" region (0,0,1,1)
+}
+@box from (0.05,0.58,0.12) to (1,0.64,0.34) texture "blocks:mw_bench_plank"
+@box from (1,0.58,0.12) to (1.95,0.64,0.34) texture "blocks:mw_bench_plank"
+@box from (0.02,0,0.11) to (0.14,1,0.23) origin (0.08,0,0.17) rotate (0,0,0,1) texture "blocks:mw_bench_post" {
+    @part tags (bottom,top) texture "blocks:mw_bench_end" region (0,0,1,1)
+}
+@box from (0.01,0.84,0.1) to (0.15,0.88,0.24) texture "blocks:mw_rope"
+@box from (0.01,0.59,0.1) to (0.15,0.63,0.24) texture "blocks:mw_rope"
+@box from (1.86,0,0.11) to (1.98,1,0.23) origin (1.92,0,0.17) rotate (0,0,0,1) texture "blocks:mw_bench_post" {
+    @part tags (bottom,top) texture "blocks:mw_bench_end" region (0,0,1,1)
+}
+@box from (1.85,0.84,0.1) to (1.99,0.88,0.24) texture "blocks:mw_rope"
+@box from (1.85,0.59,0.1) to (1.99,0.63,0.24) texture "blocks:mw_rope"
+@box from (0.02,0.715,0.125) to (0.98,0.885,0.295) texture "blocks:mw_stick_bark" {
+    @part tags (east,west) texture "blocks:mw_stick_end" region (0,0,1,1)
+}
+@box from (0.02,0.715,0.125) to (0.98,0.885,0.295) origin (0,0.8,0.21) rotate (45,0,0) texture "blocks:mw_stick_bark"
+@box from (1.02,0.715,0.125) to (1.98,0.885,0.295) texture "blocks:mw_stick_bark" {
+    @part tags (east,west) texture "blocks:mw_stick_end" region (0,0,1,1)
+}
+@box from (1.02,0.715,0.125) to (1.98,0.885,0.295) origin (0,0.8,0.21) rotate (45,0,0) texture "blocks:mw_stick_bark"
+@box from (0.6381,0.651,0.044) to (1.3319,0.669,0.2428) origin (0.6381,0.66,0.05) rotate (-74.4759,0,0) texture "blocks:mw_skin_scraped_hide"
+@box from (0.6189,0.831,0.094) to (1.3304,0.849,0.2091) origin (0.6189,0.84,0.1) rotate (-39.0939,0,0) texture "blocks:mw_skin_scraped_hide"
+@box from (0.6107,0.896,0.174) to (1.3224,0.914,0.2562) origin (0.6107,0.905,0.18) rotate (4.0856,0,0) texture "blocks:mw_skin_scraped_hide"
+@box from (0.6091,0.891,0.244) to (1.3104,0.909,0.355) origin (0.6091,0.9,0.25) rotate (45,0,0) texture "blocks:mw_skin_scraped_hide"
+@box from (0.6382,0.821,0.314) to (1.3068,0.839,0.4692) origin (0.6382,0.83,0.32) rotate (65.2249,0,0) texture "blocks:mw_skin_scraped_hide"
+@box from (0.6167,0.691,0.374) to (1.3399,0.709,0.4809) origin (0.6167,0.7,0.38) rotate (18.4349,0,0) texture "blocks:mw_skin_scraped_hide"
+@box from (0.6339,0.661,0.464) to (1.3119,0.679,0.586) origin (0.6339,0.67,0.47) rotate (0,0,0) texture "blocks:mw_skin_scraped_hide"
+@box from (1.2322,0.661,0.634) to (1.6156,0.679,0.986) origin (1.2322,0.67,0.64) rotate (0,0,0) texture "blocks:mw_skin_dressed_fur"
+@box from (1.2224,0.661,0.974) to (1.6341,0.679,1.0666) origin (1.2224,0.67,0.98) rotate (60.2551,0,0) texture "blocks:mw_skin_dressed_fur"
+@box from (1.2176,0.591,1.014) to (1.6396,0.609,1.3262) origin (1.2176,0.6,1.02) rotate (88.0908,0,0) texture "blocks:mw_skin_dressed_fur"
+@box from (0.18,0.665,0.52) to (0.95,0.705,0.66) origin (0.565,0.685,0.59) rotate (0,-14,3) texture "blocks:mw_bench_plank" {
+    @part tags (east,west) texture "blocks:mw_bench_end" region (0,0,1,1)
+}
+@box from (1.42,0.665,0.372) to (1.54,0.731,0.468) origin (1.48,0.698,0.42) rotate (0,20,0) texture "blocks:stone"
+@box from (1.55,0.665,0.34) to (1.65,0.72,0.42) origin (1.6,0.6925,0.38) rotate (0,-30,0) texture "blocks:stone"
+@box from (1.515,0.665,0.464) to (1.605,0.7145,0.536) origin (1.56,0.6898,0.5) rotate (0,50,0) texture "blocks:mw_flint"
+@box from (1.645,0.665,0.416) to (1.755,0.7255,0.504) origin (1.7,0.6953,0.46) rotate (0,10,0) texture "blocks:stone"
+@box from (0.38,0.665,0.828) to (0.46,0.709,0.892) origin (0.42,0.687,0.86) rotate (0,35,0) texture "blocks:mw_flint"
+@box from (1.045,0.665,0.692) to (1.115,0.7035,0.748) origin (1.08,0.6843,0.72) rotate (0,-15,0) texture "blocks:mw_flint"
+@box from (0.1,0.66,0.9) to (0.14,0.72,0.94) texture "blocks:mw_bench_post"
+@box from (0.085,0.72,0.885) to (0.155,0.75,0.955) origin (0.12,0.735,0.92) rotate (0,30,0) texture "blocks:stone"
+@box from (0.28,0.66,0.9) to (0.32,0.72,0.94) texture "blocks:mw_bench_post"
+@box from (0.265,0.72,0.885) to (0.335,0.75,0.955) origin (0.3,0.735,0.92) rotate (0,30,0) texture "blocks:stone"

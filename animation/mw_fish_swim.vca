@@ -1,0 +1,2 @@
+@rotate bone tail by y func (sin(t * 6.2832) * 30)
+@rotate bone body by y func (sin(t * 6.2832 + 1.4) * 5)

@@ -1,0 +1,8 @@
+{
+    "icon-type": "sprite",
+    "icon": "items:mw_bow_drill",
+    "stack-size": 1,
+    "uses": 12,
+    "script-name": "bow_drill",
+    "model-name": "mw_sprite_bow_drill"
+}

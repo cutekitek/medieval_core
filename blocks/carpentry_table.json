@@ -1,0 +1,20 @@
+{
+    "model": "custom",
+    "model-name": "mw_carpentry_table",
+    "material": "base:wood",
+    "hitbox": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+    ],
+    "light-passing": true,
+    "sky-light-passing": true,
+    "ambient-occlusion": false,
+    "script-name": "cutting_table",
+    "inventory-size": 13,
+    "base:durability": 4.0,
+    "caption": "carpentry table"
+}

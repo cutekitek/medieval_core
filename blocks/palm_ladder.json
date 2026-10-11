@@ -1,0 +1,29 @@
+{
+    "light-passing": true,
+    "sky-light-passing": true,
+    "material": "base:wood",
+    "texture-faces": [
+        "mw_palm_planks",
+        "mw_palm_planks",
+        "mw_palm_planks",
+        "mw_palm_planks",
+        "mw_palm_planks",
+        "mw_palm_planks"
+    ],
+    "model": "custom",
+    "model-name": "mw_ladder",
+    "rotation": "ladder",
+    "hitbox": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0.1875
+    ],
+    "tags": [
+        "medieval_core:ladder"
+    ],
+    "base:durability": 2.0,
+    "caption": "palm ladder"
+}

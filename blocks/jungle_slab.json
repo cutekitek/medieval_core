@@ -1,0 +1,28 @@
+{
+    "material": "base:wood",
+    "model": "custom",
+    "base:durability": 3.0,
+    "texture-faces": [
+        "mw_jungle_planks",
+        "mw_jungle_planks",
+        "mw_jungle_planks",
+        "mw_jungle_planks",
+        "mw_jungle_planks",
+        "mw_jungle_planks"
+    ],
+    "model-name": "mw_slab",
+    "rotation": "stairs",
+    "hitbox": [
+        0,
+        0,
+        0,
+        1,
+        0.5,
+        1
+    ],
+    "tags": [
+        "medieval_core:slab"
+    ],
+    "picking-item": "medieval_core:jungle_slab.item",
+    "caption": "jungle slab"
+}

@@ -1,0 +1,7 @@
+{
+    "caption": "palm roof slope",
+    "icon-type": "block",
+    "icon": "medieval_core:palm_roof",
+    "placing-block": "medieval_core:palm_roof",
+    "script-name": "shape_item"
+}

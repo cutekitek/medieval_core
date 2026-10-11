@@ -1,0 +1,14 @@
+{
+    "material": "base:wood",
+    "texture-faces": [
+        "mw_stripped_jungle_log",
+        "mw_stripped_jungle_log",
+        "mw_stripped_jungle_log_top",
+        "mw_stripped_jungle_log_top",
+        "mw_stripped_jungle_log",
+        "mw_stripped_jungle_log"
+    ],
+    "rotation": "pipe",
+    "script-name": "stripped_log",
+    "base:durability": 6.0
+}

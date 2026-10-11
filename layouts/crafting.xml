@@ -1,0 +1,24 @@
+<inventory id="root" size="524,140" color="#1F1F1FE0">
+    <label pos="12,6">@medieval_core.clothing.title</label>
+    <image src="gui/mw_slot_head" pos="12,28" size="48,48" color="#FFFFFF30"/>
+    <image src="gui/mw_slot_body" pos="12,80" size="48,48" color="#FFFFFF30"/>
+    <image src="gui/mw_slot_legs" pos="64,28" size="48,48" color="#FFFFFF30"/>
+    <image src="gui/mw_slot_feet" pos="64,80" size="48,48" color="#FFFFFF30"/>
+    <slot index="5" pos="12,28" updatefunc="on_clothing" tooltip="@medieval_core.slot.head"/>
+    <slot index="6" pos="12,80" updatefunc="on_clothing" tooltip="@medieval_core.slot.body"/>
+    <slot index="7" pos="64,28" updatefunc="on_clothing" tooltip="@medieval_core.slot.legs"/>
+    <slot index="8" pos="64,80" updatefunc="on_clothing" tooltip="@medieval_core.slot.feet"/>
+
+    <label pos="152,6">@medieval_core.crafting.title</label>
+    <slot index="0" pos="152,28" updatefunc="on_grid"/>
+    <slot index="1" pos="204,28" updatefunc="on_grid"/>
+    <slot index="2" pos="152,80" updatefunc="on_grid"/>
+    <slot index="3" pos="204,80" updatefunc="on_grid"/>
+    <image src="gui/mw_craft_arrow" pos="270,64" size="40,28"/>
+    <slot index="4" pos="324,54" taking="false" placing="false" updatefunc="on_result"/>
+
+    <label id="insulation" pos="388,30"></label>
+    <label id="shade" pos="388,50"></label>
+    <label pos="388,74">@medieval_core.clothing.felt</label>
+    <label id="felt" pos="388,94"></label>
+</inventory>

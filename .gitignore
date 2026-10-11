@@ -1,0 +1,7 @@
+# Development only: asset generators, headless tests and GUI showcases.
+# They are not part of the released mod.
+dev/
+
+# Python caches left by the generators
+__pycache__/
+*.pyc

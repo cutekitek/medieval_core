@@ -1,0 +1,8 @@
+{
+    "icon-type": "sprite",
+    "icon": "items:mw_fishing_rod",
+    "stack-size": 1,
+    "uses": 150,
+    "script-name": "fishing_rod",
+    "model-name": "mw_fishing_rod_item"
+}

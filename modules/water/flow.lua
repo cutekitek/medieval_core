@@ -1,8 +1,8 @@
 -- Minecraft-like flowing water.
 --
 -- base:water is the source block. Flowing water has a block per level:
--- millwright:falling_water (level 0, a falling column) and
--- millwright:flowing_water_1..7 (distance from the source, 1 is the highest
+-- medieval_core:falling_water (level 0, a falling column) and
+-- medieval_core:flowing_water_1..7 (distance from the source, 1 is the highest
 -- sheet). Separate blocks instead of variants let the renderer cull the
 -- faces between neighbouring levels while keeping each top face visible. The simulation is event driven: a changed cell
 -- schedules itself and its neighbours, and every STEP ticks all scheduled
@@ -37,11 +37,11 @@ local function init_ids()
     end
     ids = {
         source = block.index("base:water"),
-        by_level = {[0] = block.index("millwright:falling_water")},
+        by_level = {[0] = block.index("medieval_core:falling_water")},
         level = {},
     }
     for level = 1, this.MAX_LEVEL do
-        ids.by_level[level] = block.index("millwright:flowing_water_" .. level)
+        ids.by_level[level] = block.index("medieval_core:flowing_water_" .. level)
     end
     for level = 0, this.MAX_LEVEL do
         ids.level[ids.by_level[level]] = level
@@ -308,12 +308,12 @@ function this.save()
     for _, p in ipairs(queue) do
         data[#data + 1] = p
     end
-    file.write(pack.data_file("millwright", SAVE_FILE), json.tostring(data))
+    file.write(pack.data_file("medieval_core", SAVE_FILE), json.tostring(data))
 end
 
 function this.load()
     this.reset()
-    local path = pack.data_file("millwright", SAVE_FILE)
+    local path = pack.data_file("medieval_core", SAVE_FILE)
     if file.exists(path) then
         for _, p in ipairs(json.parse(file.read(path))) do
             this.schedule(p[1], p[2], p[3])

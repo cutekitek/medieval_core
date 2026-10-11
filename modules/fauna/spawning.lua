@@ -15,20 +15,20 @@ local PREDATOR_SAFE_RADIUS = 32
 
 -- ground block -> habitat
 local GROUND = {
-    ["millwright:snowy_dirt"] = "tundra",
-    ["millwright:snow_block"] = "tundra",
+    ["medieval_core:snowy_dirt"] = "tundra",
+    ["medieval_core:snow_block"] = "tundra",
     ["base:ice"] = "tundra",
-    ["millwright:podzol"] = "taiga",
-    ["millwright:tropical_grass_block"] = "tropics",
+    ["medieval_core:podzol"] = "taiga",
+    ["medieval_core:tropical_grass_block"] = "tropics",
     ["base:sand"] = "desert",
-    ["millwright:sandstone"] = "desert",
+    ["medieval_core:sandstone"] = "desert",
     ["base:grass_block"] = "grassland",
 }
 -- ground animals stand only on these (birds land anywhere dry)
 local WALKABLE = {
-    "base:grass_block", "millwright:podzol", "millwright:tropical_grass_block",
-    "millwright:snowy_dirt", "millwright:snow_block", "base:ice", "base:sand",
-    "base:dirt", "millwright:gravel",
+    "base:grass_block", "medieval_core:podzol", "medieval_core:tropical_grass_block",
+    "medieval_core:snowy_dirt", "medieval_core:snow_block", "base:ice", "base:sand",
+    "base:dirt", "medieval_core:gravel",
 }
 
 local ids = nil
@@ -48,7 +48,7 @@ local function init_ids()
     for i = 0, block.defs_count() - 1 do
         local name = block.name(i)
         if name:find("leaves") or name:find("_log") or name:find("_trunk") or
-           name == "base:log" or name == "millwright:vine" then
+           name == "base:log" or name == "medieval_core:vine" then
             ids.tree[i] = true
         end
     end
@@ -148,9 +148,9 @@ function this.spawn_group(kind, bx, bz, rng)
     local species = species_list[kind]
     local hitbox = entities.def_hitbox(entities.def_index(species.entity))
     local count = rng:random(species.herd[1], species.herd[2])
-    local args = {millwright__animal = {species = kind}}
+    local args = {medieval_core__animal = {species = kind}}
     if species.variants and species.herd_variant then
-        args.millwright__animal.variant = rng:random(1, #species.variants)
+        args.medieval_core__animal.variant = rng:random(1, #species.variants)
     end
     local spawned = 0
     for _ = 1, count do
@@ -170,13 +170,84 @@ function this.spawn_group(kind, bx, bz, rng)
         end
         if pos then
             if not (species.variants and species.herd_variant) and species.variants then
-                args.millwright__animal.variant = rng:random(1, #species.variants)
+                args.medieval_core__animal.variant = rng:random(1, #species.variants)
             end
             entities.spawn(species.entity, pos, args)
             spawned = spawned + 1
         end
     end
     return spawned
+end
+
+-- Fish: a school in a chunk with deep enough still water. Returns the
+-- spawned count.
+local FISH_CHANCE = 0.2
+local FISH_MIN_DEPTH = 2
+
+-- depth of still water under the surface of a column, and the surface y
+local function water_depth(x, z)
+    for y = 250, 1, -1 do
+        local id = block.get(x, y, z)
+        if id == -1 then
+            return 0
+        elseif id == ids.water then
+            local depth = 0
+            while block.get(x, y - depth, z) == ids.water do
+                depth = depth + 1
+            end
+            return depth, y
+        elseif id > 0 and block.is_solid_at(x, y, z) then
+            return 0
+        end
+    end
+    return 0
+end
+
+function this.spawn_school(bx, bz, rng)
+    init_ids()
+    local fish = species_list.fish
+    local count = rng:random(fish.school[1], fish.school[2])
+    local args = {medieval_core__fish = {variant = rng:random(1, #fish.variants)}}
+    local spawned = 0
+    for _ = 1, count * 3 do
+        local x = bx + rng:random(-2, 2)
+        local z = bz + rng:random(-2, 2)
+        local depth, top = water_depth(x, z)
+        if depth >= FISH_MIN_DEPTH then
+            -- not right under the surface nor on the bottom
+            local y = top - rng:random(1, depth - 1)
+            entities.spawn(fish.entity, {x + 0.5, y + 0.5, z + 0.5}, args)
+            spawned = spawned + 1
+            if spawned >= count then
+                break
+            end
+        end
+    end
+    return spawned
+end
+
+function this.populate_water(cx, cz)
+    init_ids()
+    local rng = random.Random()
+    rng:seed(math.abs(world.get_seed() * 3 + cx * 49979687 + cz * 15485863 + 7) % 2147483647)
+    if rng:random() > FISH_CHANCE then
+        return 0
+    end
+    -- the deepest of a few sampled columns
+    local best, best_depth = nil, FISH_MIN_DEPTH - 1
+    for sx = 2, 14, 4 do
+        for sz = 2, 14, 4 do
+            local x, z = cx * 16 + sx, cz * 16 + sz
+            local depth = water_depth(x, z)
+            if depth > best_depth then
+                best, best_depth = {x, z}, depth
+            end
+        end
+    end
+    if not best then
+        return 0
+    end
+    return this.spawn_school(best[1], best[2], rng)
 end
 
 function this.populate(cx, cz)

@@ -1,0 +1,6 @@
+{
+    "texture": "mw_limestone_hewn",
+    "material": "base:stone",
+    "base:durability": 9.0,
+    "caption": "hewn limestone"
+}

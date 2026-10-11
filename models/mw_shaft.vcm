@@ -1,5 +1,0 @@
-@bone name 'rotor' {
-    @box from (-0.09,-0.5,-0.09) to (0.09,0.5,0.09) texture "blocks:wood" {
-        @part tags (top,bottom) texture "blocks:wood_top"
-    }
-}

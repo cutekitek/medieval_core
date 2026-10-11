@@ -1,0 +1,7 @@
+{
+    "caption": "limestone roof slope",
+    "icon-type": "block",
+    "icon": "medieval_core:limestone_roof",
+    "placing-block": "medieval_core:limestone_roof",
+    "script-name": "shape_item"
+}

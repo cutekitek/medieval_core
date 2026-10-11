@@ -1,0 +1,100 @@
+@bone name 'frame' {
+    @box from (-0.4988,0,-0.0588) to (-0.4212,0.4995,0.0188) origin (-0.46,0,-0.02) rotate (-0.0069,0.2015,-0.0032,0.9795) texture "blocks:mw_stick_bark" {
+        @part tags (bottom) texture "blocks:mw_stick_end" region (0,0,1,1)
+    }
+    @box from (-0.4956,0.4515,-0.065) to (-0.4229,0.9756,0.0077) origin (-0.4592,0.4515,-0.0287) rotate (0.0364,0.1682,-0.0119,0.985) texture "blocks:mw_stick_bark"
+    @box from (-0.4764,0.9262,-0.0295) to (-0.4066,1.44,0.0403) origin (-0.4415,0.9262,0.0054) rotate (-0.0052,0.0609,-0.0018,0.9981) texture "blocks:mw_stick_bark" {
+        @part tags (top) texture "blocks:mw_stick_end" region (0,0,1,1)
+    }
+    @box from (-0.462,1.44,-0.022) to (-0.418,1.576,0.022) origin (-0.44,1.44,0) rotate (0.1216,0.145,0.21,0.9592) texture "blocks:mw_stick_bark" {
+        @part tags (top) texture "blocks:mw_stick_end" region (0,0,1,1)
+    }
+    @box from (-0.462,1.44,-0.022) to (-0.418,1.5715,0.022) origin (-0.44,1.44,0) rotate (-0.1251,0.5111,-0.1679,0.8336) texture "blocks:mw_stick_bark" {
+        @part tags (top) texture "blocks:mw_stick_end" region (0,0,1,1)
+    }
+    @box from (0.4195,0,-0.0205) to (0.5005,0.4995,0.0605) origin (0.46,0,0.02) rotate (-0.0184,0.117,0.0172,0.9928) texture "blocks:mw_stick_bark" {
+        @part tags (bottom) texture "blocks:mw_stick_end" region (0,0,1,1)
+    }
+    @box from (0.4026,0.4509,-0.0351) to (0.4811,0.9745,0.0434) origin (0.4418,0.4509,0.0042) rotate (0.008,0.0976,0.0029,0.9952) texture "blocks:mw_stick_bark"
+    @box from (0.4044,0.9264,-0.0224) to (0.4751,1.4402,0.0483) origin (0.4397,0.9264,0.013) rotate (-0.0126,0.0838,-0.0013,0.9964) texture "blocks:mw_stick_bark" {
+        @part tags (top) texture "blocks:mw_stick_end" region (0,0,1,1)
+    }
+    @box from (0.418,1.44,-0.022) to (0.462,1.576,0.022) origin (0.44,1.44,0) rotate (0.1782,0.145,-0.1647,0.9592) texture "blocks:mw_stick_bark" {
+        @part tags (top) texture "blocks:mw_stick_end" region (0,0,1,1)
+    }
+    @box from (0.418,1.44,-0.022) to (0.462,1.5715,0.022) origin (0.44,1.44,0) rotate (-0.2064,0.5111,-0.0353,0.8336) texture "blocks:mw_stick_bark" {
+        @part tags (top) texture "blocks:mw_stick_end" region (0,0,1,1)
+    }
+    @box from (-0.5904,1.48,-0.0304) to (-0.5296,1.8677,0.0304) origin (-0.56,1.48,0) rotate (0.4757,0.466,-0.5234,0.5317) texture "blocks:mw_stick_bark" {
+        @part tags (bottom) texture "blocks:mw_stick_end" region (0,0,1,1)
+    }
+    @box from (-0.2369,1.48,-0.021) to (-0.1798,1.886,0.036) origin (-0.2084,1.48,0.0075) rotate (0.4269,0.4497,-0.5667,0.5425) texture "blocks:mw_stick_bark"
+    @box from (0.1335,1.4772,-0.0388) to (0.189,1.8762,0.0167) origin (0.1612,1.4772,-0.011) rotate (0.4409,0.4286,-0.5496,0.5656) texture "blocks:mw_stick_bark" {
+        @part tags (top) texture "blocks:mw_stick_end" region (0,0,1,1)
+    }
+    @box from (-0.302,1.09,-0.012) to (-0.278,1.5912,0.012) origin (-0.29,1.09,0) rotate (0,0,-0.2471,0.969) texture "blocks:mw_stick_bark"
+    @box from (0.278,1.09,-0.012) to (0.302,1.5912,0.012) origin (0.29,1.09,0) rotate (0,0,0.2471,0.969) texture "blocks:mw_stick_bark"
+    @box from (-0.072,1.53,-0.012) to (-0.048,1.65,0.012) origin (-0.06,1.53,0) rotate (0,0,-0.7071,0.7071) texture "blocks:mw_stick_bark"
+}
+@bone name 'pot' {
+    @box from (-0.225,0.8,-0.225) to (0.225,0.85,0.225) texture "blocks:mw_fired_clay" {
+        @part tags (top) texture "blocks:mw_fired_clay_inner"
+    }
+    @box from (-0.17,0.8,-0.25) to (0.17,1.14,-0.205) texture "blocks:mw_fired_clay"
+    @box from (-0.17,0.8,0.205) to (0.17,1.14,0.25) texture "blocks:mw_fired_clay"
+    @box from (-0.25,0.8,-0.17) to (-0.205,1.14,0.17) texture "blocks:mw_fired_clay"
+    @box from (0.205,0.8,-0.17) to (0.25,1.14,0.17) texture "blocks:mw_fired_clay"
+    @box from (0.2057,0.8,0.1624) to (0.2454,1.14,0.2074) rotate (0,-105,0) texture "blocks:mw_fired_clay"
+    @box from (0.1908,0.8,0.1882) to (0.2305,1.14,0.2332) rotate (0,-135,0) texture "blocks:mw_fired_clay"
+    @box from (0.165,0.8,0.203) to (0.2048,1.14,0.248) rotate (0,-165,0) texture "blocks:mw_fired_clay"
+    @box from (-0.2048,0.8,0.203) to (-0.165,1.14,0.248) rotate (0,165,0) texture "blocks:mw_fired_clay"
+    @box from (-0.2305,0.8,0.1882) to (-0.1908,1.14,0.2332) rotate (0,135,0) texture "blocks:mw_fired_clay"
+    @box from (-0.2454,0.8,0.1624) to (-0.2057,1.14,0.2074) rotate (0,105,0) texture "blocks:mw_fired_clay"
+    @box from (-0.2454,0.8,-0.2074) to (-0.2057,1.14,-0.1624) rotate (0,75,0) texture "blocks:mw_fired_clay"
+    @box from (-0.2305,0.8,-0.2332) to (-0.1908,1.14,-0.1882) rotate (0,45,0) texture "blocks:mw_fired_clay"
+    @box from (-0.2048,0.8,-0.248) to (-0.165,1.14,-0.203) rotate (0,15,0) texture "blocks:mw_fired_clay"
+    @box from (0.165,0.8,-0.248) to (0.2048,1.14,-0.203) rotate (0,-15,0) texture "blocks:mw_fired_clay"
+    @box from (0.1908,0.8,-0.2332) to (0.2305,1.14,-0.1882) rotate (0,-45,0) texture "blocks:mw_fired_clay"
+    @box from (0.2057,0.8,-0.2074) to (0.2454,1.14,-0.1624) rotate (0,-75,0) texture "blocks:mw_fired_clay"
+    @box from (-0.17,1.13,-0.262) to (0.17,1.18,-0.193) texture "blocks:mw_fired_clay"
+    @box from (-0.17,1.13,0.193) to (0.17,1.18,0.262) texture "blocks:mw_fired_clay"
+    @box from (-0.262,1.13,-0.17) to (-0.193,1.18,0.17) texture "blocks:mw_fired_clay"
+    @box from (0.193,1.13,-0.17) to (0.262,1.18,0.17) texture "blocks:mw_fired_clay"
+    @box from (0.2057,1.13,0.1504) to (0.2454,1.18,0.2194) rotate (0,-105,0) texture "blocks:mw_fired_clay"
+    @box from (0.1908,1.13,0.1762) to (0.2305,1.18,0.2452) rotate (0,-135,0) texture "blocks:mw_fired_clay"
+    @box from (0.165,1.13,0.191) to (0.2048,1.18,0.26) rotate (0,-165,0) texture "blocks:mw_fired_clay"
+    @box from (-0.2048,1.13,0.191) to (-0.165,1.18,0.26) rotate (0,165,0) texture "blocks:mw_fired_clay"
+    @box from (-0.2305,1.13,0.1762) to (-0.1908,1.18,0.2452) rotate (0,135,0) texture "blocks:mw_fired_clay"
+    @box from (-0.2454,1.13,0.1504) to (-0.2057,1.18,0.2194) rotate (0,105,0) texture "blocks:mw_fired_clay"
+    @box from (-0.2454,1.13,-0.2194) to (-0.2057,1.18,-0.1504) rotate (0,75,0) texture "blocks:mw_fired_clay"
+    @box from (-0.2305,1.13,-0.2452) to (-0.1908,1.18,-0.1762) rotate (0,45,0) texture "blocks:mw_fired_clay"
+    @box from (-0.2048,1.13,-0.26) to (-0.165,1.18,-0.191) rotate (0,15,0) texture "blocks:mw_fired_clay"
+    @box from (0.165,1.13,-0.26) to (0.2048,1.18,-0.191) rotate (0,-15,0) texture "blocks:mw_fired_clay"
+    @box from (0.1908,1.13,-0.2452) to (0.2305,1.18,-0.1762) rotate (0,-45,0) texture "blocks:mw_fired_clay"
+    @box from (0.2057,1.13,-0.2194) to (0.2454,1.18,-0.1504) rotate (0,-75,0) texture "blocks:mw_fired_clay"
+    @box from (-0.315,1.06,-0.06) to (-0.24,1.115,0.06) texture "blocks:mw_fired_clay"
+    @box from (0.24,1.06,-0.06) to (0.315,1.115,0.06) texture "blocks:mw_fired_clay"
+}
+@bone name 'liquid' {
+    @box from (-0.2,0.85,-0.2) to (0.2,1.12,0.2) texture "$liquid" {
+        @part tags (top) texture "$liquid" region (0,0,1,1)
+    }
+}
+@bone name 'bit_1' {
+    @box from (0.048,1.09,-0.057) to (0.1362,1.145,0.0135) rotate (-10.0186,15.4555,0) texture "$bit1"
+}
+@bone name 'bit_2' {
+    @box from (-0.0129,1.09,0.0266) to (0.0729,1.145,0.0952) rotate (-11.4704,37.403,0) texture "$bit2"
+}
+@bone name 'bit_3' {
+    @box from (-0.0672,1.09,0.0658) to (0.018,1.145,0.1339) rotate (9.1293,51.4081,0) texture "$bit3"
+}
+@bone name 'bit_4' {
+    @box from (-0.1543,1.09,-0.0404) to (-0.0674,1.145,0.0291) rotate (1.6751,83.2455,0) texture "$bit4"
+}
+@bone name 'bit_5' {
+    @box from (-0.1144,1.09,-0.1056) to (-0.0273,1.145,-0.0359) rotate (1.5599,58.325,0) texture "$bit5"
+}
+@bone name 'bit_6' {
+    @box from (0.0003,1.09,-0.1275) to (0.0967,1.145,-0.0504) rotate (7.0255,35.5113,0) texture "$bit6"
+}

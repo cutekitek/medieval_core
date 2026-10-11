@@ -1,0 +1,23 @@
+@box from (0.24,0,0.26) to (0.76,0.04,0.74) texture "blocks:mw_ash" delete "bottom"
+@box from (0.34,0.03,0.36) to (0.64,0.07,0.62) origin (0.5,0,0.5) rotate (0,25,0) texture "blocks:mw_ash" delete "bottom"
+@box from (0.1822,0.04,0.3622) to (0.2578,0.1843,0.4378) origin (0.22,0.04,0.4) rotate (0.6721,0.7129,0.1019,0.1725) texture "blocks:mw_charred_wood" {
+    @part tags (bottom) texture "blocks:mw_charred_end" region (0,0,1,1)
+}
+@box from (0.2763,0.05,0.3954) to (0.3507,0.2186,0.4699) origin (0.3135,0.05,0.4326) rotate (0.6906,0.6564,0.2002,0.2282) texture "blocks:mw_charred_wood"
+@box from (0.3758,0.0441,0.4738) to (0.4462,0.1923,0.5443) origin (0.411,0.0441,0.509) rotate (0.6921,0.6641,-0.0337,0.2808) texture "blocks:mw_charred_wood" {
+    @part tags (top) texture "blocks:mw_charred_end" region (0,0,1,1)
+}
+@box from (0.7425,0.04,0.3225) to (0.8175,0.1723,0.3975) origin (0.78,0.04,0.36) rotate (-0.5419,0.7174,0.4102,0.1532) texture "blocks:mw_charred_wood" {
+    @part tags (bottom) texture "blocks:mw_charred_end" region (0,0,1,1)
+}
+@box from (0.6684,0.0488,0.3647) to (0.7372,0.205,0.4335) origin (0.7028,0.0488,0.3991) rotate (-0.6014,0.6781,0.3849,0.1739) texture "blocks:mw_charred_wood"
+@box from (0.5613,0.0434,0.3949) to (0.6295,0.1799,0.4631) origin (0.5954,0.0434,0.429) rotate (-0.3835,0.6893,0.5404,0.293) texture "blocks:mw_charred_wood" {
+    @part tags (top) texture "blocks:mw_charred_end" region (0,0,1,1)
+}
+@box from (0.5624,0.04,0.7624) to (0.6376,0.1623,0.8376) origin (0.6,0.04,0.8) rotate (-0.5338,0.5596,-0.3871,0.502) texture "blocks:mw_charred_wood" {
+    @part tags (bottom) texture "blocks:mw_charred_end" region (0,0,1,1)
+}
+@box from (0.5519,0.0539,0.6879) to (0.6249,0.1982,0.7609) origin (0.5884,0.0539,0.7244) rotate (-0.6218,0.5624,-0.3662,0.4037) texture "blocks:mw_charred_wood"
+@box from (0.5161,0.0486,0.6022) to (0.5804,0.1727,0.6665) origin (0.5482,0.0486,0.6344) rotate (-0.6063,0.5701,-0.356,0.425) texture "blocks:mw_charred_wood" {
+    @part tags (top) texture "blocks:mw_charred_end" region (0,0,1,1)
+}

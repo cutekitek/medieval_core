@@ -2,7 +2,7 @@
     "model": "custom",
     "model-name": "mw_loose_sticks",
     "hidden": true,
-    "picking-item": "millwright:stick",
+    "picking-item": "medieval_core:stick",
     "material": "base:sand",
     "obstacle": false,
     "grounded": true,

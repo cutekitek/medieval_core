@@ -1,0 +1,14 @@
+{
+    "material": "base:wood",
+    "texture-faces": [
+        "mw_stripped_palm_log",
+        "mw_stripped_palm_log",
+        "mw_stripped_palm_log_top",
+        "mw_stripped_palm_log_top",
+        "mw_stripped_palm_log",
+        "mw_stripped_palm_log"
+    ],
+    "rotation": "pipe",
+    "script-name": "stripped_log",
+    "base:durability": 6.0
+}

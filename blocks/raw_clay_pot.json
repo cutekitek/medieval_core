@@ -1,0 +1,23 @@
+{
+    "material": "base:ground",
+    "model": "custom",
+    "model-name": "mw_raw_clay_pot",
+    "texture": "mw_raw_clay",
+    "grounded": true,
+    "light-passing": true,
+    "sky-light-passing": true,
+    "ambient-occlusion": false,
+    "hitbox": [0.15, 0, 0.15, 0.7, 0.45, 0.7],
+    "script-name": "pit_kiln",
+    "base:durability": 0.3,
+    "state-based": {
+        "offset": 0,
+        "bits": 3,
+        "variants": [
+            {"model": "custom", "model-name": "mw_raw_clay_pot_straw_1"},
+            {"model": "custom", "model-name": "mw_raw_clay_pot_straw_2"},
+            {"model": "custom", "model-name": "mw_raw_clay_pot_straw_3"},
+            {"model": "custom", "model-name": "mw_pit_kiln_heap"}
+        ]
+    }
+}

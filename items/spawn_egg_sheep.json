@@ -1,0 +1,7 @@
+{
+    "icon-type": "sprite",
+    "icon": "items:mw_spawn_egg_sheep",
+    "stack-size": 64,
+    "script-name": "spawn_egg",
+    "model-name": "mw_sprite_spawn_egg_sheep"
+}

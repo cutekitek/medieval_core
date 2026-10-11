@@ -1,0 +1,28 @@
+{
+    "material": "base:stone",
+    "model": "custom",
+    "base:durability": 9.0,
+    "texture-faces": [
+        "mw_basalt_bricks",
+        "mw_basalt_bricks",
+        "mw_basalt_bricks",
+        "mw_basalt_bricks",
+        "mw_basalt_bricks",
+        "mw_basalt_bricks"
+    ],
+    "model-name": "mw_vslab",
+    "rotation": "pane",
+    "hitbox": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0.5
+    ],
+    "tags": [
+        "medieval_core:vslab"
+    ],
+    "picking-item": "medieval_core:basalt_vslab.item",
+    "caption": "basalt vertical slab"
+}

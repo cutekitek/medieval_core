@@ -1,0 +1,68 @@
+@box from (0.11,0,0.23) to (1,0.09,0.77) delete "east" texture "blocks:mw_trough_wood" {
+    @part tags (top) texture "blocks:mw_trough_inner"
+}
+@box from (1,0,0.23) to (1.89,0.09,0.77) delete "west" texture "blocks:mw_trough_wood" {
+    @part tags (top) texture "blocks:mw_trough_inner"
+}
+@box from (0.21,0,0.16) to (1,0.42,0.23) delete "east" texture "blocks:mw_trough_wood" {
+    @part tags (south) texture "blocks:mw_trough_inner"
+    @part tags (top) texture "blocks:mw_trough_rim"
+}
+@box from (1,0,0.16) to (1.79,0.42,0.23) delete "west" texture "blocks:mw_trough_wood" {
+    @part tags (south) texture "blocks:mw_trough_inner"
+    @part tags (top) texture "blocks:mw_trough_rim"
+}
+@box from (0.21,0,0.77) to (1,0.42,0.84) delete "east" texture "blocks:mw_trough_wood" {
+    @part tags (north) texture "blocks:mw_trough_inner"
+    @part tags (top) texture "blocks:mw_trough_rim"
+}
+@box from (1,0,0.77) to (1.79,0.42,0.84) delete "west" texture "blocks:mw_trough_wood" {
+    @part tags (north) texture "blocks:mw_trough_inner"
+    @part tags (top) texture "blocks:mw_trough_rim"
+}
+@box from (0.04,0,0.33) to (0.11,0.42,0.67) texture "blocks:mw_trough_wood" {
+    @part tags (east) texture "blocks:mw_trough_inner"
+    @part tags (top) texture "blocks:mw_trough_rim"
+}
+@box from (1.89,0,0.33) to (1.96,0.42,0.67) texture "blocks:mw_trough_wood" {
+    @part tags (west) texture "blocks:mw_trough_inner"
+    @part tags (top) texture "blocks:mw_trough_rim"
+}
+@box from (1.8755,0,0.6699) to (1.9653,0.42,0.7399) rotate (0,-105,0) texture "blocks:mw_trough_wood" {
+    @part tags (top) texture "blocks:mw_trough_rim"
+}
+@box from (1.8405,0,0.7305) to (1.9304,0.42,0.8005) rotate (0,-135,0) texture "blocks:mw_trough_wood" {
+    @part tags (top) texture "blocks:mw_trough_rim"
+}
+@box from (1.78,0,0.7654) to (1.8699,0.42,0.8354) rotate (0,-165,0) texture "blocks:mw_trough_wood" {
+    @part tags (top) texture "blocks:mw_trough_rim"
+}
+@box from (0.1301,0,0.7654) to (0.22,0.42,0.8354) rotate (0,165,0) texture "blocks:mw_trough_wood" {
+    @part tags (top) texture "blocks:mw_trough_rim"
+}
+@box from (0.0696,0,0.7305) to (0.1595,0.42,0.8005) rotate (0,135,0) texture "blocks:mw_trough_wood" {
+    @part tags (top) texture "blocks:mw_trough_rim"
+}
+@box from (0.0347,0,0.6699) to (0.1245,0.42,0.7399) rotate (0,105,0) texture "blocks:mw_trough_wood" {
+    @part tags (top) texture "blocks:mw_trough_rim"
+}
+@box from (0.0347,0,0.2601) to (0.1245,0.42,0.3301) rotate (0,75,0) texture "blocks:mw_trough_wood" {
+    @part tags (top) texture "blocks:mw_trough_rim"
+}
+@box from (0.0696,0,0.1995) to (0.1595,0.42,0.2695) rotate (0,45,0) texture "blocks:mw_trough_wood" {
+    @part tags (top) texture "blocks:mw_trough_rim"
+}
+@box from (0.1301,0,0.1646) to (0.22,0.42,0.2346) rotate (0,15,0) texture "blocks:mw_trough_wood" {
+    @part tags (top) texture "blocks:mw_trough_rim"
+}
+@box from (1.78,0,0.1646) to (1.8699,0.42,0.2346) rotate (0,-15,0) texture "blocks:mw_trough_wood" {
+    @part tags (top) texture "blocks:mw_trough_rim"
+}
+@box from (1.8405,0,0.1995) to (1.9304,0.42,0.2695) rotate (0,-45,0) texture "blocks:mw_trough_wood" {
+    @part tags (top) texture "blocks:mw_trough_rim"
+}
+@box from (1.8755,0,0.2601) to (1.9653,0.42,0.3301) rotate (0,-75,0) texture "blocks:mw_trough_wood" {
+    @part tags (top) texture "blocks:mw_trough_rim"
+}
+@box from (0.11,0.09,0.23) to (1,0.18,0.77) delete "east" texture "blocks:mw_vat_water"
+@box from (1,0.09,0.23) to (1.89,0.18,0.77) delete "west" texture "blocks:mw_vat_water"

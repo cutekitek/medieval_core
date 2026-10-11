@@ -1,0 +1,10 @@
+{
+    "components": [
+        {"name": "core:mob", "args": {"jump_force": 7.5, "movement_speed": 13.0}},
+        "core:pathfinding",
+        {"name": "medieval_core:animal", "args": {"species": "sheep"}}
+    ],
+    "skeleton-name": "mw_sheep",
+    "hitbox": [0.9, 1.3, 0.9],
+    "mass": 60
+}

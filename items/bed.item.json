@@ -1,0 +1,8 @@
+{
+    "icon-type": "sprite",
+    "icon": "items:mw_bed",
+    "stack-size": 1,
+    "placing-block": "medieval_core:bed",
+    "script-name": "bed_item",
+    "model-name": "mw_sprite_bed"
+}

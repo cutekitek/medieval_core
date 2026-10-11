@@ -1,0 +1,7 @@
+{
+    "caption": "marble stairs",
+    "icon-type": "block",
+    "icon": "medieval_core:marble_stairs",
+    "placing-block": "medieval_core:marble_stairs",
+    "script-name": "shape_item"
+}

@@ -1,0 +1,48 @@
+{
+    "material": "base:wood",
+    "model": "custom",
+    "base:durability": 5.0,
+    "texture-faces": [
+        "mw_oak_planks",
+        "mw_oak_planks",
+        "mw_oak_planks",
+        "mw_oak_planks",
+        "mw_oak_planks",
+        "mw_oak_planks"
+    ],
+    "model-name": "mw_stairs_inner",
+    "rotation": "stairs",
+    "hitboxes": [
+        [
+            0,
+            0,
+            0,
+            1,
+            0.5,
+            1
+        ],
+        [
+            0,
+            0.5,
+            0,
+            1,
+            0.5,
+            0.5
+        ],
+        [
+            0,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+        ]
+    ],
+    "script-name": "stairs",
+    "tags": [
+        "medieval_core:stairs"
+    ],
+    "picking-item": "medieval_core:oak_stairs.item",
+    "hidden": true,
+    "caption": "oak stairs"
+}

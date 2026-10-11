@@ -1,0 +1,54 @@
+{
+    "material": "base:stone",
+    "model": "custom",
+    "base:durability": 10.0,
+    "texture-faces": [
+        "mw_slate_bricks",
+        "mw_slate_bricks",
+        "mw_slate_bricks",
+        "mw_slate_bricks",
+        "mw_slate_bricks",
+        "mw_slate_bricks"
+    ],
+    "model-name": "mw_roof",
+    "rotation": "stairs",
+    "hitboxes": [
+        [
+            0,
+            0.0,
+            0,
+            1,
+            0.25,
+            1.0
+        ],
+        [
+            0,
+            0.25,
+            0,
+            1,
+            0.25,
+            0.75
+        ],
+        [
+            0,
+            0.5,
+            0,
+            1,
+            0.25,
+            0.5
+        ],
+        [
+            0,
+            0.75,
+            0,
+            1,
+            0.25,
+            0.25
+        ]
+    ],
+    "tags": [
+        "medieval_core:roof"
+    ],
+    "picking-item": "medieval_core:slate_roof.item",
+    "caption": "slate roof slope"
+}

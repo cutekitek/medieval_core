@@ -1,0 +1,18 @@
+{
+    "components": [
+        {
+            "name": "medieval_core:projectile",
+            "args": {
+                "kind": "spear"
+            }
+        }
+    ],
+    "skeleton-name": "mw_thrown_spear",
+    "body-type": "static",
+    "hitbox": [
+        0.3,
+        0.3,
+        0.3
+    ],
+    "blocking": false
+}

@@ -1,0 +1,13 @@
+{
+    "icon-type": "sprite",
+    "icon": "items:mw_stone_axe",
+    "stack-size": 1,
+    "uses": 80,
+    "medieval_core:tool": {
+        "type": "axe",
+        "speed": 2.5
+    },
+    "medieval_core:damage": 3,
+    "script-name": "axe",
+    "model-name": "mw_sprite_stone_axe"
+}

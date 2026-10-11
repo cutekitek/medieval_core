@@ -1,6 +1,6 @@
 local _, dir = parse_path(__DIR__)
 local ores = require "base:generation/ores"
-local trees = require "millwright:generation/trees"
+local trees = require "medieval_core:generation/trees"
 math.randomseed(SEED)
 ores.load(dir)
 
@@ -28,11 +28,11 @@ end
 
 local SEA_LEVEL = 64
 
-local GRAVEL = block.index("millwright:gravel")
-local CLAY = block.index("millwright:clay")
+local GRAVEL = block.index("medieval_core:gravel")
+local CLAY = block.index("medieval_core:clay")
 local SAND = block.index("base:sand")
-local ROCK = block.index("millwright:loose_rock")
-local FLINT = block.index("millwright:loose_flint")
+local ROCK = block.index("medieval_core:loose_rock")
+local FLINT = block.index("medieval_core:loose_flint")
 
 -- deterministic 2D value noise in [0, 1)
 local function hash2(ix, iz, salt)
@@ -78,6 +78,63 @@ local function place_shores(placements, x, z, w, d, hmap, chunk_height)
                 elseif r < 0.05 then
                     table.insert(placements, {":block", FLINT, {wx, h + 1, wz}, 0, 3})
                 end
+            end
+        end
+    end
+end
+
+-- Rock lenses ------------------------------------------------------------------
+-- Besides the biome strata (biomes.toml) the stone holds lenses and dykes of
+-- other rocks: short thick lines, deep enough never to reach the soil.
+-- Priority -2: before the ores (-1) and the caves (0), which cut through them.
+local LENSES = {
+    {block.index("medieval_core:granite"), 1.0},
+    {block.index("medieval_core:basalt"), 1.0},
+    {block.index("medieval_core:marble"), 0.7},
+    {block.index("medieval_core:slate"), 0.8},
+    {block.index("medieval_core:limestone"), 0.6},
+}
+local LENS_TRIES = 2
+local LENS_CHANCE = 0.3       -- per try and chunk
+local LENS_COVER = 8          -- blocks of rock kept above a lens
+
+local function place_lenses(placements, x, z, w, d, hmap, chunk_height)
+    local cx, cz = math.floor(x / w), math.floor(z / d)
+    local lowest = math.huge
+    for lz = 0, d - 1, 3 do
+        for lx = 0, w - 1, 3 do
+            lowest = math.min(lowest, math.floor(hmap:at(lx, lz) * chunk_height))
+        end
+    end
+    for i = 1, LENS_TRIES do
+        local salt = 40 + i * 10
+        if hash2(cx, cz, salt) < LENS_CHANCE then
+            local radius = 2 + math.floor(hash2(cx, cz, salt + 1) * 3)
+            local top = lowest - radius - LENS_COVER
+            local bottom = radius + 4
+            if top > bottom then
+                local sx = x + 3 + hash2(cx, cz, salt + 2) * (w - 6)
+                local sz = z + 3 + hash2(cx, cz, salt + 3) * (d - 6)
+                local sy = bottom + hash2(cx, cz, salt + 4) * (top - bottom)
+                local angle = hash2(cx, cz, salt + 5) * math.pi * 2
+                local length = 3 + hash2(cx, cz, salt + 6) * 6
+                local ey = math.max(bottom, math.min(top, sy + (hash2(cx, cz, salt + 7) - 0.5) * length))
+                local total = 0
+                for _, l in ipairs(LENSES) do total = total + l[2] end
+                local r = hash2(cx, cz, salt + 8) * total
+                local id = LENSES[#LENSES][1]
+                for _, l in ipairs(LENSES) do
+                    r = r - l[2]
+                    if r <= 0 then
+                        id = l[1]
+                        break
+                    end
+                end
+                table.insert(placements, {":line", id,
+                    {math.floor(sx), math.floor(sy), math.floor(sz)},
+                    {math.floor(sx + math.cos(angle) * length), math.floor(ey),
+                     math.floor(sz + math.sin(angle) * length)},
+                    radius, -2})
             end
         end
     end
@@ -183,6 +240,7 @@ end
 
 function place_structures(x, z, w, d, hmap, chunk_height)
     local placements = {}
+    place_lenses(placements, x, z, w, d, hmap, chunk_height)
     ores.place(placements, x, z, w, d, SEED, hmap, chunk_height)
     place_shores(placements, x, z, w, d, hmap, chunk_height)
     place_trees(placements, x, z, w, d, hmap, chunk_height)

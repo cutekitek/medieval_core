@@ -1,0 +1,76 @@
+[
+    {
+        "pattern": [
+            " X",
+            "XX",
+            "XX",
+            "XX",
+            "XX"
+        ],
+        "result": "medieval_core:knife_blade"
+    },
+    {
+        "pattern": [
+            " X   ",
+            "XXXX ",
+            "XXXXX",
+            "XXXX ",
+            " X   "
+        ],
+        "result": "medieval_core:axe_head"
+    },
+    {
+        "pattern": [
+            "XXX",
+            "XXX",
+            "XXX",
+            "XXX",
+            " X "
+        ],
+        "result": "medieval_core:shovel_head"
+    },
+    {
+        "pattern": [
+            " XXX ",
+            "XXXXX",
+            "X   X"
+        ],
+        "result": "medieval_core:pickaxe_head"
+    },
+    {
+        "pattern": [
+            " XXX ",
+            "XXXXX",
+            "XXXXX",
+            " XXX ",
+            "  X  "
+        ],
+        "result": "medieval_core:mace_head"
+    },
+    {
+        "pattern": [
+            " X ",
+            "XXX",
+            "XXX",
+            " X ",
+            " X "
+        ],
+        "result": "medieval_core:spear_head"
+    },
+    {
+        "pattern": [
+            " X X ",
+            "XX XX",
+            "XX XX"
+        ],
+        "result": "medieval_core:arrowhead",
+        "count": 2
+    },
+    {
+        "pattern": [
+            "XXXXX",
+            "XXXXX"
+        ],
+        "result": "medieval_core:hoe_head"
+    }
+]

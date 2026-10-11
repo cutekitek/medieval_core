@@ -1,10 +1,10 @@
--- World rule "millwright-flight-speed": flight speed multiplier of players.
+-- World rule "medieval_core-flight-speed": flight speed multiplier of players.
 -- The engine keeps it as the core:mob property flight_speed_mul (default 2.0,
 -- relative to walking speed); the rule is numeric, so the built-in boolean
 -- `rule.set` can't change it — use the `flight.speed` console command.
 local this = {}
 
-this.RULE = "millwright-flight-speed"
+this.RULE = "medieval_core-flight-speed"
 this.DEFAULT = 2.0
 this.MIN = 0.1
 this.MAX = 50.0

@@ -1,0 +1,28 @@
+[
+    {
+        "type": "shaped",
+        "pattern": [
+            "WWW",
+            "LAL"
+        ],
+        "key": {
+            "W": "medieval_core:wool",
+            "L": [
+                "base:wood.item",
+                "medieval_core:spruce_log.item",
+                "medieval_core:jungle_log.item",
+                "medieval_core:palm_log.item",
+                "medieval_core:stripped_oak_log.item",
+                "medieval_core:stripped_spruce_log.item",
+                "medieval_core:stripped_jungle_log.item",
+                "medieval_core:stripped_palm_log.item"
+            ],
+            "A": "medieval_core:stone_axe"
+        },
+        "tools": [
+            "medieval_core:stone_axe"
+        ],
+        "tool_wear": 3,
+        "result": "medieval_core:bed.item"
+    }
+]

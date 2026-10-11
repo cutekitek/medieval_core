@@ -1,0 +1,49 @@
+{
+    "model": "X",
+    "texture": "mw_potato_crop_0",
+    "material": "base:grass",
+    "draw-group": 1,
+    "light-passing": true,
+    "obstacle": false,
+    "grounded": true,
+    "hitbox": [
+        0.15,
+        0,
+        0.15,
+        0.7,
+        0.6,
+        0.7
+    ],
+    "state-based": {
+        "offset": 0,
+        "bits": 2,
+        "variants": [
+            {
+                "model": "X",
+                "texture": "mw_potato_crop_1"
+            },
+            {
+                "model": "X",
+                "texture": "mw_potato_crop_2"
+            },
+            {
+                "model": "X",
+                "texture": "mw_potato_crop_3"
+            }
+        ]
+    },
+    "picking-item": "medieval_core:potato_seeds",
+    "script-name": "crop",
+    "base:durability": 0.0,
+    "fields": {
+        "progress": {
+            "type": "float32"
+        },
+        "thirst": {
+            "type": "float32"
+        },
+        "updated": {
+            "type": "float64"
+        }
+    }
+}

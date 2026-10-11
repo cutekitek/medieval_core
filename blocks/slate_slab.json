@@ -1,0 +1,28 @@
+{
+    "material": "base:stone",
+    "model": "custom",
+    "base:durability": 6.0,
+    "texture-faces": [
+        "mw_slate_bricks",
+        "mw_slate_bricks",
+        "mw_slate_bricks",
+        "mw_slate_bricks",
+        "mw_slate_bricks",
+        "mw_slate_bricks"
+    ],
+    "model-name": "mw_slab",
+    "rotation": "stairs",
+    "hitbox": [
+        0,
+        0,
+        0,
+        1,
+        0.5,
+        1
+    ],
+    "tags": [
+        "medieval_core:slab"
+    ],
+    "picking-item": "medieval_core:slate_slab.item",
+    "caption": "slate slab"
+}

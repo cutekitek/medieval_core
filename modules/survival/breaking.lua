@@ -2,6 +2,7 @@
 -- The engine fires on_block_breaking every ~0.16 s while the destroy button is
 -- held; progress accumulates per player and resets when the target changes.
 local drops = require "survival/drops"
+local chest = require "storage/chest"
 
 local this = {}
 
@@ -12,34 +13,83 @@ local CRACK_STAGES = 11     -- textures cracks/cracks_0 .. cracks_10
 local DEFAULT_HARDNESS = 1.0
 local UNBREAKABLE = 1e6
 
-local states = {}  -- pid -> {x, y, z, id, progress, last, wrap}
+local HIT_SOUND_INTERVAL = 0.25
+local HIT_SOUND_VOLUME = 0.55
 
--- Tool speed hook: item user property "millwright:tool" = {type=..., speed=...}
--- and block material decide the multiplier. Bare hands = 1.
+local states = {}  -- pid -> {x, y, z, id, progress, last, wrap, next_sound}
+
+-- Hit sounds while breaking (sounds/medieval_core/dig_<kind>_N): the kind comes
+-- from the block name first (leaves, gravel, ice), then from its material.
+local NAME_SOUND = {
+    {"leaves", "leaves"}, {"bush", "leaves"}, {"vine", "leaves"},
+    {"gravel", "gravel"}, {"loose_rock", "gravel"}, {"loose_flint", "gravel"},
+    {"ice", "glass"},
+}
+local MATERIAL_SOUND = {
+    ["base:wood"] = "wood",
+    ["base:grass"] = "plant",
+    ["base:ground"] = "dirt",
+    ["base:grass_block"] = "dirt",
+    ["base:sand"] = "sand",
+    ["base:snow"] = "snow",
+    ["base:glass"] = "glass",
+}
+local sound_kinds = {}
+
+function this.sound_kind(blockid)
+    local kind = sound_kinds[blockid]
+    if kind == nil then
+        local name = block.name(blockid):match(":(.+)$") or block.name(blockid)
+        for _, rule in ipairs(NAME_SOUND) do
+            if name:find(rule[1], 1, true) then
+                kind = rule[2]
+                break
+            end
+        end
+        kind = kind or MATERIAL_SOUND[block.material(blockid)] or "stone"
+        sound_kinds[blockid] = kind
+    end
+    return kind
+end
+
+local function play_hit(state)
+    audio.play_sound("medieval_core/dig_" .. this.sound_kind(state.id),
+        state.x + 0.5, state.y + 0.5, state.z + 0.5,
+        HIT_SOUND_VOLUME, 0.9 + math.random() * 0.2, "regular")
+end
+
+-- Tools: item user property "medieval_core:tool" = {type=..., speed=...}.
+-- A tool is faster on the blocks of its material and wears out on them
+-- (item property "uses"). Bare hands = 1.
 local MATERIAL_TOOL = {
     ["base:stone"] = "pick",
     ["base:metal"] = "pick",
     ["base:wood"] = "axe",
     ["base:ground"] = "shovel",
     ["base:sand"] = "shovel",
+    ["base:snow"] = "shovel",
     ["base:grass_block"] = "shovel",
+    ["base:grass"] = "knife",
 }
 
-local function tool_speed(pid, blockid)
+-- the held tool's definition if it suits the block, else nil
+function this.tool_for(pid, blockid)
     local invid, slot = player.get_inventory(pid)
     local itemid = inventory.get(invid, slot)
     if itemid == 0 then
-        return 1.0
+        return nil
     end
     local props = item.properties and item.properties[itemid]
-    local tool = props and props["millwright:tool"]
-    if not tool then
-        return 1.0
+    local tool = props and props["medieval_core:tool"]
+    if tool and MATERIAL_TOOL[block.material(blockid)] == tool.type then
+        return tool
     end
-    if MATERIAL_TOOL[block.material(blockid)] == tool.type then
-        return tool.speed or 1.0
-    end
-    return 1.0
+    return nil
+end
+
+local function tool_speed(pid, blockid)
+    local tool = this.tool_for(pid, blockid)
+    return tool and tool.speed or 1.0
 end
 
 function this.hardness(blockid)
@@ -86,8 +136,16 @@ local function finish(state, pid)
     if block.get(state.x, state.y, state.z) ~= id then
         return
     end
+    local tool = this.tool_for(pid, id)
+    local variant = block.get_variant(state.x, state.y, state.z)
+    -- the engine deletes a block's inventory with the block: empty it first
+    chest.spill(state.x, state.y, state.z)
     block.destruct(state.x, state.y, state.z, pid)
-    drops.spawn(id, state.x, state.y, state.z)
+    drops.spawn(id, state.x, state.y, state.z, tool and tool.type, variant)
+    if tool and not player.is_infinite_items(pid) then
+        local invid, slot = player.get_inventory(pid)
+        inventory.use(invid, slot)
+    end
 end
 
 -- Called on every breaking event; dt may be given explicitly (tests)
@@ -121,6 +179,11 @@ function this.hit(blockid, x, y, z, pid, dt)
         finish(state, pid)
     else
         show_cracks(state)
+        if not state.next_sound or now >= state.next_sound then
+            state.next_sound = now + HIT_SOUND_INTERVAL
+            play_hit(state)
+            this.hits_played = (this.hits_played or 0) + 1
+        end
     end
 end
 

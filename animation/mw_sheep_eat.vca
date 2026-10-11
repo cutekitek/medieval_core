@@ -1,0 +1,1 @@
+@rotate bone head by x func (-58 + sin(t * 18) * 6)

@@ -1,0 +1,11 @@
+{
+    "components": [
+        "medieval_core:ripple"
+    ],
+    "skeleton-name": "mw_ripple",
+    "body-type": "static",
+    "hitbox": [0.1, 0.1, 0.1],
+    "blocking": false,
+    "selectable": false,
+    "lighting-mode": "solid"
+}

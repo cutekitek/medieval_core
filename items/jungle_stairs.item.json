@@ -1,0 +1,7 @@
+{
+    "caption": "jungle stairs",
+    "icon-type": "block",
+    "icon": "medieval_core:jungle_stairs",
+    "placing-block": "medieval_core:jungle_stairs",
+    "script-name": "shape_item"
+}

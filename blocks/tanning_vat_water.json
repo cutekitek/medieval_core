@@ -1,0 +1,20 @@
+{
+    "model": "custom",
+    "material": "base:wood",
+    "hitbox": [
+        0.06,
+        0.0,
+        0.06,
+        0.88,
+        0.82,
+        0.88
+    ],
+    "light-passing": true,
+    "sky-light-passing": true,
+    "ambient-occlusion": false,
+    "script-name": "tanning_vat",
+    "picking-item": "medieval_core:tanning_vat.item",
+    "base:durability": 3.0,
+    "model-name": "mw_tanning_vat_water",
+    "hidden": true
+}

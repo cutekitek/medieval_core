@@ -1,0 +1,7 @@
+{
+    "caption": "slate roof slope",
+    "icon-type": "block",
+    "icon": "medieval_core:slate_roof",
+    "placing-block": "medieval_core:slate_roof",
+    "script-name": "shape_item"
+}

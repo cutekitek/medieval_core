@@ -1,0 +1,65 @@
+{
+    "model": "X",
+    "texture": "mw_tomato_crop_0",
+    "material": "base:grass",
+    "draw-group": 1,
+    "light-passing": true,
+    "obstacle": false,
+    "grounded": true,
+    "hitbox": [
+        0.15,
+        0,
+        0.15,
+        0.7,
+        0.95,
+        0.7
+    ],
+    "state-based": {
+        "offset": 0,
+        "bits": 3,
+        "variants": [
+            {
+                "model": "X",
+                "texture": "mw_tomato_crop_1"
+            },
+            {
+                "model": "X",
+                "texture": "mw_tomato_crop_2"
+            },
+            {
+                "model": "X",
+                "texture": "mw_tomato_crop_3"
+            },
+            {
+                "model": "X",
+                "texture": "mw_tomato_crop_0_wilted"
+            },
+            {
+                "model": "X",
+                "texture": "mw_tomato_crop_1_wilted"
+            },
+            {
+                "model": "X",
+                "texture": "mw_tomato_crop_2_wilted"
+            },
+            {
+                "model": "X",
+                "texture": "mw_tomato_crop_3_wilted"
+            }
+        ]
+    },
+    "picking-item": "medieval_core:tomato_seeds",
+    "script-name": "crop",
+    "base:durability": 0.0,
+    "fields": {
+        "progress": {
+            "type": "float32"
+        },
+        "thirst": {
+            "type": "float32"
+        },
+        "updated": {
+            "type": "float64"
+        }
+    }
+}

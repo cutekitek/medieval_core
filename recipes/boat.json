@@ -1,0 +1,35 @@
+[
+    {
+        "type": "shaped",
+        "pattern": [
+            "P",
+            "S",
+            "S"
+        ],
+        "key": {
+            "P": [
+                "base:planks.item",
+                "medieval_core:oak_planks.item",
+                "medieval_core:spruce_planks.item",
+                "medieval_core:jungle_planks.item",
+                "medieval_core:palm_planks.item"
+            ],
+            "S": "medieval_core:stick"
+        },
+        "result": "medieval_core:paddle"
+    },
+    {
+        "type": "shaped",
+        "pattern": [
+            "  S",
+            " ST",
+            "S T"
+        ],
+        "key": {
+            "S": "medieval_core:stick",
+            "T": "medieval_core:twine"
+        },
+        "mirror": true,
+        "result": "medieval_core:fishing_rod"
+    }
+]

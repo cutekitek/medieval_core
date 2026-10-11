@@ -10,5 +10,5 @@
     "hitbox": [0.15, 0.0, 0.15, 0.7, 0.6, 0.7],
     "base:durability": 0.0,
     "hidden": true,
-    "picking-item": "millwright:mushroom"
+    "picking-item": "medieval_core:mushroom"
 }

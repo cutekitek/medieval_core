@@ -1,0 +1,26 @@
+@box from (0.0625,0,0.0625) to (0.9375,0.0625,0.9375) texture "blocks:mw_chest_side" {
+    @part tags (top) texture "blocks:mw_chest_inner"
+    @part tags (bottom) texture "blocks:mw_chest_top"
+}
+@box from (0.0625,0,0.0625) to (0.9375,0.625,0.125) texture "blocks:mw_chest_side" {
+    @part tags (south) texture "blocks:mw_chest_inner"
+    @part tags (top) texture "blocks:mw_chest_top"
+}
+@box from (0.0625,0,0.875) to (0.9375,0.625,0.9375) texture "blocks:mw_chest_side" {
+    @part tags (north) texture "blocks:mw_chest_inner"
+    @part tags (top) texture "blocks:mw_chest_top"
+}
+@box from (0.0625,0,0.125) to (0.125,0.625,0.875) delete "north,south" texture "blocks:mw_chest_side" {
+    @part tags (east) texture "blocks:mw_chest_inner"
+    @part tags (top) texture "blocks:mw_chest_top"
+}
+@box from (0.875,0,0.125) to (0.9375,0.625,0.875) delete "north,south" texture "blocks:mw_chest_side" {
+    @part tags (west) texture "blocks:mw_chest_inner"
+    @part tags (top) texture "blocks:mw_chest_top"
+}
+@box from (0.47,0.525,0.9375) to (0.53,0.585,0.9675) texture "blocks:mw_chest_hasp"
+@box from (0.0625,0.625,0.0625) to (0.9375,0.875,0.9375) texture "blocks:mw_chest_side" {
+    @part tags (top) texture "blocks:mw_chest_top"
+    @part tags (bottom) texture "blocks:mw_chest_inner"
+}
+@box from (0.45,0.505,0.9375) to (0.55,0.705,0.9625) texture "blocks:mw_chest_hasp"

@@ -2,15 +2,15 @@
         @box from (-0.418,-0.15,-0.825) to (0.418,0.532,0.77) texture "entities/mw_polar_bear_fur"
         @box from (-0.33,0.51,-0.682) to (0.33,0.576,-0.165) texture "entities/mw_polar_bear_fur"
                 @bone name 'head' move (0,0.312,-0.985) {
-            @box from (-0.187,-0.187,-0.16) to (0.187,0.165,0.05) texture "entities/mw_polar_bear_fur"
-            @box from (-0.264,-0.22,-0.556) to (0.264,0.22,-0.16) texture "entities/mw_polar_bear_fur" {
+            @box from (-0.264,-0.22,-0.396) to (0.264,0.22,0) texture "entities/mw_polar_bear_fur" {
             @part tags (north) texture "entities/mw_polar_bear_face" region (0,0,1,1)
         }
-            @box from (-0.132,-0.209,-0.776) to (0.132,0,-0.556) texture "entities/mw_polar_bear_snout" {
+            @box from (-0.132,-0.209,-0.616) to (0.132,0,-0.396) texture "entities/mw_polar_bear_muzzle" {
             @part tags (north) texture "entities/mw_polar_bear_snout" region (0,0,1,1)
         }
-            @box from (-0.242,0.22,-0.402) to (-0.132,0.33,-0.336) texture "entities/mw_polar_bear_fur"
-            @box from (0.132,0.22,-0.402) to (0.242,0.33,-0.336) texture "entities/mw_polar_bear_fur"
+            @box from (-0.242,0.22,-0.242) to (-0.132,0.33,-0.176) texture "entities/mw_polar_bear_fur"
+            @box from (0.132,0.22,-0.242) to (0.242,0.33,-0.176) texture "entities/mw_polar_bear_fur"
+            @box from (-0.198,-0.187,0) to (0.198,0.176,0.24) texture "entities/mw_polar_bear_fur"
         }
                 @bone name 'tail' move (0,0.4,0.77) {
             @box from (-0.06,-0.1,0) to (0.06,0.04,0.1) texture "entities/mw_polar_bear_fur"

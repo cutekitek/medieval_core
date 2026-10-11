@@ -1,0 +1,7 @@
+{
+    "caption": "marble vertical slab",
+    "icon-type": "block",
+    "icon": "medieval_core:marble_vslab",
+    "placing-block": "medieval_core:marble_vslab",
+    "script-name": "shape_item"
+}

@@ -1,0 +1,7 @@
+{
+    "icon-type": "sprite",
+    "icon": "items:mw_potato",
+    "stack-size": 32,
+    "script-name": "food",
+    "model-name": "mw_sprite_potato"
+}

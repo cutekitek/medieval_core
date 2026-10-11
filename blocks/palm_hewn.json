@@ -1,0 +1,14 @@
+{
+    "texture-faces": [
+        "mw_palm_hewn_side",
+        "mw_palm_hewn_side",
+        "mw_palm_hewn_end",
+        "mw_palm_hewn_end",
+        "mw_palm_hewn_side",
+        "mw_palm_hewn_side"
+    ],
+    "material": "base:wood",
+    "rotation": "pipe",
+    "base:durability": 6.0,
+    "caption": "hewn palm beam"
+}

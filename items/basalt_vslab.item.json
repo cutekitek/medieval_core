@@ -1,0 +1,7 @@
+{
+    "caption": "basalt vertical slab",
+    "icon-type": "block",
+    "icon": "medieval_core:basalt_vslab",
+    "placing-block": "medieval_core:basalt_vslab",
+    "script-name": "shape_item"
+}

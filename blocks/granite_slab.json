@@ -1,0 +1,28 @@
+{
+    "material": "base:stone",
+    "model": "custom",
+    "base:durability": 9.0,
+    "texture-faces": [
+        "mw_granite_bricks",
+        "mw_granite_bricks",
+        "mw_granite_bricks",
+        "mw_granite_bricks",
+        "mw_granite_bricks",
+        "mw_granite_bricks"
+    ],
+    "model-name": "mw_slab",
+    "rotation": "stairs",
+    "hitbox": [
+        0,
+        0,
+        0,
+        1,
+        0.5,
+        1
+    ],
+    "tags": [
+        "medieval_core:slab"
+    ],
+    "picking-item": "medieval_core:granite_slab.item",
+    "caption": "granite slab"
+}

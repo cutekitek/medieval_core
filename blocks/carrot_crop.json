@@ -1,0 +1,49 @@
+{
+    "model": "X",
+    "texture": "mw_carrot_crop_0",
+    "material": "base:grass",
+    "draw-group": 1,
+    "light-passing": true,
+    "obstacle": false,
+    "grounded": true,
+    "hitbox": [
+        0.2,
+        0,
+        0.2,
+        0.6,
+        0.5,
+        0.6
+    ],
+    "state-based": {
+        "offset": 0,
+        "bits": 2,
+        "variants": [
+            {
+                "model": "X",
+                "texture": "mw_carrot_crop_1"
+            },
+            {
+                "model": "X",
+                "texture": "mw_carrot_crop_2"
+            },
+            {
+                "model": "X",
+                "texture": "mw_carrot_crop_3"
+            }
+        ]
+    },
+    "picking-item": "medieval_core:carrot_seeds",
+    "script-name": "crop",
+    "base:durability": 0.0,
+    "fields": {
+        "progress": {
+            "type": "float32"
+        },
+        "thirst": {
+            "type": "float32"
+        },
+        "updated": {
+            "type": "float64"
+        }
+    }
+}

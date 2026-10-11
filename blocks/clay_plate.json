@@ -1,0 +1,13 @@
+{
+    "material": "base:stone",
+    "model": "custom",
+    "model-name": "mw_clay_plate",
+    "texture": "mw_fired_clay",
+    "grounded": true,
+    "obstacle": false,
+    "light-passing": true,
+    "sky-light-passing": true,
+    "ambient-occlusion": false,
+    "hitbox": [0.18, 0, 0.18, 0.64, 0.1, 0.64],
+    "base:durability": 0.4
+}

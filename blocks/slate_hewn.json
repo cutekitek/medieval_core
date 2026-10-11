@@ -1,0 +1,6 @@
+{
+    "texture": "mw_slate_hewn",
+    "material": "base:stone",
+    "base:durability": 10.0,
+    "caption": "hewn slate"
+}

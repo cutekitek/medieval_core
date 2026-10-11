@@ -1,0 +1,14 @@
+{
+    "texture-faces": [
+        "mw_jungle_hewn_side",
+        "mw_jungle_hewn_side",
+        "mw_jungle_hewn_end",
+        "mw_jungle_hewn_end",
+        "mw_jungle_hewn_side",
+        "mw_jungle_hewn_side"
+    ],
+    "material": "base:wood",
+    "rotation": "pipe",
+    "base:durability": 6.0,
+    "caption": "hewn jungle beam"
+}

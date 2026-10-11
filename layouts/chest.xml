@@ -1,0 +1,4 @@
+<inventory id="root" size="524,198" color="#1F1F1FE0">
+    <label pos="12,6">@medieval_core.chest.title</label>
+    <slots-grid start-index="0" rows="3" cols="9" pos="30,32" interval="4" sharefunc="share_func"/>
+</inventory>

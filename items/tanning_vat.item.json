@@ -1,0 +1,7 @@
+{
+    "icon-type": "sprite",
+    "icon": "items:mw_tanning_vat",
+    "stack-size": 8,
+    "placing-block": "medieval_core:tanning_vat",
+    "model-name": "mw_sprite_tanning_vat"
+}

@@ -1,0 +1,47 @@
+{
+    "material": "base:stone",
+    "model": "custom",
+    "base:durability": 12.0,
+    "texture-faces": [
+        "mw_marble_hewn",
+        "mw_marble_hewn",
+        "mw_marble_hewn",
+        "mw_marble_hewn",
+        "mw_marble_hewn",
+        "mw_marble_hewn"
+    ],
+    "model-name": "mw_column_0",
+    "rotation": "pipe",
+    "hitbox": [
+        0.125,
+        0,
+        0.125,
+        0.75,
+        1,
+        0.75
+    ],
+    "script-name": "column",
+    "tags": [
+        "medieval_core:column"
+    ],
+    "picking-item": "medieval_core:marble_column.item",
+    "state-based": {
+        "offset": 0,
+        "bits": 2,
+        "variants": [
+            {
+                "model": "custom",
+                "model-name": "mw_column_1"
+            },
+            {
+                "model": "custom",
+                "model-name": "mw_column_2"
+            },
+            {
+                "model": "custom",
+                "model-name": "mw_column_3"
+            }
+        ]
+    },
+    "caption": "marble column"
+}

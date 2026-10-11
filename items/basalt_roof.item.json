@@ -1,0 +1,7 @@
+{
+    "caption": "basalt roof slope",
+    "icon-type": "block",
+    "icon": "medieval_core:basalt_roof",
+    "placing-block": "medieval_core:basalt_roof",
+    "script-name": "shape_item"
+}

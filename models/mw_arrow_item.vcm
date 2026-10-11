@@ -1,0 +1,6 @@
+@box from (-0.018,-0.018,-0.61) to (0.018,0.018,0.75) texture "blocks:mw_stripped_spruce_log"
+@box from (-0.045,-0.012,-0.69) to (0.045,0.012,-0.59) texture "blocks:mw_flint"
+@box from (-0.022,-0.009,-0.75) to (0.022,0.009,-0.68) texture "blocks:mw_flint"
+@box from (-0.026,-0.026,-0.6) to (0.026,0.026,-0.55) texture "blocks:mw_rope"
+@box from (-0.004,-0.065,0.39) to (0.004,0.065,0.69) delete "top,bottom" texture "blocks:mw_fletching"
+@box from (-0.065,-0.004,0.39) to (0.065,0.004,0.69) delete "east,west" texture "blocks:mw_fletching"

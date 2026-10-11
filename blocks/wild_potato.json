@@ -1,0 +1,20 @@
+{
+    "model": "X",
+    "texture": "mw_wild_potato",
+    "material": "base:grass",
+    "draw-group": 1,
+    "light-passing": true,
+    "obstacle": false,
+    "grounded": true,
+    "hitbox": [
+        0.15,
+        0,
+        0.15,
+        0.7,
+        0.6,
+        0.7
+    ],
+    "picking-item": "medieval_core:potato",
+    "script-name": "crop",
+    "base:durability": 0.0
+}

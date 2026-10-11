@@ -1,5 +1,5 @@
 -- Player vital stats: health, hunger (food), thirst (water).
--- Ticked from world.lua on_player_tick, persisted in world:data/millwright/.
+-- Ticked from world.lua on_player_tick, persisted in world:data/medieval_core/.
 local this = {}
 
 this.MAX_HEALTH = 20
@@ -24,7 +24,7 @@ local SAVE_FILE = "players.json"
 
 local players = {}  -- pid -> stats
 
--- listeners: on_death(pid)
+-- listeners: on_damage(pid, amount), on_death(pid)
 this.listeners = {}
 
 local function new_stats()
@@ -59,12 +59,24 @@ local function die(pid)
             listener.on_death(pid)
         end
     end
+    -- the bed (respawn point) outlives the player
+    local bed = players[pid] and players[pid].bed
     players[pid] = new_stats()
+    players[pid].bed = bed
 end
 
 function this.damage(pid, amount)
     local stats = this.get(pid)
     stats.health = clamp(stats.health - amount, 0, this.MAX_HEALTH)
+    if amount > 0 then
+        local x, y, z = player.get_pos(pid)
+        audio.play_sound("medieval_core/hurt", x, y + 0.6, z, 0.8, 0.9 + math.random() * 0.2, "regular")
+    end
+    for _, listener in ipairs(this.listeners) do
+        if listener.on_damage then
+            listener.on_damage(pid, amount)
+        end
+    end
     if stats.health <= 0 then
         die(pid)
     end
@@ -140,7 +152,7 @@ end
 
 function this.load()
     players = {}
-    local path = pack.data_file("millwright", SAVE_FILE)
+    local path = pack.data_file("medieval_core", SAVE_FILE)
     if not file.exists(path) then
         return
     end
@@ -159,7 +171,7 @@ function this.save()
     for pid, stats in pairs(players) do
         data[tostring(pid)] = stats
     end
-    file.write(pack.data_file("millwright", SAVE_FILE), json.tostring(data, true))
+    file.write(pack.data_file("medieval_core", SAVE_FILE), json.tostring(data, true))
 end
 
 function this.reset()

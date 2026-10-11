@@ -1,0 +1,7 @@
+{
+    "caption": "spruce column",
+    "icon-type": "block",
+    "icon": "medieval_core:spruce_column",
+    "placing-block": "medieval_core:spruce_column",
+    "script-name": "shape_item"
+}
