@@ -20,6 +20,8 @@ local farming = require "farming/farming"
 local calendar = require "world/calendar"
 local sleep = require "player/sleep"
 local notice = require "player/notice"
+local riding = require "riding/riding"
+local leash = require "riding/leash"
 
 local EYE_HEIGHT = 0.7
 local FIELD_CHECK = 1.0    -- seconds between bringing the fields around a player up to date
@@ -72,7 +74,8 @@ end
 
 function on_player_tick(playerid, tps)
     flight.apply(playerid)
-    boat.tick(playerid)
+    riding.tick(playerid)
+    boat.tick(playerid, riding.seated_in(playerid) ~= nil)
     check_fields(playerid, 1 / tps)
     if not mode.enabled() then
         mode.apply_creative(playerid)
@@ -112,6 +115,8 @@ end
 function on_world_quit()
     breaking.reset()
     boat.reset()
+    riding.reset()
+    leash.reset()
     dugout.reset()
     chest.reset()
     trough.reset()

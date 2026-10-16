@@ -93,15 +93,16 @@ function this.controls(pid)
 end
 
 -- every player tick: forget boats that are gone and give the normal pace
--- back (the slowed speed is saved with the player and outlives a reload)
-function this.tick(pid)
+-- back (the slowed speed is saved with the player and outlives a reload);
+-- busy = the player's pace is set by something else (riding)
+function this.tick(pid, busy)
     if seated[pid] and not boat_component(seated[pid]) then
         this.unseat(pid)
     end
     if carrying[pid] and not boat_component(carrying[pid]) then
         this.uncarry(pid)
     end
-    if not seated[pid] and not carrying[pid] then
+    if not seated[pid] and not carrying[pid] and not busy then
         local mob = mob_of(pid)
         if mob and mob.get_movement_speed() < this.WALK_SPEED * 0.99 then
             set_pace(pid, 1, 1)

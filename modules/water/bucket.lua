@@ -11,7 +11,6 @@ local trough = require "husbandry/trough"
 
 local this = {}
 
-local REACH = 5.0
 local EYE_HEIGHT = 0.7
 
 local function swap_held(pid, name)
@@ -26,7 +25,9 @@ end
 
 local function look_ray(pid, liquids)
     local x, y, z = player.get_pos(pid)
-    return block.raycast({x, y + EYE_HEIGHT, z}, this.dir_of(pid), REACH, nil, {}, liquids)
+    -- as far as the player reaches (water is not selected by the engine)
+    return block.raycast({x, y + EYE_HEIGHT, z}, this.dir_of(pid),
+        player.get_interaction_distance(pid), nil, {}, liquids)
 end
 
 local function scoop(pid)

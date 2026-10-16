@@ -1,0 +1,11 @@
+{
+    "components": [
+        "medieval_core:lasso_rope"
+    ],
+    "skeleton-name": "mw_lasso_rope",
+    "body-type": "static",
+    "hitbox": [0.1, 0.1, 0.1],
+    "blocking": false,
+    "selectable": false,
+    "save": false
+}

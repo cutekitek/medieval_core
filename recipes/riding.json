@@ -1,0 +1,31 @@
+[
+    {
+        "type": "shaped",
+        "pattern": [
+            "LKL",
+            "LTL",
+            "T T"
+        ],
+        "key": {
+            "L": "medieval_core:leather",
+            "T": "medieval_core:twine",
+            "K": "medieval_core:stone_knife"
+        },
+        "tools": [
+            "medieval_core:stone_knife"
+        ],
+        "result": "medieval_core:saddle"
+    },
+    {
+        "type": "shaped",
+        "pattern": [
+            "TT ",
+            "T T",
+            " TT"
+        ],
+        "key": {
+            "T": "medieval_core:twine"
+        },
+        "result": "medieval_core:lasso"
+    }
+]

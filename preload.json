@@ -11,6 +11,9 @@
         "mw_bear_attack",
         "mw_horse_walk",
         "mw_horse_graze",
+        "mw_horse_trot",
+        "mw_horse_gallop",
+        "mw_horse_jump",
         "mw_squirrel_hop",
         "mw_squirrel_sit",
         "mw_bird_fly",
@@ -61,7 +64,28 @@
         "gui/mw_slot_feet",
         "gui/mw_knap_rock",
         "gui/mw_knap_flint",
-        "gui/mw_knap_clay"
+        "gui/mw_knap_clay",
+        "gui/mw_hud_air_empty",
+        "gui/mw_hud_air_full",
+        "gui/mw_hud_air_half",
+        "gui/mw_hud_food_empty",
+        "gui/mw_hud_food_full",
+        "gui/mw_hud_food_half",
+        "gui/mw_hud_heart_empty",
+        "gui/mw_hud_heart_full",
+        "gui/mw_hud_heart_half",
+        "gui/mw_hud_stamina_empty",
+        "gui/mw_hud_stamina_full",
+        "gui/mw_hud_stamina_half",
+        "gui/mw_hud_stamina_winded",
+        "gui/mw_hud_temp_chilly",
+        "gui/mw_hud_temp_cold",
+        "gui/mw_hud_temp_hot",
+        "gui/mw_hud_temp_normal",
+        "gui/mw_hud_temp_warm",
+        "gui/mw_hud_water_empty",
+        "gui/mw_hud_water_full",
+        "gui/mw_hud_water_half"
     ],
     "sounds": [
         "medieval_core/rod_cast",
@@ -135,6 +159,7 @@
     "models": [
         "mw_bow_drawn_1",
         "mw_bow_drawn_2",
-        "mw_bow_drawn_3"
+        "mw_bow_drawn_3",
+        "mw_rider"
     ]
 }

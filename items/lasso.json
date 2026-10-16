@@ -1,0 +1,7 @@
+{
+    "icon-type": "sprite",
+    "icon": "items:mw_lasso",
+    "stack-size": 16,
+    "script-name": "lasso",
+    "model-name": "mw_sprite_lasso"
+}

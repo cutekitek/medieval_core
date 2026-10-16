@@ -1,24 +1,10 @@
-<container id="root" size="524,48" gravity="bottom-center" margin="0,0,0,62" color="#00000000">
-  <container id="bars" size="524,48" color="#00000000">
-    <container id="air_bar" pos="0,4" size="170,14" color="#00000000">
-      <container pos="0,0" size="170,14" color="#00000090"/>
-      <container id="air" pos="0,0" size="170,14" color="#A8D8F0FF"/>
-      <label id="air_text" pos="4,0" size="166,14" color="#103040FF">20</label>
-    </container>
-    <container id="temp_bar" pos="354,4" size="170,14" color="#00000000">
-      <container pos="0,0" size="170,14" color="#00000090"/>
-      <container id="temp" pos="0,0" size="85,14" color="#58B050FF"/>
-      <container pos="84,0" size="2,14" color="#FFFFFF70"/>
-      <label id="temp_text" pos="4,0" size="166,14">37</label>
-    </container>
-    <container pos="0,26" size="170,14" color="#00000090"/>
-    <container id="health" pos="0,26" size="170,14" color="#C0303AFF"/>
-    <label id="health_text" pos="4,26" size="166,14">20</label>
-    <container pos="177,26" size="170,14" color="#00000090"/>
-    <container id="food" pos="177,26" size="170,14" color="#C8862CFF"/>
-    <label id="food_text" pos="181,26" size="166,14">20</label>
-    <container pos="354,26" size="170,14" color="#00000090"/>
-    <container id="water" pos="354,26" size="170,14" color="#2C78C8FF"/>
-    <label id="water_text" pos="358,26" size="166,14">20</label>
+<container id="root" size="524,58" gravity="bottom-center" margin="0,0,0,68" color="#00000000" interactive="false">
+  <container id="survival" size="524,58" color="#00000000">
+    <container id="health_row" pos="0,40" size="180,18" color="#00000000"/>
+    <container id="food_row" pos="344,40" size="180,18" color="#00000000"/>
+    <container id="water_row" pos="344,20" size="180,18" color="#00000000"/>
+    <container id="air_row" pos="344,0" size="180,18" color="#00000000"/>
+    <image id="temp" src="gui/mw_hud_temp_normal" pos="253,40" size="18,18"/>
   </container>
+  <container id="stamina_row" pos="0,20" size="180,18" color="#00000000" visible="false"/>
 </container>

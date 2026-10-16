@@ -20,7 +20,6 @@ local this = {}
 
 local P = "medieval_core:"
 this.EYE_HEIGHT = 0.7
-this.REACH = 10
 
 -- the forms of a material besides the input items listed in the catalogue
 local FORMS = {
@@ -364,7 +363,9 @@ end
 function this.aim(pid)
     local x, y, z = player.get_pos(pid)
     local dir = player.get_dir(pid)
-    local hit = block.raycast({x, y + this.EYE_HEIGHT, z}, dir, this.REACH)
+    -- the engine selected the block within the player's reach (from the
+    -- camera, a little off this eye point)
+    local hit = block.raycast({x, y + this.EYE_HEIGHT, z}, dir, player.get_interaction_distance(pid) + 0.5)
     return dir, hit and hit.endpoint
 end
 

@@ -3,6 +3,7 @@
 -- its surface: the ground block of each biome is distinct, and forest is
 -- told from plains by the trees standing on it.
 local species_list = require "fauna/species"
+local flow = require "water/flow"
 
 local this = {}
 
@@ -110,6 +111,59 @@ function this.habitat(cx, cz)
     return best, trees
 end
 
+-- solid bodies (animals, players) in a box of `size` centred at pos: the
+-- engine pushes bodies apart by at most 0.1 m a step, so animals put into
+-- each other stay stuck or stand on one another's backs
+function this.is_clear(pos, size)
+    for _, uid in ipairs(entities.get_all_in_radius(pos, 3)) do
+        local e = entities.get(uid)
+        if e and (e:get_player() or e:get_component("medieval_core:animal")) then
+            -- get_size leaves out the transform scale (lambs)
+            local p = e.transform:get_pos()
+            local s = vec3.mul(e.rigidbody:get_size(), e.transform:get_size())
+            if math.abs(p[1] - pos[1]) < (size[1] + s[1]) * 0.5 and
+               math.abs(p[2] - pos[2]) < (size[2] + s[2]) * 0.5 and
+               math.abs(p[3] - pos[3]) < (size[3] + s[3]) * 0.5 then
+                return false
+            end
+        end
+    end
+    return true
+end
+
+local function open_at(x, y, z)
+    local id = block.get(x, y, z)
+    return id == 0 or (id > 0 and block.is_replaceable_at(x, y, z) and not flow.is_water(id))
+end
+
+-- where to put a body of `size` standing near the cell (x, y, z): that cell
+-- first, then rings of cells around it, each a block up or down. Returns
+-- the body centre or nil.
+function this.find_clear(x, y, z, size, radius)
+    local height = math.max(1, math.ceil(size[2]))
+    for r = 0, radius or 2 do
+        for dx = -r, r do
+            for dz = -r, r do
+                if math.max(math.abs(dx), math.abs(dz)) == r then
+                    for _, dy in ipairs({0, 1, -1}) do
+                        local cx, cy, cz = x + dx, y + dy, z + dz
+                        local below = block.get(cx, cy - 1, cz)
+                        local ok = below > 0 and not block.is_replaceable_at(cx, cy - 1, cz)
+                        for h = 0, height - 1 do
+                            ok = ok and open_at(cx, cy + h, cz)
+                        end
+                        local pos = {cx + 0.5, cy + size[2] * 0.5 + 0.05, cz + 0.5}
+                        if ok and this.is_clear(pos, size) then
+                            return pos
+                        end
+                    end
+                end
+            end
+        end
+    end
+    return nil
+end
+
 local function pick_species(habitat, r)
     local total = EMPTY_WEIGHT
     local list = {}
@@ -153,7 +207,11 @@ function this.spawn_group(kind, bx, bz, rng)
         args.medieval_core__animal.variant = rng:random(1, #species.variants)
     end
     local spawned = 0
-    for _ = 1, count do
+    -- a cell may come up twice: a few more tries
+    for _ = 1, count * 3 do
+        if spawned >= count then
+            break
+        end
         local x = bx + rng:random(-3, 3)
         local z = bz + rng:random(-3, 3)
         local y, id, tree, top_y, top_id = column(x, z)
@@ -167,6 +225,9 @@ function this.spawn_group(kind, bx, bz, rng)
             end
         elseif ids.walkable[id] and block.get(x, y + 1, z) == 0 then
             pos = {x + 0.5, y + 1 + hitbox[2] * 0.5 + 0.05, z + 0.5}
+        end
+        if pos and not species.flight and not this.is_clear(pos, hitbox) then
+            pos = nil
         end
         if pos then
             if not (species.variants and species.herd_variant) and species.variants then

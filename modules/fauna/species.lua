@@ -15,6 +15,16 @@
 --   young one gains from a hand feeding; baby_scale - its size
 -- voice: a call now and then while active (sounds/medieval_core/<name>), every
 --   {min, max} seconds; it is also heard, higher, when the animal is hurt
+-- leash: can be caught with a lasso (riding/leash); the rope is tied at
+--   `point` of `bone` (the bone sits at `offset` in the model)
+-- ride: can be saddled and ridden (a grown one): speeds in m/s, jump and
+--   step speeds up (m/s), seat = the rider's centre in the model, bob = how
+--   much the back rises and falls in the trot and the gallop
+-- tracks: walk, trot, gallop (by speed, blended), idle, air, eat, fly,
+--   attack; stride = gait cycles per second at a speed {m/s, cycles},
+--   replaces gait (cycles per block)
+-- hooves: footfalls (shares of a gait cycle) that sound the ground
+-- draw_distance: m from the camera the model is drawn to (fauna/lod)
 local this = {}
 
 this.cow = {
@@ -28,6 +38,7 @@ this.cow = {
     wander_radius = 7,
     lure_item = "medieval_core:plant_fiber",
     tracks = {walk = "mw_cow_walk", idle = "mw_cow_graze"},
+    leash = {bone = "head", offset = {0, 0.5, -0.62}, point = {0, -0.16, -0.26}},
     loot = {
         {item = "medieval_core:raw_beef", min = 1, max = 3},
         {item = "medieval_core:hide", min = 1, max = 2},
@@ -59,6 +70,7 @@ this.sheep = {
     wander_radius = 7,
     lure_item = "medieval_core:wheat",
     tracks = {walk = "mw_cow_walk", idle = "mw_sheep_graze", eat = "mw_sheep_eat"},
+    leash = {bone = "head", offset = {0, 0.39, -0.52}, point = {0, -0.12, -0.2}},
     loot = {
         {item = "medieval_core:raw_mutton", min = 1, max = 2},
     },
@@ -85,6 +97,7 @@ this.sheep = {
 }
 
 this.chicken = {
+    draw_distance = 72,   -- small: not drawn further (fauna/lod)
     voice = {name = "chicken", every = {6, 18}, volume = 0.6},
     entity = "medieval_core:chicken",
     health = 4,
@@ -121,11 +134,47 @@ this.horse = {
     temper = "shy",
     shy_radius = 7,
     walk_speed = 16,
-    flee_speed = 40,
+    flee_speed = 60,      -- gallops away (about 6 m/s)
     gait = 0.7,
     wander_radius = 9,
     lure_item = "medieval_core:plant_fiber",
-    tracks = {walk = "mw_horse_walk", idle = "mw_horse_graze"},
+    tracks = {walk = "mw_horse_walk", trot = "mw_horse_trot", gallop = "mw_horse_gallop",
+              idle = "mw_horse_graze", air = "mw_horse_jump"},
+    -- walk up to ~2.8 m/s, trot to ~5.5, then the gallop
+    gaits = {walk = 2.8, trot = 5.5},
+    stride = {{0, 0}, {1.6, 0.9}, {4, 1.45}, {10, 2.1}, {14, 2.3}},
+    hooves = {
+        walk = {0, 0.25, 0.5, 0.75},
+        trot = {0, 0.5},
+        gallop = {0, 0.1, 0.32, 0.42},
+    },
+    -- a halter ring under the jaw
+    leash = {bone = "head", offset = {0, 0.4, -0.62}, point = {0, 0.35, -0.715}},
+    ride = {
+        trot = 5.0,           -- forward
+        gallop = 10.0,        -- forward with sprint
+        back = 1.4,
+        side = 1.2,
+        swim = 2.2,
+        accel = 6.0,          -- m/s^2
+        brake = 12.0,
+        turn = 170,           -- degrees per second towards the rider's view
+        jump = 9.9,           -- two blocks up
+        step = 7.3,           -- a block up, by itself
+        -- in seconds of gallop; per second, except jump (each)
+        stamina = {
+            max = 25,
+            gallop = 1.0,
+            swim = 0.5,
+            jump = 3.0,
+            trot = 1.0,       -- regained at a trot
+            rest = 2.5,       -- regained at a walk or standing
+            recover = 0.4,    -- a winded horse gallops again from this share
+        },
+        seat = {0, 0.97, -0.08},
+        bob = {trot = 0.03, gallop = 0.045},
+        saddle_item = "medieval_core:saddle",
+    },
     variants = {
         {["$coat"] = "entities/mw_horse_bay", ["$mane"] = "entities/mw_horse_bay_mane",
          ["$face"] = "entities/mw_horse_bay_face"},
@@ -205,6 +254,7 @@ this.polar_bear = {
 }
 
 this.squirrel = {
+    draw_distance = 72,   -- small: not drawn further (fauna/lod)
     voice = {name = "squirrel", every = {8, 25}, volume = 0.5},
     entity = "medieval_core:squirrel",
     health = 3,
@@ -229,6 +279,7 @@ this.squirrel = {
 -- birds: walk/peck on the ground, take off when startled or bored, fly
 -- between a few waypoints and land on the ground or on a tree crown
 this.crow = {
+    draw_distance = 72,   -- small: not drawn further (fauna/lod)
     voice = {name = "crow", every = {8, 25}, volume = 0.8},
     entity = "medieval_core:crow",
     health = 3,
@@ -249,6 +300,7 @@ this.crow = {
 }
 
 this.parrot = {
+    draw_distance = 72,   -- small: not drawn further (fauna/lod)
     voice = {name = "parrot", every = {6, 20}, volume = 0.7},
     entity = "medieval_core:parrot",
     health = 3,
@@ -277,6 +329,7 @@ this.parrot = {
 }
 
 this.owl = {
+    draw_distance = 72,   -- small: not drawn further (fauna/lod)
     voice = {name = "owl", every = {10, 30}, volume = 0.7},
     entity = "medieval_core:owl",
     health = 4,

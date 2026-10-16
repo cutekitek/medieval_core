@@ -14,9 +14,6 @@ egg=яйцо
 cow=корова
 chicken=курица
 
-medieval_core.health=Здоровье
-medieval_core.hunger=Сытость
-medieval_core.thirst=Жажда
 medieval_core.died=Вы погибли
 medieval_core.drank=Вы попили воды
 
@@ -60,7 +57,6 @@ owl=сова
 falling water=падающая вода
 wooden bucket=деревянное ведро
 water bucket=ведро воды
-medieval_core.air=Дыхание
 
 spawn egg cow=яйцо призыва: корова
 spawn egg chicken=яйцо призыва: курица
@@ -93,12 +89,6 @@ cooked meat=жареное мясо
 cooked chicken=жареная курятина
 cooked game=жареная дичь
 
-medieval_core.temp.cold=Переохлаждение
-medieval_core.temp.chilly=Холодно
-medieval_core.temp.normal=Тело
-medieval_core.temp.warm=Жарко
-medieval_core.temp.hot=Перегрев
-medieval_core.temp.air=воздух
 medieval_core.clothing.title=Одежда
 medieval_core.clothing.insulation=Утепление
 medieval_core.clothing.shade=Тень
@@ -301,3 +291,11 @@ spawn egg fish=яйцо призыва: рыба
 paddle=весло
 fishing rod=удочка
 dugout=долблёнка
+
+saddle=седло
+lasso=лассо
+medieval_core.ride.how=Shift - спешиться, Ctrl - галоп, пробел - прыжок
+medieval_core.ride.tied=Лошадь привязана к забору
+medieval_core.ride.no_saddle=Сначала оседлайте лошадь
+medieval_core.ride.winded=Лошадь выдохлась: дайте ей отдышаться
+medieval_core.leash.slipped=Лассо соскользнуло

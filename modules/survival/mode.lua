@@ -6,11 +6,17 @@ local sleep = require "player/sleep"
 local this = {}
 
 this.RULE = "medieval_core-survival"
+-- how far a survival player reaches to break, place and use (blocks, from
+-- the eyes); creative keeps the engine default
+this.REACH = 4.0
+this.CREATIVE_REACH = 10.0
 
 local function apply_rules(enabled)
     rules.set("allow-content-access", not enabled)
     rules.set("allow-flight", not enabled)
     rules.set("allow-noclip", not enabled)
+    -- the fast interaction key reaches 100 times as far
+    rules.set("allow-fast-interaction", not enabled)
 end
 
 function this.enabled()
@@ -40,6 +46,14 @@ function this.apply_player(pid)
     if player.is_noclip(pid) then
         player.set_noclip(pid, false)
     end
+    if player.get_interaction_distance(pid) ~= this.REACH then
+        player.set_interaction_distance(pid, this.REACH)
+    end
+end
+
+-- reach of a player in the current mode (for the pack's own ray casts)
+function this.reach(pid)
+    return this.enabled() and this.REACH or player.get_interaction_distance(pid)
 end
 
 -- With survival off the timed breaking (survival/breaking) does not run and
@@ -52,6 +66,9 @@ function this.apply_creative(pid)
     creative[pid] = true
     if not player.is_instant_destruction(pid) then
         player.set_instant_destruction(pid, true)
+    end
+    if player.get_interaction_distance(pid) == this.REACH then
+        player.set_interaction_distance(pid, this.CREATIVE_REACH)
     end
 end
 

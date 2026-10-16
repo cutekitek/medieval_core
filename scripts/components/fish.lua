@@ -27,7 +27,7 @@ local THINK_STEP = 0.1          -- seconds between AI updates
 local SLEEP_STEP = 1.0          -- the same for a fish far from players
 local ACTIVE_RADIUS = 48
 local DETAIL_RADIUS = 20        -- closer: animated every frame
-local RENDER_RADIUS = 64        -- further: not posed at all
+local RENDER_RADIUS = 40        -- further: not posed, not drawn at all
 local FAR_RENDER_STEP = 0.2
 
 local variant = SAVED_DATA.variant or ARGS.variant or math.random(1, #species.variants)
@@ -449,8 +449,14 @@ function on_physics_update(delta)
         if think_step ~= SLEEP_STEP then
             think_step = SLEEP_STEP
             body:set_vel({0, 0, 0})
+            -- out of the physics too: hundreds of resting fish cost the
+            -- physics of every frame (the switch is saved with the body)
+            body:set_enabled(false)
         end
         return
+    end
+    if not body:is_enabled() then
+        body:set_enabled(true)
     end
     think_step = THINK_STEP
     local wet = flow.in_water(pos[1], pos[2], pos[3])
@@ -558,9 +564,16 @@ end
 -- level of detail: every frame close by, a few times a second further away
 -- (turning only, the tail keeps its pose), nothing beyond RENDER_RADIUS
 local render_acc = 0
+local hidden = false
 
 function on_render(delta)
-    if near_distance > RENDER_RADIUS then
+    -- the engine would draw the model however far it is
+    local hide = near_distance > RENDER_RADIUS
+    if hide ~= hidden then
+        hidden = hide
+        rig:set_visible(not hide)
+    end
+    if hide then
         return
     end
     local detailed = near_distance <= DETAIL_RADIUS

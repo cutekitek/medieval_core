@@ -10,24 +10,85 @@
             @box from (0.138,0.66,-0.37) to (0.152,0.71,-0.31) origin (0,0,0) rotate (-25,0,0) texture "entities/mw_eye"
             @box from (-0.11,0.78,-0.3) to (-0.04,0.9,-0.24) origin (0,0,0) rotate (-25,0,0) texture "$coat"
             @box from (0.04,0.78,-0.3) to (0.11,0.9,-0.24) origin (0,0,0) rotate (-25,0,0) texture "$coat"
+            @bone name 'bridle' move (0,0,0) {
+                @box from (-0.15,0.49,-0.62) to (0.15,0.79,-0.58) origin (0,0,0) rotate (-25,0,0) texture "entities/mw_saddle_dark"
+                @box from (-0.15,0.49,-0.27) to (0.15,0.795,-0.23) origin (0,0,0) rotate (-25,0,0) texture "entities/mw_saddle_dark"
+                @box from (-0.156,0.62,-0.58) to (-0.148,0.66,-0.27) origin (0,0,0) rotate (-25,0,0) texture "entities/mw_saddle_dark"
+                @box from (0.148,0.62,-0.58) to (0.156,0.66,-0.27) origin (0,0,0) rotate (-25,0,0) texture "entities/mw_saddle_dark"
+                @box from (-0.17,0.53,-0.67) to (-0.14,0.58,-0.62) origin (0,0,0) rotate (-25,0,0) texture "entities/mw_saddle_iron"
+                @box from (0.14,0.53,-0.67) to (0.17,0.58,-0.62) origin (0,0,0) rotate (-25,0,0) texture "entities/mw_saddle_iron"
+            }
+            @bone name 'reins' move (0,0,0) {
+                @tri a (-0.149,0.2245,-0.819) b (-0.1669,0.2245,-0.8179) c (-0.167,0.2364,-0.8193) uv (0,0,1,0,1,1) texture "entities/mw_saddle_dark"
+                @tri a (-0.149,0.2245,-0.819) b (-0.167,0.2364,-0.8193) c (-0.1491,0.2364,-0.8204) uv (0,0,1,1,0,1) texture "entities/mw_saddle_dark"
+                @tri a (-0.0811,0.366,0.2988) b (-0.099,0.366,0.2999) c (-0.0989,0.354,0.3012) uv (0,0,1,0,1,1) texture "entities/mw_saddle_dark"
+                @tri a (-0.0811,0.366,0.2988) b (-0.0989,0.354,0.3012) c (-0.081,0.354,0.3001) uv (0,0,1,1,0,1) texture "entities/mw_saddle_dark"
+                @tri a (-0.081,0.354,0.3001) b (-0.0989,0.354,0.3012) c (-0.1669,0.2245,-0.8179) uv (0,0,1,0,1,1) texture "entities/mw_saddle_dark"
+                @tri a (-0.081,0.354,0.3001) b (-0.1669,0.2245,-0.8179) c (-0.149,0.2245,-0.819) uv (0,0,1,1,0,1) texture "entities/mw_saddle_dark"
+                @tri a (-0.0989,0.354,0.3012) b (-0.099,0.366,0.2999) c (-0.167,0.2364,-0.8193) uv (0,0,1,0,1,1) texture "entities/mw_saddle_dark"
+                @tri a (-0.0989,0.354,0.3012) b (-0.167,0.2364,-0.8193) c (-0.1669,0.2245,-0.8179) uv (0,0,1,1,0,1) texture "entities/mw_saddle_dark"
+                @tri a (-0.099,0.366,0.2999) b (-0.0811,0.366,0.2988) c (-0.1491,0.2364,-0.8204) uv (0,0,1,0,1,1) texture "entities/mw_saddle_dark"
+                @tri a (-0.099,0.366,0.2999) b (-0.1491,0.2364,-0.8204) c (-0.167,0.2364,-0.8193) uv (0,0,1,1,0,1) texture "entities/mw_saddle_dark"
+                @tri a (-0.0811,0.366,0.2988) b (-0.081,0.354,0.3001) c (-0.149,0.2245,-0.819) uv (0,0,1,0,1,1) texture "entities/mw_saddle_dark"
+                @tri a (-0.0811,0.366,0.2988) b (-0.149,0.2245,-0.819) c (-0.1491,0.2364,-0.8204) uv (0,0,1,1,0,1) texture "entities/mw_saddle_dark"
+                @tri a (0.1669,0.2245,-0.8179) b (0.149,0.2245,-0.819) c (0.1491,0.2364,-0.8204) uv (0,0,1,0,1,1) texture "entities/mw_saddle_dark"
+                @tri a (0.1669,0.2245,-0.8179) b (0.1491,0.2364,-0.8204) c (0.167,0.2364,-0.8193) uv (0,0,1,1,0,1) texture "entities/mw_saddle_dark"
+                @tri a (0.099,0.366,0.2999) b (0.0811,0.366,0.2988) c (0.081,0.354,0.3001) uv (0,0,1,0,1,1) texture "entities/mw_saddle_dark"
+                @tri a (0.099,0.366,0.2999) b (0.081,0.354,0.3001) c (0.0989,0.354,0.3012) uv (0,0,1,1,0,1) texture "entities/mw_saddle_dark"
+                @tri a (0.0989,0.354,0.3012) b (0.081,0.354,0.3001) c (0.149,0.2245,-0.819) uv (0,0,1,0,1,1) texture "entities/mw_saddle_dark"
+                @tri a (0.0989,0.354,0.3012) b (0.149,0.2245,-0.819) c (0.1669,0.2245,-0.8179) uv (0,0,1,1,0,1) texture "entities/mw_saddle_dark"
+                @tri a (0.081,0.354,0.3001) b (0.0811,0.366,0.2988) c (0.1491,0.2364,-0.8204) uv (0,0,1,0,1,1) texture "entities/mw_saddle_dark"
+                @tri a (0.081,0.354,0.3001) b (0.1491,0.2364,-0.8204) c (0.149,0.2245,-0.819) uv (0,0,1,1,0,1) texture "entities/mw_saddle_dark"
+                @tri a (0.0811,0.366,0.2988) b (0.099,0.366,0.2999) c (0.167,0.2364,-0.8193) uv (0,0,1,0,1,1) texture "entities/mw_saddle_dark"
+                @tri a (0.0811,0.366,0.2988) b (0.167,0.2364,-0.8193) c (0.1491,0.2364,-0.8204) uv (0,0,1,1,0,1) texture "entities/mw_saddle_dark"
+                @tri a (0.099,0.366,0.2999) b (0.0989,0.354,0.3012) c (0.1669,0.2245,-0.8179) uv (0,0,1,0,1,1) texture "entities/mw_saddle_dark"
+                @tri a (0.099,0.366,0.2999) b (0.1669,0.2245,-0.8179) c (0.167,0.2364,-0.8193) uv (0,0,1,1,0,1) texture "entities/mw_saddle_dark"
+            }
         }
                 @bone name 'tail' move (0,0.5,0.72) {
             @box from (-0.06,-0.7,-0.02) to (0.06,0,0.1) texture "$mane"
         }
+                @bone name 'saddle' move (0,0.56,-0.05) {
+            @box from (-0.29,-0.15,-0.31) to (0.29,0.012,0.25) texture "entities/mw_saddle_cloth"
+            @box from (-0.17,0.012,-0.25) to (0.17,0.06,0.16) texture "entities/mw_saddle_leather"
+            @box from (-0.11,0.06,-0.28) to (0.11,0.14,-0.19) texture "entities/mw_saddle_dark"
+            @box from (-0.15,0.06,0.1) to (0.15,0.17,0.18) texture "entities/mw_saddle_dark"
+            @box from (-0.305,-0.3,-0.2) to (-0.29,0,0.07) texture "entities/mw_saddle_leather"
+            @box from (0.29,-0.3,-0.2) to (0.305,0,0.07) texture "entities/mw_saddle_leather"
+            @box from (-0.282,-0.57,-0.12) to (0.282,-0.555,-0.05) texture "entities/mw_saddle_dark"
+            @box from (-0.282,-0.56,-0.12) to (-0.27,-0.3,-0.05) texture "entities/mw_saddle_dark"
+            @box from (0.27,-0.56,-0.12) to (0.282,-0.3,-0.05) texture "entities/mw_saddle_dark"
+            @box from (-0.318,-0.46,-0.04) to (-0.306,-0.02,-0.01) texture "entities/mw_saddle_dark"
+            @box from (-0.345,-0.52,-0.075) to (-0.295,-0.46,0.025) texture "entities/mw_saddle_iron"
+            @box from (0.306,-0.46,-0.04) to (0.318,-0.02,-0.01) texture "entities/mw_saddle_dark"
+            @box from (0.295,-0.52,-0.075) to (0.345,-0.46,0.025) texture "entities/mw_saddle_iron"
+        }
                 @bone name 'leg_fl' move (-0.17,0.05,-0.56) {
-            @box from (-0.08,-0.75,-0.08) to (0.08,0,0.08) texture "$coat"
-            @box from (-0.09,-0.85,-0.09) to (0.09,-0.75,0.09) texture "entities/mw_horse_hoof"
+            @box from (-0.085,-0.44,-0.085) to (0.085,0,0.085) texture "$coat"
+            @bone name 'leg_fl_low' move (0,-0.43,0) {
+                @box from (-0.07,-0.32,-0.07) to (0.07,0.02,0.07) texture "$coat"
+                @box from (-0.08,-0.42,-0.08) to (0.08,-0.32,0.08) texture "entities/mw_horse_hoof"
+            }
         }
                 @bone name 'leg_fr' move (0.17,0.05,-0.56) {
-            @box from (-0.08,-0.75,-0.08) to (0.08,0,0.08) texture "$coat"
-            @box from (-0.09,-0.85,-0.09) to (0.09,-0.75,0.09) texture "entities/mw_horse_hoof"
+            @box from (-0.085,-0.44,-0.085) to (0.085,0,0.085) texture "$coat"
+            @bone name 'leg_fr_low' move (0,-0.43,0) {
+                @box from (-0.07,-0.32,-0.07) to (0.07,0.02,0.07) texture "$coat"
+                @box from (-0.08,-0.42,-0.08) to (0.08,-0.32,0.08) texture "entities/mw_horse_hoof"
+            }
         }
                 @bone name 'leg_bl' move (-0.17,0.05,0.56) {
-            @box from (-0.08,-0.75,-0.08) to (0.08,0,0.08) texture "$coat"
-            @box from (-0.09,-0.85,-0.09) to (0.09,-0.75,0.09) texture "entities/mw_horse_hoof"
+            @box from (-0.085,-0.44,-0.085) to (0.085,0,0.085) texture "$coat"
+            @bone name 'leg_bl_low' move (0,-0.43,0) {
+                @box from (-0.07,-0.32,-0.07) to (0.07,0.02,0.07) texture "$coat"
+                @box from (-0.08,-0.42,-0.08) to (0.08,-0.32,0.08) texture "entities/mw_horse_hoof"
+            }
         }
                 @bone name 'leg_br' move (0.17,0.05,0.56) {
-            @box from (-0.08,-0.75,-0.08) to (0.08,0,0.08) texture "$coat"
-            @box from (-0.09,-0.85,-0.09) to (0.09,-0.75,0.09) texture "entities/mw_horse_hoof"
+            @box from (-0.085,-0.44,-0.085) to (0.085,0,0.085) texture "$coat"
+            @bone name 'leg_br_low' move (0,-0.43,0) {
+                @box from (-0.07,-0.32,-0.07) to (0.07,0.02,0.07) texture "$coat"
+                @box from (-0.08,-0.42,-0.08) to (0.08,-0.32,0.08) texture "entities/mw_horse_hoof"
+            }
         }
     }

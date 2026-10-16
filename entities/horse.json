@@ -17,9 +17,10 @@
     ],
     "skeleton-name": "mw_horse",
     "hitbox": [
-        1.0,
+        0.9,
         1.6,
-        1.0
+        0.9
     ],
+    "solid": true,
     "mass": 450
 }

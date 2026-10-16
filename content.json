@@ -342,7 +342,9 @@
     "slate_slab.item",
     "slate_vslab.item",
     "slate_column.item",
-    "slate_roof.item"
+    "slate_roof.item",
+    "saddle",
+    "lasso"
   ],
   "entities": [
     "chest_lid",
@@ -366,6 +368,7 @@
     "vat_hide",
     "thrown_spear",
     "flying_arrow",
-    "sheep"
+    "sheep",
+    "lasso_rope"
   ]
 }

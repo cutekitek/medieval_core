@@ -1,5 +1,7 @@
 -- Spawn eggs (medieval_core:spawn_egg_<species>): use on a block to release
 -- the animal on top of it. Not used up with infinite items (creative).
+local spawning = require "fauna/spawning"
+
 local PREFIX = "medieval_core:spawn_egg_"
 
 local function held(pid)
@@ -27,7 +29,9 @@ function on_use_on_block(x, y, z, pid, normal)
         tx, ty, tz = x + normal[1], y + normal[2], z + normal[3]
     end
     local hitbox = entities.def_hitbox(def)
-    entities.spawn(entity, {tx + 0.5, ty + hitbox[2] * 0.5 + 0.05, tz + 0.5},
+    -- not into another animal or the player: bodies are solid
+    local pos = spawning.find_clear(tx, ty, tz, hitbox, 1) or {tx + 0.5, ty + hitbox[2] * 0.5 + 0.05, tz + 0.5}
+    entities.spawn(entity, pos,
         {medieval_core__animal = {species = species}, medieval_core__fish = {}})
     if not player.is_infinite_items(pid) then
         inventory.set(invid, slot, count > 1 and itemid or 0, count - 1)

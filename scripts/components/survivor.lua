@@ -6,6 +6,7 @@ local ranged_pose = require "combat/ranged_pose"
 local sleep = require "player/sleep"
 local shapes = require "building/shapes"
 local boat = require "boat/boat"
+local riding = require "riding/riding"
 
 local tsf = entity.transform
 local body = entity.rigidbody
@@ -126,7 +127,8 @@ end
 -- runs after core:mob and core:player, so the water settings win
 function on_physics_update(delta)
     local pid = entity:get_player()
-    if pid == -1 or player.is_flight(pid) or player.is_noclip(pid) or boat.seated_in(pid) then
+    if pid == -1 or player.is_flight(pid) or player.is_noclip(pid) or boat.seated_in(pid) or
+       riding.seated_in(pid) then
         water_state = "dry"
         on_ladder = false
         return
@@ -210,11 +212,24 @@ local function pose_sleep(pid)
     return asleep
 end
 
+-- in the saddle: the body with the legs astride (models/mw_rider)
+local body_model = body_bone and rig:get_model(body_bone)
+local astride = false
+
+local function pose_rider(pid)
+    local on = riding.seated_in(pid) ~= nil
+    if on ~= astride and body_bone then
+        astride = on
+        rig:set_model(body_bone, on and "mw_rider" or body_model)
+    end
+end
+
 function on_render(delta)
     local pid = entity:get_player()
     if pid == -1 or not item_bone then
         return
     end
+    pose_rider(pid)
     if pose_sleep(pid) then
         return
     end

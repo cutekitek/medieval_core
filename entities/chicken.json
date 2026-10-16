@@ -6,5 +6,6 @@
     ],
     "skeleton-name": "mw_chicken",
     "hitbox": [0.4, 0.6, 0.4],
+    "solid": true,
     "mass": 2
 }
