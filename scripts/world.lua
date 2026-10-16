@@ -20,6 +20,7 @@ local farming = require "farming/farming"
 local calendar = require "world/calendar"
 local sleep = require "player/sleep"
 local notice = require "player/notice"
+local pose = require "player/pose"
 local riding = require "riding/riding"
 local leash = require "riding/leash"
 
@@ -93,13 +94,22 @@ end
 -- any block change by a player may let water flow
 function on_block_broken(blockid, x, y, z, playerid)
     flow.notify(x, y, z)
+    if playerid and playerid >= 0 then
+        pose.play(playerid, "swing")
+    end
 end
 
 function on_block_placed(blockid, x, y, z, playerid)
     flow.notify(x, y, z)
+    if playerid and playerid >= 0 then
+        pose.play(playerid, "use")
+    end
 end
 
 function on_block_breaking(blockid, x, y, z, playerid)
+    if playerid and playerid >= 0 then
+        pose.play(playerid, "swing")
+    end
     if mode.enabled() then
         breaking.hit(blockid, x, y, z, playerid)
     end

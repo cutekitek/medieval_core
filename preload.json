@@ -159,7 +159,6 @@
     "models": [
         "mw_bow_drawn_1",
         "mw_bow_drawn_2",
-        "mw_bow_drawn_3",
-        "mw_rider"
+        "mw_bow_drawn_3"
     ]
 }

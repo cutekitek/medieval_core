@@ -9,5 +9,5 @@
     },
     "medieval_core:damage": 3,
     "script-name": "axe",
-    "model-name": "mw_sprite_stone_axe"
+    "model-name": "mw_tool_stone_axe"
 }

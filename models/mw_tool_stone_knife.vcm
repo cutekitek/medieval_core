@@ -1,0 +1,6 @@
+@box from (-0.03,-0.3,-0.022) to (0.03,-0.05,0.022) origin (0,0,0) rotate (0,0,-45) texture "blocks:mw_stick_bark"
+@box from (-0.036,-0.24,-0.028) to (0.036,-0.21,0.028) origin (0,0,0) rotate (0,0,-45) texture "blocks:mw_rope"
+@box from (-0.036,-0.13,-0.028) to (0.036,-0.1,0.028) origin (0,0,0) rotate (0,0,-45) texture "blocks:mw_rope"
+@box from (-0.034,-0.05,-0.009) to (0.034,0.13,0.009) origin (0,0,0) rotate (0,0,-45) texture "blocks:mw_flint"
+@box from (-0.026,0.13,-0.008) to (0.026,0.21,0.008) origin (0,0,0) rotate (0,0,-45) texture "blocks:mw_flint"
+@box from (-0.014,0.21,-0.006) to (0.014,0.27,0.006) origin (0,0,0) rotate (0,0,-45) texture "blocks:mw_flint"

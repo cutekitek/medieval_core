@@ -9,5 +9,5 @@
     },
     "medieval_core:damage": 2,
     "script-name": "knife",
-    "model-name": "mw_sprite_stone_knife"
+    "model-name": "mw_tool_stone_knife"
 }

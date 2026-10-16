@@ -2,7 +2,7 @@
 local stats = require "survival/stats"
 local mode = require "survival/mode"
 local flow = require "water/flow"
-local ranged_pose = require "combat/ranged_pose"
+local pose = require "player/pose"
 local sleep = require "player/sleep"
 local shapes = require "building/shapes"
 local boat = require "boat/boat"
@@ -179,70 +179,37 @@ function on_physics_update(delta)
     body:set_vel(vel)
 end
 
--- third person: a held spear or bow is posed (and wound up) on the
--- model's item bone; base:player_animator only sets the bone when the item
--- changes
+-- third person: the whole body is posed every frame (player/pose); the
+-- local player's mouse buttons start the swing and the push of the right
+-- arm (world.lua starts them for block changes by any player)
 local rig = entity.skeleton
-local item_bone = rig:index("item")
-local body_bone = rig:index("body")
+local poser = pose.new(entity)
+local buttons = {attack = false, build = false}
 
--- lying on the back in bed: the body turned flat (the head towards the
--- pillow, the entity faces the foot of the bed), nothing in hand
--- (the body model is 0.14 thick: it rests on the blanket; core:mob turns
--- the head every frame, here it lies face up, sunk into the pillow)
-local LIE = mat4.mul(mat4.translate({0, -0.24, 0}), mat4.rotate({1, 0, 0}, 90))
-local HEAD_LIE = mat4.translate({0, 0, -0.15})
-local head_bone = rig:index("head")
-local lying = false
-
-local function pose_sleep(pid)
-    local asleep = sleep.is_sleeping(pid)
-    if asleep and head_bone then
-        rig:set_matrix(head_bone, HEAD_LIE)
+local function own_actions(pid)
+    if not hud or pid ~= hud.get_player() or hud.is_inventory_open() or menu.page ~= "" then
+        buttons.attack, buttons.build = false, false
+        return
     end
-    -- the sleeper's own model would stand in the view from the pillow
-    local own = asleep and hud and pid == hud.get_player() and not sleep.free_camera
-    rig:set_visible(not own)
-    if asleep == lying or not body_bone then
-        return asleep
+    local attack = input.is_active("player.attack")
+    local build = input.is_active("player.build")
+    if attack then
+        pose.play(pid, "swing")
     end
-    lying = asleep
-    rig:set_matrix(body_bone, asleep and LIE or mat4.idt())
-    rig:set_visible(item_bone, not asleep)
-    return asleep
-end
-
--- in the saddle: the body with the legs astride (models/mw_rider)
-local body_model = body_bone and rig:get_model(body_bone)
-local astride = false
-
-local function pose_rider(pid)
-    local on = riding.seated_in(pid) ~= nil
-    if on ~= astride and body_bone then
-        astride = on
-        rig:set_model(body_bone, on and "mw_rider" or body_model)
+    if build and not buttons.build then
+        pose.play(pid, "use")
     end
+    buttons.attack, buttons.build = attack, build
 end
 
 function on_render(delta)
     local pid = entity:get_player()
-    if pid == -1 or not item_bone then
+    if pid == -1 or not poser then
         return
     end
-    pose_rider(pid)
-    if pose_sleep(pid) then
-        return
-    end
-    local m, model = ranged_pose.third_person(pid)
-    if m then
-        rig:set_matrix(item_bone, m)
-        rig:set_model(item_bone, model)
-        weapon_held = true
-    elseif weapon_held then
-        -- back to how the animator holds other items
-        weapon_held = false
-        local invid, slot = player.get_inventory(pid)
-        rig:set_model(item_bone, item.model_name(inventory.get(invid, slot)))
-        rig:set_matrix(item_bone, mat4.rotate({0, 1, 0}, -80))
-    end
+    -- the sleeper's own model would stand in the view from the pillow
+    local own = sleep.is_sleeping(pid) and hud and pid == hud.get_player() and not sleep.free_camera
+    rig:set_visible(not own)
+    own_actions(pid)
+    poser.update(pid, delta, {water = water_state, ladder = on_ladder})
 end

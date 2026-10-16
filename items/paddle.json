@@ -2,5 +2,5 @@
     "icon-type": "sprite",
     "icon": "items:mw_paddle",
     "stack-size": 1,
-    "model-name": "mw_sprite_paddle"
+    "model-name": "mw_tool_paddle"
 }

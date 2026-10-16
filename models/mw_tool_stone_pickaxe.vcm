@@ -1,0 +1,7 @@
+@box from (-0.026,-0.4,-0.026) to (0.026,0.3,0.026) origin (0,0,0) rotate (0,0,-45) texture "blocks:mw_stick_bark"
+@box from (-0.1,0.23,-0.034) to (0.1,0.32,0.034) origin (0,0,0) rotate (0,0,-45) texture "blocks:stone"
+@box from (-0.2,0.24,-0.026) to (-0.1,0.31,0.026) origin (0,0,0) rotate (0,0,-45) texture "blocks:stone"
+@box from (0.1,0.24,-0.026) to (0.2,0.31,0.026) origin (0,0,0) rotate (0,0,-45) texture "blocks:stone"
+@box from (-0.27,0.215,-0.016) to (-0.2,0.285,0.016) origin (0,0,0) rotate (0,0,-45) texture "blocks:stone"
+@box from (0.2,0.215,-0.016) to (0.27,0.285,0.016) origin (0,0,0) rotate (0,0,-45) texture "blocks:stone"
+@box from (-0.036,0.2,-0.036) to (0.036,0.235,0.036) origin (0,0,0) rotate (0,0,-45) texture "blocks:mw_rope"

@@ -5,5 +5,5 @@
     "uses": 80,
     "medieval_core:tool": {"type": "pick", "speed": 2.5},
     "medieval_core:damage": 2,
-    "model-name": "mw_sprite_stone_pickaxe"
+    "model-name": "mw_tool_stone_pickaxe"
 }

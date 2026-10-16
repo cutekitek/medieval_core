@@ -87,7 +87,7 @@ function this.hand_point(pid)
     end
     local yaw = math.rad((player.get_rot(pid)))
     local fx, fz = -math.sin(yaw), -math.cos(yaw)
-    return {x + fx * 0.25 - fz * 0.3, y + 0.05, z + fz * 0.25 + fx * 0.3}
+    return {x + fx * 0.28 - fz * 0.29, y - 0.12, z + fz * 0.28 + fx * 0.29}
 end
 
 -- the holder's end of the rope (nil: the holder is gone)

@@ -5,5 +5,5 @@
     "uses": 80,
     "medieval_core:knockback": 2.0,
     "medieval_core:damage": 3,
-    "model-name": "mw_sprite_stone_mace"
+    "model-name": "mw_tool_stone_mace"
 }

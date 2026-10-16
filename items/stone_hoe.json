@@ -5,5 +5,5 @@
     "uses": 80,
     "medieval_core:damage": 2,
     "script-name": "hoe",
-    "model-name": "mw_sprite_stone_hoe"
+    "model-name": "mw_tool_stone_hoe"
 }
