@@ -128,4 +128,4 @@ rule.set medieval_core-survival false
 
 ## Автор
 
-Andrey Tazetdinov. Версия 0.1.0.
+Andrey Tazetdinov. Версия 0.1.1.
